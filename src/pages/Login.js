@@ -7,7 +7,7 @@ import {
 import { auth } from "../firebase/firebaseconfig";
 import { useState,useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import {loginSuccess, logoutSuccess} from "../features/loginCheck/loginSlice"
+import {loginSuccess, logoutSuccess,UserLoginName} from "../features/loginCheck/loginSlice"
 
 
 const Login = () => {
@@ -25,8 +25,10 @@ const Login = () => {
 useEffect(() => {
     onAuthStateChanged(auth, (currentUser) => {
         setUser(currentUser);
-        dispatch(loginSuccess("true"))
-
+            if(currentUser!== null){
+                dispatch(loginSuccess("true"))
+                dispatch(UserLoginName(user.email))
+            }
     });
 
 }, [])
@@ -49,6 +51,7 @@ useEffect(() => {
                 auth,
                 loginEmail,
                 loginPassword)
+                
         }
         catch(error){
             console.log(error);
@@ -56,6 +59,7 @@ useEffect(() => {
     }
     const logout = async()=>{
         await signOut(auth)
+        dispatch(loginSuccess("false"))
 
     }
 
