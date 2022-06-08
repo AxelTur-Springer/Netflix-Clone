@@ -1,8 +1,26 @@
 import React from 'react';
+import { useState,useEffect } from 'react';
 import "../styling/homescreen.css"
 import NavBarHome from '../Components/NavBarHome';
+import {
+    createUserWithEmailAndPassword , 
+    onAuthStateChanged, 
+    signOut,
+    signInWithEmailAndPassword,
+    fetchSignInMethodsForEmail
+} from "firebase/auth"
+import { auth } from "../firebase/firebaseconfig";
 const HomeScreen = () => {
-    return (
+    const [registerEmail,setRegisterEmail]= useState("")
+    const [isClient,setisClient]= useState()
+
+    async function Register(){
+       let result = await fetchSignInMethodsForEmail(auth, registerEmail) 
+        setisClient(result)
+    }
+
+console.log(isClient)
+return (
         <div className='homeScreenContainer'>
             <div className='greetingHomeScreen'>
             <NavBarHome />
@@ -18,10 +36,10 @@ const HomeScreen = () => {
                         </div>
                         <div className='EnterEmailInputBtn'>
                             <div className='InputCont'>
-                                <input type="text" placeholder='Email address' />
+                                <input type="text" placeholder='Email address' onChange={(event)=>{setRegisterEmail(event.target.value)}}/>
                             </div>
                             <div className='btnCont'>
-                                <button>Get Started</button>
+                                <button onClick={Register}>Get Started</button>
                             </div>
                         </div>
                     </div>

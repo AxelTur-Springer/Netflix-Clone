@@ -3,7 +3,9 @@ import {
     createUserWithEmailAndPassword , 
     onAuthStateChanged, 
     signOut,
-    signInWithEmailAndPassword} from "firebase/auth"
+    signInWithEmailAndPassword,
+    fetchSignInMethodsForEmail} from "firebase/auth"
+
 import { auth } from "../firebase/firebaseconfig";
 import { useState,useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
