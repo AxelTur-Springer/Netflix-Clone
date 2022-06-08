@@ -19,7 +19,7 @@ const Login = () => {
     const store = useSelector((store)=>{return store});
     const stateOfLogIn = useSelector((store)=>{return store.LogedInReducer})
     const dispatch = useDispatch();
-    console.log(store)
+    //console.log(store)
 
 
 useEffect(() => {

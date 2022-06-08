@@ -1,14 +1,36 @@
 import { initializeApp } from "firebase/app";
 import React from 'react';
-import './App.css';
+import { useState,useEffect } from 'react';
+import { BrowserRouter, Route, Routes,Link,Navigate } from 'react-router-dom';import './App.css';
 import Login from "./pages/Login";
+import NavBar from "./Components/NavBar";
+import HomeScreen from "./pages/homeScreen";
+import { store } from "./app/store";
+import { useSelector, useDispatch } from 'react-redux';
 function App() {
+  const [user,setUser] = useState()
+  const Store = useSelector((store)=>{return store})
+  useEffect(() => {
+    setUser(Store.LogedInReducer.userLogIn);
+  },);
+ 
+
+  
   return (
     <div className="App">
-      <header className="App-header">
-        <h1>Welcome to My Awesome App</h1>
-          <Login />
-      </header>
+      <BrowserRouter > 
+      {user}   
+      <NavBar />
+      <Routes>
+        <Route path='/'  element = {  user ==="true"? (
+              <Navigate replace to="/home" />
+            ) : (
+              <Login />
+            )}/>
+        <Route path='/home' element = {<HomeScreen/>}/>
+        <Route path='/login' element = {<Login />} />
+      </Routes>
+    </BrowserRouter >
     </div>
   );
 }
