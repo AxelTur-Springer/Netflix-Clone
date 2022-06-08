@@ -19,16 +19,20 @@ import { useSelector, useDispatch } from 'react-redux';
 function App() {
   const [user,setUser] = useState()
   const dispatch = useDispatch();
-
+  const Store = useSelector((store)=>{return store})
   useEffect(() => {
     onAuthStateChanged(auth, (currentUser) => {
-      setUser(currentUser.email);
            if(currentUser!== null){
+            setUser(currentUser.email);
+
              dispatch(loginSuccess("true"))
               //dispatch(UserLoginName(user.email))
-          }
+            }
+            else{
+              setUser(undefined)
+            }
   });
-  },);
+  },[Store]);
 
   return (
     <div className="App">
@@ -42,8 +46,18 @@ function App() {
               <HomeScreen/>
             )}/>
         <Route path='/home' element = {<HomeScreen/>}/>
-        <Route path='/login' element = {<Login />} />
-        <Route path='/main' element = {<Main/>} />
+        <Route path='/login' element={
+          user !== undefined? (
+            <Navigate replace to="/main" />
+          ) : (
+            <Login />
+          )} />
+        <Route path='/main' element = {
+          user === undefined? (
+            <Navigate replace to="/home" />
+          ) : (
+            <Main />
+          )} />
 </Routes>
     </BrowserRouter >
     </div>

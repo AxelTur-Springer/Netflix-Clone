@@ -25,14 +25,13 @@ const Login = () => {
 useEffect(() => {
     onAuthStateChanged(auth, (currentUser) => {
         setUser(currentUser);
-            if(currentUser!== null){
-                dispatch(loginSuccess("true"))
+             if(currentUser!== null){
+               dispatch(loginSuccess("true"))
                 dispatch(UserLoginName(user.email))
             }
     });
 
 }, [])
-
     async function Register(){
         try{
             const user = await createUserWithEmailAndPassword(
