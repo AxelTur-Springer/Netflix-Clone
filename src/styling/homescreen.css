@@ -1,6 +1,60 @@
-.FullBodyHomeScreen{
+.homeScreenContainer{
+   display: flex;
+   flex-direction: column;
+}
+.greetingHomeScreen{
     background-image: url(../assets/AR-en-20220606-popsignuptwoweeks-perspective_alpha_website_large.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     height: 100vh;
+    text-align: center;
+}
+.greetingHomeScreen .GreetingPlusInput{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    color: white;
+    width: 70%;
+    margin: auto;
+}
+.greetingHomeScreen .GreetingPlusInput div p{
+margin-top: 0%;
+}
+.greetingHomeScreen .GreetingPlusInput h1{
+    padding: 0em 2em;
+    font-size: 4rem;
+}
+.our-story-card-subtitle{
+    font-size: 1.625rem;
+}
+.emailformtitle{   
+     font-size: 1.25rem;
+}
+.homeScreenContainer .EnterEmailInputBtn{
+    display: flex;
+    justify-content: space-between;
+    margin: 0px auto;
+    width: 85%
+}
+.homeScreenContainer .EnterEmailInputBtn .InputCont{
+    width: 70%;
+}
+.homeScreenContainer .EnterEmailInputBtn .InputCont input{
+    width: 100%;
+    height: 4rem;
+    border: none;
+    padding: 0%;
+    outline: none;
+}
+.homeScreenContainer .EnterEmailInputBtn .btnCont {
+    width: 30%;
+}
+.homeScreenContainer .EnterEmailInputBtn .btnCont button{
+    border: none;
+    width: 100%;
+    height: 4rem;
+    color: white;
+    font-size: 1.625rem;
+    background-color: red;
 }

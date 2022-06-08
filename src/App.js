@@ -37,8 +37,6 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter > 
-      <NavBar />
-      {user }
       <Routes>
         <Route path='/'  element = {  user !== undefined? (
             <Navigate replace to="/main" />
