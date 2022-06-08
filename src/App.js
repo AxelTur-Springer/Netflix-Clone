@@ -41,11 +41,15 @@ function App() {
       {user }
       <Routes>
         <Route path='/'  element = {  user !== undefined? (
-              <Main />
+            <Navigate replace to="/main" />
             ) : (
               <HomeScreen/>
             )}/>
-        <Route path='/home' element = {<HomeScreen/>}/>
+        <Route path='/home' element = { user !== undefined? (
+            <Navigate replace to="/main" />
+          ) : (
+            <HomeScreen />
+          ) }/>
         <Route path='/login' element={
           user !== undefined? (
             <Navigate replace to="/main" />
