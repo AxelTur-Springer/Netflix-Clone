@@ -11,8 +11,8 @@ export default function NavBarHome() {
                     <img src={netflixLogo} alt="" />
                 </div>
             </div>
-            <div>
-                <button><Link to={"/login"}>Login </Link></button>
+            <div className='buttonContainer'>
+                <button><Link className='link-style' to={"/login"}>Sign In </Link></button>
             </div>
                    
     </div>

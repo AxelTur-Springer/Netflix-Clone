@@ -4,8 +4,8 @@ import NavBarHome from '../Components/NavBarHome';
 const HomeScreen = () => {
     return (
         <div className='homeScreenContainer'>
-            <NavBarHome />
             <div className='greetingHomeScreen'>
+            <NavBarHome />
                 <div className='GreetingPlusInput'>
                         <div>
                             <h1>Unlimited movies, TV shows, and more.</h1>

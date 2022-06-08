@@ -1,9 +1,27 @@
 .NavBarHomeContainer{
-    position:absolute;
-    width: 100%;
     display: flex;
     justify-content: space-between;
+    padding: 1em 4em;
 }
 .NavBarHomeContainer .ImgCont img{
-width: 10em;
+width: 12em;
+}
+.NavBarHomeContainer .buttonContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.NavBarHomeContainer .buttonContainer button{
+    border: none;
+    background-color: #e50914;
+    color: white;
+    font-size: 1em;
+    padding: 0.6em 1.5em;
+    border-radius: 5px;
+ 
+}
+.link-style{
+    color: white;
+    text-decoration: none;
 }
