@@ -1,8 +1,9 @@
 import React from 'react';
+import "../styling/homescreen.css"
 
 const HomeScreen = () => {
     return (
-        <div>
+        <div className='FullBodyHomeScreen'>
             Welcome home Screen
         </div>
     );

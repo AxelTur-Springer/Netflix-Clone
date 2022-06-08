@@ -1,0 +1,9 @@
+.NavBarContainer{
+    position:absolute;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.NavBarContainer .ImgCont img{
+width: 10em;
+}
