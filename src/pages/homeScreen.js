@@ -2,6 +2,7 @@ import React from 'react';
 import { useState,useEffect } from 'react';
 import "../styling/homescreen.css"
 import NavBarHome from '../Components/NavBarHome';
+import { BrowserRouter, Route, Routes,Link,Navigate } from 'react-router-dom';
 import {
     createUserWithEmailAndPassword , 
     onAuthStateChanged, 
@@ -16,12 +17,22 @@ const HomeScreen = () => {
 
     async function Register(){
        let result = await fetchSignInMethodsForEmail(auth, registerEmail) 
-        setisClient(result)
+        if(result.length !== 0){
+            setisClient(true)
+        }else{
+            setisClient(false)
+        }
     }
 
-console.log(isClient)
+    console.log(isClient)
+
 return (
         <div className='homeScreenContainer'>
+            {isClient ? (
+            <Navigate replace to="/login" />
+          ) : isClient=== undefined ? null :  (
+            <Navigate replace to="/register" />
+          )}
             <div className='greetingHomeScreen'>
             <NavBarHome />
                 <div className='GreetingPlusInput'>
