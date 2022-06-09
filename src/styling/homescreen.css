@@ -1,6 +1,7 @@
 .homeScreenContainer{
    display: flex;
    flex-direction: column;
+   position: relative;
 }
 .greetingHomeScreen{
     background-image: url(../assets/AR-en-20220606-popsignuptwoweeks-perspective_alpha_website_large.jpg);

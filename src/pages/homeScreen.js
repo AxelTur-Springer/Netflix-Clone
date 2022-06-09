@@ -2,6 +2,7 @@ import React from 'react';
 import { useState,useEffect } from 'react';
 import "../styling/homescreen.css"
 import NavBarHome from '../Components/NavBarHome';
+import PopUp from '../Components/PopUp';
 import { BrowserRouter, Route, Routes,Link,Navigate } from 'react-router-dom';
 import {
     createUserWithEmailAndPassword , 
@@ -14,20 +15,32 @@ import { auth } from "../firebase/firebaseconfig";
 const HomeScreen = () => {
     const [registerEmail,setRegisterEmail]= useState("")
     const [isClient,setisClient]= useState()
+    const [isRegistered,setisRegistered]= useState()
 
     async function Register(){
        let result = await fetchSignInMethodsForEmail(auth, registerEmail) 
         if(result.length !== 0){
-            setisClient(true)
+            renderPopUp(true)
+            setTimeout(() => {
+                setisClient(true)
+            }, 5000);
         }else{
-            setisClient(false)
+            renderPopUp(false)
+            setTimeout(() => {
+                setisClient(false)
+            }, 5000);
         }
     }
 
-    console.log(isClient)
+function renderPopUp(account){
+    account ?setisRegistered(true):setisRegistered(false)
 
+}
 return (
         <div className='homeScreenContainer'>
+            {isRegistered ? <PopUp  exists ={isRegistered} /> : 
+            isRegistered === undefined? null :<PopUp exists ={isRegistered} /> }
+           
             {isClient ? (
             <Navigate replace to="/login" />
           ) : isClient=== undefined ? null :  (

@@ -1,0 +1,24 @@
+.popUpCont{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    margin-left: auto;
+margin-right: auto;
+left: 0;
+right: 0;
+text-align: center;
+color: white;
+height: 100%;
+background-color: rgba(2, 2, 2, 0.493);
+}
+.popUp{
+    background-color: black;
+    width: 20em;
+    height: 20em;
+    margin: auto;
+    border-radius: 10px;
+}
+.popUpCont h1{
+    color: #e50914;
+}
