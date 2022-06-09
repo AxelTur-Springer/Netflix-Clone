@@ -13,7 +13,7 @@ import {loginSuccess, logoutSuccess,UserLoginName} from "../features/loginCheck/
 import "../styling/login.css"
 import NavBarSignInRegister from '../Components/navBarSignInRegister';
 
-const Login = () => {
+const Register = () => {
     const [registerEmail,setRegisterEmail]= useState("")
     const [registerPassword,setRegisterPassword]= useState("")
     const [loginEmail,setloginEmail]= useState("")
@@ -35,7 +35,7 @@ useEffect(() => {
     });
 
 }, [])
-    async function Register(){
+    async function RegisterNew(){
         try{
             const user = await createUserWithEmailAndPassword(
                 auth,
@@ -74,7 +74,7 @@ useEffect(() => {
                     <h3>Register</h3>
                     <input type="text" name="" id="" placeholder='email' onChange={(event)=>{setRegisterEmail(event.target.value)}}/>
                     <input type="text" name="" id="" placeholder='password' onChange={(event)=>{setRegisterPassword(event.target.value)}}/>
-                        <button onClick={Register}>Register </button>
+                        <button onClick={RegisterNew}>Register </button>
                 </div>
                 <div>
                     <h3>Login</h3>
@@ -100,5 +100,4 @@ useEffect(() => {
     </>
     );
 }
-
-export default Login;
+export default Register;

@@ -1,0 +1,9 @@
+.NavBarSignInRegisterContainer{
+    display: flex;
+    justify-content: space-between;
+    padding: 1em 4em;
+    position: absolute;
+}
+.NavBarSignInRegisterContainer .ImgCont img{
+width: 12em;
+}

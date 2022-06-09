@@ -14,6 +14,7 @@ import Login from "./pages/Login";
 import NavBar from "./Components/NavBar";
 import HomeScreen from "./pages/homeScreen";
 import Main from "./pages/main";
+import Register from "./pages/register";
 import { store } from "./app/store";
 import { useSelector, useDispatch } from 'react-redux';
 function App() {
@@ -60,6 +61,11 @@ function App() {
           ) : (
             <Main />
           )} />
+            <Route path='/register' element = { user !== undefined? (
+            <Navigate replace to="/main" />
+          ) : (
+            <Register />
+          )}/>
 </Routes>
     </BrowserRouter >
     </div>

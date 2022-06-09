@@ -1,0 +1,12 @@
+.loginBodyContainer{
+    display: flex;
+    flex-direction: column;
+    background-image: url(../assets/AR-en-20220606-popsignuptwoweeks-perspective_alpha_website_large.jpg);
+    height: 100vh;
+    background-color: black;
+}
+.loginBodyContainer .contLogin {
+ width: 50%;
+ margin: auto;
+    border: saddlebrown solid;
+}
