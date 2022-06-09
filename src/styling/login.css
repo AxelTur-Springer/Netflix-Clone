@@ -4,9 +4,39 @@
     background-image: url(../assets/AR-en-20220606-popsignuptwoweeks-perspective_alpha_website_large.jpg);
     height: 100vh;
     background-color: black;
+    color: white;
 }
 .loginBodyContainer .contLogin {
- width: 50%;
- margin: auto;
-    border: saddlebrown solid;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+     margin: auto;
+    background-color: black;
+    border-radius: 5px;
+    padding: 1em 3.2em;
+    width: 15em;
+    height: 26em;
+}
+.loginBodyContainer .contLogin .InputsCont{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.loginBodyContainer .contLogin .InputsCont input{
+  height: 3em;
+  width: 100%;
+  margin: 0.3em auto;
+  border: none;
+  border-radius: 2px;
+  padding: 0%;
+  outline: none;
+}
+.loginBodyContainer .contLogin .buttonCont button{
+border: none;
+width: 100%;
+background-color: #e50914;
+color: white;
+padding: 1em 0em;
+margin: 1em auto;
+border-radius: 2px;
 }

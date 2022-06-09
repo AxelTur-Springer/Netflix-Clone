@@ -57,12 +57,8 @@ useEffect(() => {
         }
         catch(error){
             console.log(error);
+            alert(error)
         }
-    }
-    const logout = async()=>{
-        await signOut(auth)
-        dispatch(loginSuccess("false"))
-
     }
 
     return (
@@ -70,33 +66,23 @@ useEffect(() => {
         <NavBarSignInRegister />
         <div className='loginBodyContainer'> 
             <div className='contLogin'>
-                <div>
-                    <h3>Register</h3>
-                    <input type="text" name="" id="" placeholder='email' onChange={(event)=>{setRegisterEmail(event.target.value)}}/>
-                    <input type="text" name="" id="" placeholder='password' onChange={(event)=>{setRegisterPassword(event.target.value)}}/>
-                        <button onClick={Register}>Register </button>
-                </div>
-                <div>
-                    <h3>Login</h3>
-                    <div>
-                        <input type="text" name="" id="" placeholder='email' onChange={(event)=>{setloginEmail(event.target.value)}}/>
-                        <input type="text" name="" id="" placeholder='password' onChange={(event)=>{setLoginPassword(event.target.value)}}/>
+                <div className='greetInputBtn'>
+                    <h1>Sign In</h1>
+                        <div className='InputsCont'>
+                            <input type="text" name="" id="" placeholder='email' onChange={(event)=>{setloginEmail(event.target.value)}}/>
+                            <input type="text" name="" id="" placeholder='password' onChange={(event)=>{setLoginPassword(event.target.value)}}/>
+                        </div>
+                        <div className='buttonCont'>
+                            <button onClick={login}>Sign In</button>
+                        </div>           
                     </div>
-                    <div>
-                        <button onClick={login}>login</button>
-                    </div>
-                </div>
-                {user ? user.email : "Not Logged In"}
                 <div>
-                    <button onClick={logout}>signOut</button>
+                    <p>New to Netflix? Sign up now.
+This page is protected by Google reCAPTCHA to ensure you're not a bot. Learn more.</p>
                 </div>
-                
             </div>
         </div>  
 
-        <div className='footer'>
-        stuff
-    </div>
     </>
     );
 }

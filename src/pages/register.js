@@ -76,27 +76,9 @@ useEffect(() => {
                     <input type="text" name="" id="" placeholder='password' onChange={(event)=>{setRegisterPassword(event.target.value)}}/>
                         <button onClick={RegisterNew}>Register </button>
                 </div>
-                <div>
-                    <h3>Login</h3>
-                    <div>
-                        <input type="text" name="" id="" placeholder='email' onChange={(event)=>{setloginEmail(event.target.value)}}/>
-                        <input type="text" name="" id="" placeholder='password' onChange={(event)=>{setLoginPassword(event.target.value)}}/>
-                    </div>
-                    <div>
-                        <button onClick={login}>login</button>
-                    </div>
-                </div>
-                {user ? user.email : "Not Logged In"}
-                <div>
-                    <button onClick={logout}>signOut</button>
-                </div>
                 
             </div>
-        </div>  
-
-        <div className='footer'>
-        stuff
-    </div>
+        </div>
     </>
     );
 }
