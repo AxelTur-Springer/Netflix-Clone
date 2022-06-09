@@ -10,7 +10,7 @@ import { auth } from "../firebase/firebaseconfig";
 import { useState,useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import {loginSuccess, logoutSuccess,UserLoginName} from "../features/loginCheck/loginSlice"
-import "../styling/login.css"
+import "../styling/register.css"
 import NavBarSignInRegister from '../Components/navBarSignInRegister';
 
 const Register = () => {
@@ -68,17 +68,24 @@ useEffect(() => {
     return (
         <>
         <NavBarSignInRegister />
-        <div className='loginBodyContainer'> 
-            <div className='contLogin'>
+        <div className='RegisterBodyContainer'> 
+            <div className='contRegister'>
+                <div className='greetInputBtn'>
+                    <h1>Register</h1>
+                        <div className='InputsCont'>
+                            <input type="text" name="" id="" placeholder='email' onChange={(event)=>{setRegisterEmail(event.target.value)}}/>
+                            <input type="text" name="" id="" placeholder='password' onChange={(event)=>{setRegisterPassword(event.target.value)}}/>
+                            <input type="text" name="" id="" placeholder='Name'/>
+                        </div>
+                        <div className='buttonCont'>
+                            <button onClick={RegisterNew}>Register</button>
+                        </div>           
+                    </div>
                 <div>
-                    <h3>Register</h3>
-                    <input type="text" name="" id="" placeholder='email' onChange={(event)=>{setRegisterEmail(event.target.value)}}/>
-                    <input type="text" name="" id="" placeholder='password' onChange={(event)=>{setRegisterPassword(event.target.value)}}/>
-                        <button onClick={RegisterNew}>Register </button>
                 </div>
-                
             </div>
-        </div>
+        </div>  
+
     </>
     );
 }

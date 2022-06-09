@@ -8,7 +8,7 @@ export default function NavBarSignInRegister() {
     <div className='NavBarSignInRegisterContainer'>
        <div className='ImgCont'>
                 <div>
-                    <img src={netflixLogo} alt="" />
+                   <Link to={"/home"}> <img src={netflixLogo} alt="" /> </Link >
                 </div>
             </div>
            

@@ -1,4 +1,4 @@
-.loginBodyContainer{
+.RegisterBodyContainer{
     display: flex;
     flex-direction: column;
     background-image: url(../assets/AR-en-20220606-popsignuptwoweeks-perspective_alpha_website_large.jpg);
@@ -6,7 +6,7 @@
     background-color: black;
     color: white;
 }
-.loginBodyContainer .contLogin {
+.RegisterBodyContainer .contRegister {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -17,12 +17,12 @@
     width: 15em;
     height: 26em;
 }
-.loginBodyContainer .contLogin .InputsCont{
+.RegisterBodyContainer .contRegister .InputsCont{
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
-.loginBodyContainer .contLogin .InputsCont input{
+.RegisterBodyContainer .contRegister .InputsCont input{
   height: 3em;
   width: 16em;
   margin: 0.3em auto;
@@ -34,7 +34,7 @@
   color: white;
 }
 
-.loginBodyContainer .contLogin .buttonCont button{
+.RegisterBodyContainer .contRegister .buttonCont button{
 border: none;
 width: 100%;
 background-color: #e50914;
