@@ -1,11 +1,11 @@
 const API_KEY = "076a8aeadc245f1cbc3779685ceb3a1d";
 
 
-
  async function originalSeriesapi() {
     try{
       let response = await fetch(`https://api.themoviedb.org/3/discover/tv?api_key=${API_KEY}&with_networks=213`)
       let data = await response.json();
+      console.log(data)
       return  await data
     }catch(err){
       console.error(err);
@@ -23,3 +23,5 @@ async function popularApi() {
 
 
 export {popularApi,originalSeriesapi}
+
+

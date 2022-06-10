@@ -4,7 +4,7 @@ import NavBar from '../Components/NavBar';
 import "../styling/main.css"
 //import { getMovieList ,apiimg } from '../MovieApiData';
 import { originalSeriesapi,popularApi ,allMovies} from '../MovieApiData';
-
+import randomNetflixMovies from '../randomMovieObj';
 const Main = () => {
     const [originalSeries,setoriginalSeries] = useState([])
     const [popular,setpopular] = useState([])
@@ -17,7 +17,7 @@ const Main = () => {
         console.log(originalSeries)
     },[]);
 
-
+console.log(randomNetflixMovies())
     return (
         <>
             <NavBar />
