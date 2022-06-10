@@ -1,0 +1,24 @@
+.carusel{
+    display: flex;
+    overflow: hidden;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* moviecards styling*/
+.movieCardImgCont img{
+    width: 10em;
+}
