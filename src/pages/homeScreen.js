@@ -13,14 +13,17 @@ import {
 } from "firebase/auth"
 import { auth } from "../firebase/firebaseconfig";
 const HomeScreen = () => {
+
     const [registerEmail,setRegisterEmail]= useState("")
     const [isClient,setisClient]= useState()
     const [isRegistered,setisRegistered]= useState()
 
+
+
     async function Register(){
        let result = await fetchSignInMethodsForEmail(auth, registerEmail) 
         if(result.length !== 0){
-            renderPopUp(true)
+            renderPopUp(true);
             setTimeout(() => {
                 setisClient(true)
             }, 5000);

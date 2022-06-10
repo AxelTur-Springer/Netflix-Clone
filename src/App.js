@@ -9,7 +9,7 @@ import {loginSuccess, logoutSuccess,UserLoginName} from "./features/loginCheck/l
 
 import React from 'react';
 import { useState,useEffect } from 'react';
-import { BrowserRouter, Route, Routes,Link,Navigate } from 'react-router-dom';import './App.css';
+import { BrowserRouter, Route, Routes,Link,Navigate,useNavigate } from 'react-router-dom';import './App.css';
 import Login from "./pages/Login";
 import NavBar from "./Components/NavBar";
 import HomeScreen from "./pages/homeScreen";

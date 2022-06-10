@@ -4,7 +4,8 @@ import {
     onAuthStateChanged, 
     signOut,
     signInWithEmailAndPassword,
-    fetchSignInMethodsForEmail} from "firebase/auth"
+    fetchSignInMethodsForEmail,
+    sendPasswordResetEmail } from "firebase/auth"
 
 import { auth } from "../firebase/firebaseconfig";
 import { useState,useEffect } from 'react';
@@ -41,6 +42,7 @@ useEffect(() => {
                 auth,
                 registerEmail,
                 registerPassword)
+          
                 dispatch(loginSuccess("true"))
             }
         catch(error){
