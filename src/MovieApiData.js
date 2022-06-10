@@ -21,5 +21,5 @@ async function popularApi() {
     }
   }
 
-  
+
 export {popularApi,originalSeriesapi}

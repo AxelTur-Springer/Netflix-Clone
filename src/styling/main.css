@@ -3,8 +3,6 @@
     height: 100vh;
 }
 .preview-menu{
-border: solid red;
-height: 20em;
 }
 
 .carusel{
@@ -14,7 +12,10 @@ height: 20em;
 
 
 
-
+.previewMenu img{
+    height: 80vh;
+    width: 100%;
+}
 
 
 
