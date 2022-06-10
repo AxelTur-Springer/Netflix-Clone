@@ -8,30 +8,46 @@ import randomNetflixMovies from '../randomMovieObj';
 const Main = () => {
     const [originalSeries,setoriginalSeries] = useState([])
     const [popular,setpopular] = useState([])
+    const [randomOriginalNet,setrandomOriginalNet] = useState([])
 
 
     const API_KEY = "076a8aeadc245f1cbc3779685ceb3a1d";
+    
+    
     useEffect(() => {
         originalSeriesapi().then((data)=>{setoriginalSeries(data.results) })
         popularApi().then((data)=>{setpopular(data.results) })
-        console.log(originalSeries)
+        testing()
     },[]);
 
-console.log(randomNetflixMovies())
+
+
+
+function testing(){
+    let arrayOfPreviewsCompo =[];
+    for(let i = 0 ; i< randomNetflixMovies().length ; i++){
+        arrayOfPreviewsCompo.push(
+            <PreviewMenu 
+            img ={"https://image.tmdb.org/t/p/w1280" + 
+            randomNetflixMovies()[i].backdrop_path} />
+        )
+    }
+    
+    let x = 0;
+    setInterval(() => {
+        x+=1
+        console.log(x)
+        setrandomOriginalNet(arrayOfPreviewsCompo[x])
+    }, 5000);
+}
+
     return (
         <>
-            <NavBar />
+      <NavBar />
+
             <div className='Main-menu'>
                 <div className='preview-menu'>
-                { originalSeries.filter((movie)=>{
-                            return movie.name === "Stranger Things"
-                }
-                ).map((movie)=>{
-                    return <PreviewMenu 
-                    img={"https://image.tmdb.org/t/p/w1280" + movie.backdrop_path} />
-                    })
-            }
-                            
+                    {randomOriginalNet}          
                 </div>
                 <div className='categories'>
                     <div className='carusel OriginalSeries'>
