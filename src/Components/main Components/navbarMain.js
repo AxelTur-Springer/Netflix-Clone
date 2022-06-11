@@ -6,6 +6,8 @@ import { useState,useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import {loginSuccess, logoutSuccess,UserLoginName} from "../../features/loginCheck/loginSlice"
 import netflixLogo from "../../assets/logoNetNav.png"
+import profileImg from "../../assets/iconProfile.png"
+import arrow from "../../assets/play.png"
 import "../../styling/navbarMain.css"
 
 const NavBarMain = () => {
@@ -23,13 +25,13 @@ const NavBarMain = () => {
                     </div>
                 </div>
                     <div>
-                        <Link to={"/main"} className = "link"> home </Link >
+                        <Link to={"/main"} className = "link"> Home </Link >
                     </div>
                     <div>
-                        <Link to={"/series"} className = "link"> series </Link >
+                        <Link to={"/series"} className = "link"> Series </Link >
                     </div>
                     <div>
-                        <Link to={"/peliculas"} className = "link"> peliculas </Link >
+                        <Link to={"/peliculas"} className = "link"> Peliculas </Link >
                     </div>
             </div>
             <div className='contSearchProfileLog'>
@@ -37,7 +39,15 @@ const NavBarMain = () => {
                     <input type="text" placeholder='titulo,series,peliculas'/>
                 </div>
                 <div className='profileDropDown'>
-                    <div>
+                    <div className='Profile'>
+                        <div>
+                            <img src={profileImg} alt="" />
+                        </div>
+                        <div className='arrow'>
+                            <img src={arrow} alt="" />
+                        </div>
+                    </div>
+                    <div className='DropDown'>
                         <button onClick={logout}>Log Out</button>
                     </div>
                 </div>

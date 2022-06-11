@@ -8,8 +8,6 @@ const Main = () => {
    
     
 
-
-
     return (
         <>
       <NavBarMain />

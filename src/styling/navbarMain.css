@@ -6,6 +6,7 @@
     color: white;
     padding: 0.5em 0em;
     font-size: 0.8em;
+    position: fixed;
 }
 .NavBarContainerMain .link{
    color: white;
@@ -29,8 +30,37 @@ width: 7em;
     display: flex;
     margin-right: 1em;
 }
-.NavBarContainerMain .contSearchProfileLog div{
+.NavBarContainerMain .contSearchProfileLog .searchBar{
+display: flex;
+flex-direction: column;
+justify-content: center;
+margin-right: 1em;
+}
+
+/* managing dropdown stuff*/
+.NavBarContainerMain .Profile {
+    display: flex;
+    flex-direction: row;
+    }
+.NavBarContainerMain .Profile img{
+width: 2.1em;
+}
+.NavBarContainerMain .Profile .arrow{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    }
+    .NavBarContainerMain .Profile .arrow img{
+         width: 1em;
+        }
+
+.NavBarContainerMain  .profileDropDown{
+    position: relative;
+}
+.NavBarContainerMain .profileDropDown .DropDown{
+    position: absolute;
+    top: 5em;
+    border: solid red;
+    height: 20em;
+
 }
