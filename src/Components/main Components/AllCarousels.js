@@ -28,16 +28,32 @@ return (
 
 
 function CarouselOriginalNet(){
-    
     const [originalSeries,setoriginalSeries] = useState([])
-
-
     useEffect(() => {
         originalSeriesapi().then((data)=>{setoriginalSeries(data.results) })
     },[]);  
     
+    let left = 0;
+    let right = 0 ;
+    function scrollLeft(e){
+        left = left + 20 ;
+        const carosuel = document.getElementsByClassName('carusel OriginalNetflix')
+        carosuel[0].style.left = left.toString() + "px"     }
+    
+    function scrollRight(e){
+        right = right + 20;
+        const carosuel = document.getElementsByClassName('carusel OriginalNetflix')
+        carosuel[0].style.right = right.toString() + "px" 
+     console.log(carosuel)
+     carosuel[0].scrollLeft = right
+    }
+    
 return (
-    <div className='carusel OriginalNetflix'>
+<>
+  <div>
+    <button onClick={scrollLeft}> scroll</button>
+  </div>
+    <div className='carusel OriginalNetflix'>  
         {
         originalSeries.map((movie)=>{
         return <MovieCards 
@@ -45,6 +61,10 @@ return (
         })
         }    
     </div>
+    <div>
+    <button onClick={scrollRight}> scroll</button>
+  </div>
+    </>
 )     
 
 }
