@@ -50,9 +50,11 @@ width: 2.1em;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin-left: 0.3em;
+    transform: rotate(90deg)
     }
     .NavBarContainerMain .Profile .arrow img{
-         width: 1em;
+         width: 0.5em;
         }
 
 .NavBarContainerMain  .profileDropDown{
@@ -60,7 +62,7 @@ width: 2.1em;
    
 }
 .NavBarContainerMain .profileDropDown .DropDown{
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: flex-end;
     position: absolute;
@@ -69,5 +71,4 @@ width: 2.1em;
     height: 20em;
     width: 10em;
     background-color: black;
-
 }

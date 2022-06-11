@@ -16,6 +16,20 @@ const NavBarMain = () => {
         await signOut(auth)
         dispatch(loginSuccess("false"))
     }
+
+    function displayMenu(){
+        const menu = document.getElementsByClassName("DropDown")
+        const arrow = document.getElementsByClassName("arrow")
+        arrow[0].style.transform = "rotate(90deg)"
+        console.log(arrow[0])
+        menu[0].style.display= "flex"
+    }
+    function hideMenu(){
+        const menu = document.getElementsByClassName("DropDown")
+        const arrow = document.getElementsByClassName("arrow")
+        arrow[0].style.transform = "rotate(270deg)"
+        menu[0].style.display= "none"
+    }
     return (
         <div className='NavBarContainerMain'>
             <div className='imghomeseriesmoviescont'>
@@ -38,7 +52,7 @@ const NavBarMain = () => {
                 <div className='searchBar'>
                     <input type="text" placeholder='titulo,series,peliculas'/>
                 </div>
-                <div className='profileDropDown'>
+                <div className='profileDropDown' onMouseOver={displayMenu}>
                     <div className='Profile'>
                         <div>
                             <img src={profileImg} alt="" />
@@ -47,7 +61,7 @@ const NavBarMain = () => {
                             <img src={arrow} alt="" />
                         </div>
                     </div>
-                    <div className='DropDown'>
+                    <div className='DropDown' onMouseLeave={hideMenu}>
                         <button onClick={logout}>Log Out</button>
                     </div>
                 </div>
