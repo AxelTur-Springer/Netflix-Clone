@@ -2,7 +2,6 @@ import React from 'react';
 import { useState,useEffect } from 'react';
 import NavBar from '../Components/NavBar';
 import "../styling/main.css"
-//import { getMovieList ,apiimg } from '../MovieApiData';
 import { originalSeriesapi,popularApi ,allMovies} from '../MovieApiData';
 import randomNetflixMovies from '../randomMovieObj';
 const Main = () => {
@@ -10,9 +9,7 @@ const Main = () => {
     const [popular,setpopular] = useState([])
     const [randomOriginalNet,setrandomOriginalNet] = useState([])
 
-
     const API_KEY = "076a8aeadc245f1cbc3779685ceb3a1d";
-    
     
     useEffect(() => {
         originalSeriesapi().then((data)=>{setoriginalSeries(data.results) })
@@ -25,6 +22,8 @@ const Main = () => {
 
 function testing(){
     let arrayOfPreviewsCompo =[];
+    let x = 0;
+
     for(let i = 0 ; i< randomNetflixMovies().length ; i++){
         arrayOfPreviewsCompo.push(
             <PreviewMenu 
@@ -32,8 +31,7 @@ function testing(){
             randomNetflixMovies()[i].backdrop_path} />
         )
     }
-    
-    let x = 0;
+    setrandomOriginalNet(arrayOfPreviewsCompo[x])
     setInterval(() => {
         x === 20 ? x = 0 : x+=1
         console.log(x)
