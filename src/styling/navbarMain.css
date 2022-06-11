@@ -41,6 +41,7 @@ margin-right: 1em;
 .NavBarContainerMain .Profile {
     display: flex;
     flex-direction: row;
+    margin-right: 2em;
     }
 .NavBarContainerMain .Profile img{
 width: 2.1em;
@@ -56,11 +57,17 @@ width: 2.1em;
 
 .NavBarContainerMain  .profileDropDown{
     position: relative;
+   
 }
 .NavBarContainerMain .profileDropDown .DropDown{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
     position: absolute;
-    top: 5em;
-    border: solid red;
+    top: 3.4em;
+    right: 2em;
     height: 20em;
+    width: 10em;
+    background-color: black;
 
 }
