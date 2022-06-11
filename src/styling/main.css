@@ -1,31 +1,30 @@
+/* main menu styling*/
 .Main-menu{
     background-color: rgb(0, 0, 0);
     height: 100vh;
 }
-.preview-menu{
-width: 100%;
-}
-
-.carusel{
-    display: flex;
-    overflow: hidden;
-}
 
 
 
+
+
+
+/* styling for bilboard intro*/
 .previewMenu img{
-    height: 80 vh;
+    height: 85vh;
     width: 100%;
 }
 
 
 
+/* carosel styling*/
 
 
 
-
-
-
+.carusel{
+    display: flex;
+    overflow: hidden;
+}
 
 
 

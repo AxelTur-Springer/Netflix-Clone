@@ -1,0 +1,36 @@
+.NavBarContainerMain{
+    background-color: black;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    padding: 0.5em 0em;
+    font-size: 0.8em;
+}
+.NavBarContainerMain .link{
+   color: white;
+   text-decoration: none;
+}
+.NavBarContainerMain .ImgCont img{
+width: 7em;
+}
+.NavBarContainerMain .imghomeseriesmoviescont{
+    display: flex;
+    flex-direction: row;
+}
+.NavBarContainerMain .imghomeseriesmoviescont div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 1em;
+}
+/* managing search bar and profile info*/
+.NavBarContainerMain .contSearchProfileLog{
+    display: flex;
+    margin-right: 1em;
+}
+.NavBarContainerMain .contSearchProfileLog div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}

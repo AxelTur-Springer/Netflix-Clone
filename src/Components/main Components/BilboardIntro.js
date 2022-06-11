@@ -27,7 +27,7 @@ function testing(){
     }
     setrandomOriginalNet(arrayOfPreviewsCompo[x])
     setInterval(() => {
-        x === 20 ? x = 0 : x+=1
+        x === 19 ? x = 0 : x+=1
         console.log(x)
         setrandomOriginalNet(arrayOfPreviewsCompo[x])
     }, 5000);
