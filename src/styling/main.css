@@ -23,12 +23,13 @@
 
 .carusel{
     display: flex;
-    position: relative;
-    overflow-x: scroll;
-    width: 100%;
+    overflow-x: hidden;
     scrollbar-width: none; 
     -ms-overflow-style: none;  
     transition: ease-in-out;
+    border: solid red;
+    padding: 1em 0em;
+    
 }
 .carusel::-webkit-scrollbar { 
     width: 0;
@@ -45,11 +46,15 @@
     justify-content: space-between;
 }
 .HiddenMenu{
+    display: none;
+    z-index: 1;
+    position: absolute;
+    bottom: -50px;    
     width: 93%;
+    background-color: black;
 
 }
-.MovieCardCont:hover{
-    transform: scale(1.5);
+.movieCardImgCont:hover{
 }
 
 .movieCardImgCont{

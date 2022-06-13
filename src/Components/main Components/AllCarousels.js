@@ -121,11 +121,21 @@ return (
 
 function MovieCards(props){
     function test(e){
-      
+        let main = e.currentTarget.childNodes[0]
+
+        let test = e.currentTarget.childNodes[1]
+        setTimeout(() => {
+            test.style.display ="flex"
+            main.style.transform = "scale(1.2)"
+        }, 1000);
+    }
+    function testoUT(e){
+        let test = e.currentTarget.childNodes[1]
+        test.style.display ="none"
     }
     return(
-        <div className='MovieCardCont'>
-            <div className='movieCardImgCont' onMouseOver={test}>
+        <div className='MovieCardCont'  onMouseOver={test} onMouseLeave={testoUT}>
+            <div className='movieCardImgCont'>
                 <img src={props.img} alt="" />
             </div>
             <div className='HiddenMenu'>
