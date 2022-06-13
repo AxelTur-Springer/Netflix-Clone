@@ -84,8 +84,8 @@ function CarouselOriginalNet(){
     
     function scrollRight(e){
         const carosuel = document.getElementsByClassName('carusel OriginalNetflix')
+        console.log(carosuel)
         let widthImg= carosuel[0].firstElementChild.getBoundingClientRect().width
-        console.log()
         if(scroll >  carosuel[0].scrollWidth - 1000 ){
             scroll = 0
         }else{
@@ -121,11 +121,31 @@ return (
 
 function MovieCards(props){
     function test(e){
-
+      
     }
     return(
-        <div className='movieCardImgCont' onMouseOver={test}>
-            <img src={props.img} alt="" />
+        <div className='MovieCardCont'>
+            <div className='movieCardImgCont' onMouseOver={test}>
+                <img src={props.img} alt="" />
+            </div>
+            <div className='HiddenMenu'>
+                    <div className='playAddColection'>
+                        <div>
+                            <button>Play</button>
+                        </div>
+                        <div>
+                            <button>Add Colection</button>
+                        </div>
+                        <div>
+                            <button>Like</button>
+                        </div>
+                    </div>
+                    <div className='SeeMore'>
+                        <div>
+                            <button>See More</button>
+                        </div>
+                    </div>
+            </div>
         </div>
     )
 }

@@ -7,7 +7,6 @@
 /* styling for bilboard intro*/
 .previewMenu{
     height: 85vh;
-    border: solid red;
     width: 100%;
     background-repeat: no-repeat;
     background-size: cover;
@@ -16,13 +15,17 @@
 
 
 /* carosel styling*/
+.carouselContainer{
+    position: relative;
+    color: white;
 
+}
 
 .carusel{
     display: flex;
     position: relative;
+    overflow-x: scroll;
     width: 100%;
-    overflow-y: scroll;
     scrollbar-width: none; 
     -ms-overflow-style: none;  
     transition: ease-in-out;
@@ -35,19 +38,32 @@
 
 /* moviecards styling*/
 
+
+.MovieCardCont{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.HiddenMenu{
+    width: 93%;
+
+}
+.MovieCardCont:hover{
+    transform: scale(1.5);
+}
+
 .movieCardImgCont{
     padding-right: 1em;
-   
 }
-.carouselContainer{
-    position: relative;
-    color: white;
-}
+
+
 .movieCardImgCont img{
     width: 14em;
     border-radius: 5px;
 
 }
+
+
 
 .categories .ScrollBtn{
 z-index: 1;
