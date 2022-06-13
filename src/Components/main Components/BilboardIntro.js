@@ -2,6 +2,7 @@ import React from 'react';
 import { useState,useEffect } from 'react';
 import randomNetflixMovies from '../../randomMovieObj';
 import play from "../../assets/playIcon.png"
+
 export const BilboardMain = () => {
 
     const [randomOriginalNet,setrandomOriginalNet] = useState([])
@@ -68,7 +69,20 @@ console.log(props)
                         <button>Mas informacionS</button>
                     </div>
                 </div>
-          
         </div>
     )
 }
+
+const YoutubeEmbed = () => (
+    <div className="video-responsive">
+      <iframe
+        width="853"
+        height="480"
+        src={`https://www.youtube.com/embed/mCdA4bJAGGk`}
+        frameBorder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowFullScreen
+        title="Embedded youtube"
+      />
+    </div>
+  );
