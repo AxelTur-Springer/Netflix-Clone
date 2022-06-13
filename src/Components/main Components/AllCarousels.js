@@ -124,21 +124,27 @@ function MovieCards(props){
         let main = e.currentTarget.childNodes[0]
 
         let test = e.currentTarget.childNodes[1]
-        setTimeout(() => {
+       // setTimeout(() => {
             test.style.display ="flex"
-            main.style.transform = "scale(1.2)"
-        }, 1000);
+            main.style.transform = "scale(1.1)"
+            test.style.transform = "scale(1.1)"
+
+       // }, 1000);
     }
     function testoUT(e){
+        let main = e.currentTarget.childNodes[0]
+
         let test = e.currentTarget.childNodes[1]
         test.style.display ="none"
+        main.style.transform = "scale(1)"
+
     }
     return(
         <div className='MovieCardCont'  onMouseOver={test} onMouseLeave={testoUT}>
             <div className='movieCardImgCont'>
                 <img src={props.img} alt="" />
             </div>
-            <div className='HiddenMenu'>
+                {/* <div className='HiddenMenu'>
                     <div className='playAddColection'>
                         <div>
                             <button>Play</button>
@@ -155,7 +161,7 @@ function MovieCards(props){
                             <button>See More</button>
                         </div>
                     </div>
-            </div>
+    </div> */}
         </div>
     )
 }

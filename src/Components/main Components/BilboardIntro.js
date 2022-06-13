@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState,useEffect } from 'react';
 import randomNetflixMovies from '../../randomMovieObj';
+import play from "../../assets/playIcon.png"
 export const BilboardMain = () => {
 
     const [randomOriginalNet,setrandomOriginalNet] = useState([])
@@ -23,14 +24,16 @@ function testing(){
             <PreviewMenu 
             img ={"https://image.tmdb.org/t/p/w1280" + 
             randomNetflixMovies()[i].backdrop_path} 
-            title = {randomNetflixMovies()[i].name}/>
+            title = {randomNetflixMovies()[i].name}
+            descripcion = {randomNetflixMovies()[i].overview}/>
         )
+        console.log(randomNetflixMovies())
     }
     setrandomOriginalNet(arrayOfPreviewsCompo[x])
     setInterval(() => {
         x === 19 ? x = 0 : x+=1
         setrandomOriginalNet(arrayOfPreviewsCompo[x])
-    }, 5000);
+    }, 10000);
 }
 
     return (
@@ -50,10 +53,22 @@ function PreviewMenu(props){
 
     }
 
-
+console.log(props)
     return(
         <div className='previewMenu'>
-           <h3>{props.title}</h3>
+            <div className='Descripcion'>
+                <h2>{props.title}</h2>
+                <p>{props.descripcion}</p>
+            </div>
+                <div className='botones'>
+                    <div className='PlayBtn'>
+                        <button><img src={play} />Play</button>
+                    </div>
+                    <div >
+                        <button>Mas informacionS</button>
+                    </div>
+                </div>
+          
         </div>
     )
 }

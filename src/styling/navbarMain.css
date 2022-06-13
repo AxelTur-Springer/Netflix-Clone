@@ -61,6 +61,7 @@ width: 2.1em;
 
 .NavBarContainerMain  .profileDropDown{
     position: relative;
+    z-index: 1;
    
 }
 .NavBarContainerMain .profileDropDown .DropDown{
