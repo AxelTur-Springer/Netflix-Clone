@@ -121,7 +121,7 @@ return (
 
 function MovieCards(props){
     function test(e){
-        return <MovieCardPrev /> 
+
     }
     return(
         <div className='movieCardImgCont' onMouseOver={test}>
