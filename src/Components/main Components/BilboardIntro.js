@@ -12,17 +12,18 @@ export const BilboardMain = () => {
     },[]);
 
 
-
+ 
 
 function testing(){
     let arrayOfPreviewsCompo =[];
     let x = 0;
 
-    for(let i = 0 ; i< randomNetflixMovies().length ; i++){
+    for(let i = 0 ; i<  randomNetflixMovies().length ; i++){
         arrayOfPreviewsCompo.push(
             <PreviewMenu 
             img ={"https://image.tmdb.org/t/p/w1280" + 
-            randomNetflixMovies()[i].backdrop_path} />
+            randomNetflixMovies()[i].backdrop_path} 
+            title = {randomNetflixMovies()[i].name}/>
         )
     }
     setrandomOriginalNet(arrayOfPreviewsCompo[x])
@@ -42,9 +43,19 @@ function testing(){
 
 
 function PreviewMenu(props){
+
+  const backGround =  document.getElementsByClassName("previewMenu")[0];
+    if(backGround !== undefined){
+        backGround.style.backgroundImage = `url(${props.img})`
+        backGround.style.backgroundImage = `url(${props.img})`
+
+    }
+
+
+  console.log(props)
     return(
         <div className='previewMenu'>
-            <img src={props.img} alt="" />
+           <h3>{props.title}</h3>
         </div>
     )
 }

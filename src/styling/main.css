@@ -1,14 +1,16 @@
 /* main menu styling*/
 .Main-menu{
     background-color: rgb(0, 0, 0);
-
 }
 
 
 /* styling for bilboard intro*/
-.previewMenu img{
+.previewMenu{
     height: 85vh;
+    border: solid red;
     width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 
