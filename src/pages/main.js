@@ -14,12 +14,8 @@ const Main = () => {
             <div className='Main-menu'>
                  <BilboardMain/>        
                 <div className='categories'>
-                
                            <CarouselOriginalNet />
-
-                    <div className='carusel Popular'>
-                       <CarouselPopular />
-                    </div>      
+                            <CarouselPopular />
                 </div>
             </div>
         </>

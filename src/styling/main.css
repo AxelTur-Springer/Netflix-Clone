@@ -5,10 +5,6 @@
 }
 
 
-
-
-
-
 /* styling for bilboard intro*/
 .previewMenu img{
     height: 85vh;
@@ -20,34 +16,31 @@
 /* carosel styling*/
 
 
-
 .carusel{
     display: flex;
     position: relative;
- 
-}
-.OriginalNetflix{
-    position: relative;
     width: 100%;
     overflow-y: scroll;
-    scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none; 
+    -ms-overflow-style: none;  
     transition: ease-in-out;
-
 }
-.OriginalNetflix::-webkit-scrollbar { /* WebKit */
+.carusel::-webkit-scrollbar { 
     width: 0;
     height: 0;
-}
-.OriginalNetflix .movieCardImgCont{
-    margin-right: 1em;
-    animation: test 1s timing-function delay iteration-count direction fill-mode;
-   
 }
 
 
 /* moviecards styling*/
 
+.movieCardImgCont{
+    padding-right: 1em;
+   
+}
+.carouselContainer{
+    position: relative;
+    color: white;
+}
 .movieCardImgCont img{
     width: 14em;
     border-radius: 5px;
@@ -55,18 +48,28 @@
 }
 
 .categories .ScrollBtn{
-position: absolute;
 z-index: 1;
+
 }
-.categories .ScrollBtn.Left{
-    bottom: 15px;
+.categories .ScrollBtn:hover{
+    background-color: rgba(0, 0, 0, 0.384);
     }
-.categories .ScrollBtn.Right{
-    right: 0px;
-    bottom: 15px;
-}
-.categories .ScrollBtn button{
-    border: none;
-    background-color: transparent;
-    color: white;
-}
+    .categories .ScrollBtn.Left{
+        display: flex;
+        position: absolute;
+        top: 50%;
+        bottom: 50%;
+        }
+    .categories .ScrollBtn.Right{
+        position: absolute;
+        right: 0px;
+        display: flex;
+        top: 50%;
+        bottom: 50%;
+        
+    }
+    .categories .ScrollBtn button{
+        border: none;
+        background-color: transparent;
+        color: white;
+    }
