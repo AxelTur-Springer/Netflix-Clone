@@ -49,23 +49,24 @@
 
 .categories .ScrollBtn{
 z-index: 1;
-
 }
+
 .categories .ScrollBtn:hover{
     background-color: rgba(0, 0, 0, 0.384);
+    transform: scale(1.1);
     }
     .categories .ScrollBtn.Left{
-        display: flex;
         position: absolute;
-        top: 50%;
-        bottom: 50%;
+        bottom: 0px;
+        height: 73%;
+        display: flex;
         }
     .categories .ScrollBtn.Right{
         position: absolute;
-        right: 0px;
+        bottom: 0px;
+        right: 5px;
+        height: 73%;
         display: flex;
-        top: 50%;
-        bottom: 50%;
         
     }
     .categories .ScrollBtn button{

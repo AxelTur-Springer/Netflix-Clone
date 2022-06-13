@@ -1,7 +1,8 @@
 import React from 'react';
 import { useState,useEffect } from 'react';
 import { originalSeriesapi,popularApi ,allMovies} from '../../MovieApiData';
-   
+import right from "../../assets/right.png"
+import left from "../../assets/left.png"
 
 
 function CarouselPopular(){
@@ -30,7 +31,6 @@ function CarouselPopular(){
     function scrollRight(e){
         const carosuel = document.getElementsByClassName('carusel Popular')
         let widthImg= carosuel[0].firstElementChild.getBoundingClientRect().width
-      
         if(scroll > scroll >  carosuel[0].scrollWidth - 1000 ){
             scroll = 0
         }else{
@@ -43,7 +43,7 @@ return (
 <div className='carouselContainer Popular'>
     <h3>Populares Ahora</h3>
     <div  className='ScrollBtn Left'>
-        <button onClick={scrollLeft}> scroll</button>
+        <button onClick={scrollLeft}><img src={left} alt="" /></button>
     </div>
     <div className='carusel Popular'>  
         {
@@ -54,7 +54,7 @@ return (
         }    
     </div>
     <div className='ScrollBtn Right' >
-        <button onClick={scrollRight}> scroll</button>
+        <button onClick={scrollRight}> <img src={right} alt="" /></button>
     </div>
   </div>
   )     
@@ -98,7 +98,7 @@ return (
 <div className='carouselContainer Netflix'>
     <h3>Originales de Netflix</h3>
     <div  className='ScrollBtn Left'>
-        <button onClick={scrollLeft}> scroll</button>
+        <button onClick={scrollLeft}> <img src={left} alt="" /></button>
     </div>
     <div className='carusel OriginalNetflix'>  
         {
@@ -109,7 +109,7 @@ return (
         }    
     </div>
     <div className='ScrollBtn Right' >
-        <button onClick={scrollRight}> scroll</button>
+        <button onClick={scrollRight}> <img src={right} alt="" /></button>
     </div>
   </div>
   )     
@@ -121,11 +121,19 @@ return (
 
 function MovieCards(props){
     function test(e){
-        console.log()
+        return <MovieCardPrev /> 
     }
     return(
         <div className='movieCardImgCont' onMouseOver={test}>
             <img src={props.img} alt="" />
+        </div>
+    )
+}
+
+function MovieCardPrev(){
+    return(
+        <div>
+            helloooo
         </div>
     )
 }
