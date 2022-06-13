@@ -33,19 +33,38 @@ function CarouselOriginalNet(){
         originalSeriesapi().then((data)=>{setoriginalSeries(data.results) })
     },[]);  
     
-    let left = 0;
-    let right = 0 ;
-    function scrollLeft(e){
-        left = left + 20 ;
-        const carosuel = document.getElementsByClassName('carusel OriginalNetflix')
-        carosuel[0].style.left = left.toString() + "px"     }
+
     
-    function scrollRight(e){
-        right = right + 20;
+    let scroll = 0;
+
+
+
+    function scrollLeft(e){
+        const AllMovies = document.querySelectorAll(".movieCardImgCont")
         const carosuel = document.getElementsByClassName('carusel OriginalNetflix')
-        carosuel[0].style.right = right.toString() + "px" 
-     console.log(carosuel)
-     carosuel[0].scrollLeft = right
+        let widthImg= carosuel[0].firstElementChild.getBoundingClientRect().width
+        console.log(carosuel[0].firstElementChild.getBoundingClientRect().width)
+        if(scroll > 3000){
+            scroll = 0
+        }else{
+            scroll = scroll + widthImg ;
+        }
+        carosuel[0].scrollTo({ left: scroll, behavior: 'smooth' })
+    }
+    function scrollRight(e){
+        const carosuel = document.getElementsByClassName('carusel OriginalNetflix')
+
+        let widthImg= carosuel[0].firstElementChild.getBoundingClientRect().width
+
+
+        if(scroll === 0){
+            scroll = 0 
+        }else {
+            scroll -= widthImg;
+        }
+  
+     
+        carosuel[0].scrollTo({ left: scroll, behavior: 'smooth' })
     }
     
 return (
