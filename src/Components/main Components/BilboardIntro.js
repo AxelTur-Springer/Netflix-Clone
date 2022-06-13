@@ -47,23 +47,30 @@ function testing(){
 
 
 function PreviewMenu(props){
+    const [clicked,setclicked] = useState(false)
 
   const backGround =  document.getElementsByClassName("previewMenu")[0];
     if(backGround !== undefined){
         backGround.style.backgroundImage = `url(${props.img})`
 
     }
+function playVideo(){
+    setclicked(true)
+}
 
 console.log(props)
     return(
         <div className='previewMenu'>
+            {clicked ? <YoutubeEmbed /> : null }
             <div className='Descripcion'>
                 <h2>{props.title}</h2>
                 <p>{props.descripcion}</p>
             </div>
                 <div className='botones'>
                     <div className='PlayBtn'>
-                        <button><img src={play} />Play</button>
+                        <button onClick={playVideo}>
+                            <img src={play} />Play
+                        </button>
                     </div>
                     <div >
                         <button>Mas informacionS</button>
