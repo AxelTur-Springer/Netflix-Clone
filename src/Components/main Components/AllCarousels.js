@@ -97,8 +97,11 @@ function CarouselOriginalNet(){
 
 
     function test(e){
+        const hiddenMenu = document.getElementsByClassName("HideMenu")
         if( e.target.localName === "img"){
-            console.log(e)
+            hiddenMenu[0].style.display = "flex"
+            console.log(e.target.parentElement)
+            console.log(hiddenMenu)
         }
         
         let hideShowElem = e.currentTarget.childNodes[1]
@@ -108,8 +111,12 @@ function CarouselOriginalNet(){
 
     }
     function testoUT(e){
-       // let main = e.currentTarget.childNodes[0].children[1]
-       // main.style.display ="none"
+        const hiddenMenu = document.getElementsByClassName("HideMenu")
+        if( e.target.localName === "img"){
+            hiddenMenu[0].style.display = "none"
+            console.log(e.target.parentElement)
+            console.log(hiddenMenu)
+        }
 
     }
 

@@ -145,11 +145,10 @@ border-radius: 5px;
 
 }
 
-.HiddenMenu{
-    display: flex;
+.HideMenu{
+    display: none;
     position: absolute;
-    top: 763px;
-    left: 530px;
+
     background-color: azure;
     color: black;
     z-index: 1;
