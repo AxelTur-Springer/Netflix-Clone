@@ -148,7 +148,6 @@ border-radius: 5px;
 .HideMenu{
     display: none;
     position: absolute;
-
     background-color: azure;
     color: black;
     z-index: 1;

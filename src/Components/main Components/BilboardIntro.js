@@ -30,7 +30,6 @@ function testing(){
             title = {randomNetflixMovies()[i].name}
             descripcion = {randomNetflixMovies()[i].overview}/>
         )
-        console.log(randomNetflixMovies())
     }
     setrandomOriginalNet(arrayOfPreviewsCompo[x])
     setInterval(() => {
@@ -50,7 +49,6 @@ function testing(){
 
 function PreviewMenu(props){
 
-console.log(props)
     return(
         <div className='previewMenu' style={ {backgroundImage: `url(${props.img})`}}>
             <div className='Descripcion'>

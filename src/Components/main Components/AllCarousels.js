@@ -64,6 +64,7 @@ return (
 
 function CarouselOriginalNet(){
     const [originalSeries,setoriginalSeries] = useState([])
+
     useEffect(() => {
         originalSeriesapi().then((data)=>{setoriginalSeries(data.results) })
     },[]);  
@@ -96,28 +97,25 @@ function CarouselOriginalNet(){
     
 
 
+    let PosicionX
+    let PosicionY
+
     function test(e){
         const hiddenMenu = document.getElementsByClassName("HideMenu")
         if( e.target.localName === "img"){
             hiddenMenu[0].style.display = "flex"
-            console.log(e.target.parentElement)
-            console.log(hiddenMenu)
+            const element = e.target.parentElement
+            PosicionX = element.getBoundingClientRect().x
+            PosicionY = element.getBoundingClientRect().y
+            hiddenMenu[0].style.left = PosicionX.toString() +"px"
         }
         
-        let hideShowElem = e.currentTarget.childNodes[1]
-        PosicionX = e.currentTarget.getBoundingClientRect().x +150
-        PosicionY = e.currentTarget.getBoundingClientRect().y
-        hideShowElem.style.display ="flex"
+
 
     }
-    function testoUT(e){
-        const hiddenMenu = document.getElementsByClassName("HideMenu")
-        if( e.target.localName === "img"){
-            hiddenMenu[0].style.display = "none"
-            console.log(e.target.parentElement)
-            console.log(hiddenMenu)
-        }
 
+    function testoUT(e){
+  
     }
 
 return (
@@ -140,7 +138,7 @@ return (
     </div>
   </div>
   <div className='HideMenu'>
-            {<HiddenMenu top = {PosicionX} bottom = {PosicionY} />}
+            {<HiddenMenu />}
         </div>
   </>
   )     
@@ -148,8 +146,6 @@ return (
 }
 
 
-let PosicionX
-let PosicionY
 function MovieCards(props){
  
     return(
