@@ -51,13 +51,12 @@ function PreviewMenu(props){
 
   const backGround =  document.getElementsByClassName("previewMenu")[0];
     if(backGround !== undefined){
-        backGround.style.backgroundImage = `url(${props.img})`
 
     }
 
 console.log(props)
     return(
-        <div className='previewMenu'>
+        <div className='previewMenu' style={ {backgroundImage: `url(${props.img})`}}>
             <div className='Descripcion'>
                 <h2>{props.title}</h2>
                 <p>{props.descripcion}</p>
