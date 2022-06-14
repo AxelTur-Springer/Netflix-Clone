@@ -105,9 +105,11 @@ function CarouselOriginalNet(){
         if( e.target.localName === "img"){
             hiddenMenu[0].style.display = "flex"
             const element = e.target.parentElement
-            PosicionX = element.getBoundingClientRect().x
-            PosicionY = element.getBoundingClientRect().y
+            PosicionX = element.getBoundingClientRect().x+ 11
+            PosicionY = hiddenMenu[0].getBoundingClientRect().y
             hiddenMenu[0].style.left = PosicionX.toString() +"px"
+            hiddenMenu[0].style.transform = "scale(1.1)"
+            console.log(PosicionY)
         }
         
 
@@ -115,7 +117,11 @@ function CarouselOriginalNet(){
     }
 
     function testoUT(e){
-  
+        const hiddenMenu = document.getElementsByClassName("HideMenu")
+       
+            hiddenMenu[0].style.display = "none"
+          
+    
     }
 
 return (

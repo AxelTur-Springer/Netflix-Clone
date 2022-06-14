@@ -146,14 +146,15 @@ border-radius: 5px;
 }
 
 .HideMenu{
-    display: none;
+    display: flex;
     position: absolute;
-    background-color: azure;
-    color: black;
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     z-index: 1;
     width: 14em;
-    
-
+    height: 10em;
+    margin-top: -10px;
+    border-radius: 0px 0px 5px 5px;
 }
 
 .movieCardImgCont img{
