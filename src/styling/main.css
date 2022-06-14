@@ -140,10 +140,6 @@ border-radius: 5px;
 .movieCardImgCont{
     padding-right: 1em;
 }
-.movieCardImgCont:hover{
-    transform: scale(1.1);
-
-}
 
 .HideMenu{
     display: flex;

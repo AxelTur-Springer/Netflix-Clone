@@ -103,26 +103,37 @@ function CarouselOriginalNet(){
     function test(e){
         const hiddenMenu = document.getElementsByClassName("HideMenu")
         if( e.target.localName === "img"){
+            const MovieCont = e.target.parentElement
             hiddenMenu[0].style.display = "flex"
+            MovieCont.style.transform = "scale(1.1)" 
             const element = e.target.parentElement
             PosicionX = element.getBoundingClientRect().x+ 11
             PosicionY = hiddenMenu[0].getBoundingClientRect().y
             hiddenMenu[0].style.left = PosicionX.toString() +"px"
             hiddenMenu[0].style.transform = "scale(1.1)"
-            console.log(PosicionY)
         }
         
+        if(e.target.classList[0] === "HideMenu"){
+            console.log(e)    
+        }
 
 
     }
 
-    function testoUT(e){
+    function testOut(e){
+        let movieCards = document.getElementsByClassName("movieCardImgCont")
         const hiddenMenu = document.getElementsByClassName("HideMenu")
-       
+        const MovieCont = e.target.parentElement
+        if( e.target.localName !== "img"){
             hiddenMenu[0].style.display = "none"
-          
-    
+
+        }
+        for(let i = 0 ; i < movieCards.length; i++){
+            movieCards[i].style.transform ="scale(1)"
+        }
+
     }
+
 
 return (
     <>
@@ -131,11 +142,12 @@ return (
     <div  className='ScrollBtn Left'>
         <button onClick={scrollLeft}> <img src={left} alt="" /></button>
     </div>
-    <div className='carusel OriginalNetflix'  onMouseOver={test} onMouseLeave={testoUT}>  
+    <div className='carusel OriginalNetflix'  onMouseOver={test}  onMouseLeave={testOut} >  
         {
             originalSeries.map((movie)=>{
             return <MovieCards 
-            img={"https://image.tmdb.org/t/p/w500" + movie.backdrop_path} />
+            img={"https://image.tmdb.org/t/p/w500" + movie.backdrop_path}
+            />
             })
         }    
     </div>
@@ -143,7 +155,7 @@ return (
         <button onClick={scrollRight}> <img src={right} alt="" /></button>
     </div>
   </div>
-  <div className='HideMenu'>
+  <div className='HideMenu' onMouseOver={test}>
             {<HiddenMenu />}
         </div>
   </>
@@ -166,25 +178,33 @@ function MovieCards(props){
 
 
 function HiddenMenu(props){
-    console.log(props)
-    return(
-        <div className='HiddenMenu' style={ {top: props.top}}>
-        <div className='playAddColection'>
-            <div>
-                <button>Play</button>
+    function testoUT(e){
+        const hiddenMenu = document.getElementsByClassName("HideMenu")
+       
+            hiddenMenu[0].style.display = "none"
+          
+    
+    }    return(
+        <div className='HiddenMenu' style={ {top: props.top}} onMouseLeave={testoUT}>
+            <div className='InvisibleSet'>
+
             </div>
-            <div>
-                <button>Add Colection</button>
+            <div className='playAddColection'>
+                <div>
+                    <button>Play</button>
+                </div>
+                <div>
+                    <button>Add Colection</button>
+                </div>
+                <div>
+                    <button>Like</button>
+                </div>
             </div>
-            <div>
-                <button>Like</button>
+            <div className='SeeMore'>
+                <div>
+                    <button>See More</button>
+                </div>
             </div>
-        </div>
-        <div className='SeeMore'>
-            <div>
-                <button>See More</button>
-            </div>
-        </div>
 </div>
     )
 }
