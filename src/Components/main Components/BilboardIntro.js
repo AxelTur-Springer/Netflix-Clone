@@ -1,5 +1,6 @@
 import React from 'react';
 import { useState,useEffect } from 'react';
+import {Link } from 'react-router-dom';
 import randomNetflixMovies from '../../randomMovieObj';
 import play from "../../assets/playIcon.png"
 
@@ -47,30 +48,25 @@ function testing(){
 
 
 function PreviewMenu(props){
-    const [clicked,setclicked] = useState(false)
 
   const backGround =  document.getElementsByClassName("previewMenu")[0];
     if(backGround !== undefined){
         backGround.style.backgroundImage = `url(${props.img})`
 
     }
-function playVideo(){
-    setclicked(true)
-}
 
 console.log(props)
     return(
         <div className='previewMenu'>
-            {clicked ? <YoutubeEmbed /> : null }
             <div className='Descripcion'>
                 <h2>{props.title}</h2>
                 <p>{props.descripcion}</p>
             </div>
                 <div className='botones'>
                     <div className='PlayBtn'>
-                        <button onClick={playVideo}>
+                        <Link to={"/Play"}>
                             <img src={play} />Play
-                        </button>
+                        </Link>
                     </div>
                     <div >
                         <button>Mas informacionS</button>
@@ -80,16 +76,3 @@ console.log(props)
     )
 }
 
-const YoutubeEmbed = () => (
-    <div className="video-responsive">
-      <iframe
-        width="853"
-        height="480"
-        src={`https://www.youtube.com/embed/mCdA4bJAGGk`}
-        frameBorder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowFullScreen
-        title="Embedded youtube"
-      />
-    </div>
-  );

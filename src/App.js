@@ -15,6 +15,7 @@ import NavBar from "./Components/NavBar";
 import HomeScreen from "./pages/homeScreen";
 import Main from "./pages/main";
 import Register from "./pages/register";
+import { YoutubeEmbed } from "./pages/Reproduce";
 import { store } from "./app/store";
 import { useSelector, useDispatch } from 'react-redux';
 function App() {
@@ -66,6 +67,12 @@ function App() {
           ) : (
             <Register />
           )}/>
+           <Route path='/play' element = {
+          user === undefined? (
+            <Navigate replace to="/home" />
+          ) : (
+            <YoutubeEmbed />
+          )} />
 </Routes>
     </BrowserRouter >
     </div>
