@@ -3,6 +3,7 @@ import { useState,useEffect } from 'react';
 import {Link } from 'react-router-dom';
 import randomNetflixMovies from '../../randomMovieObj';
 import play from "../../assets/playIcon.png"
+import info from "../../assets/informacion.png"
 
 export const BilboardMain = () => {
 
@@ -49,11 +50,6 @@ function testing(){
 
 function PreviewMenu(props){
 
-  const backGround =  document.getElementsByClassName("previewMenu")[0];
-    if(backGround !== undefined){
-
-    }
-
 console.log(props)
     return(
         <div className='previewMenu' style={ {backgroundImage: `url(${props.img})`}}>
@@ -63,12 +59,29 @@ console.log(props)
             </div>
                 <div className='botones'>
                     <div className='PlayBtn'>
-                        <Link to={"/Play"}>
-                            <img src={play} />Play
+                        <Link to={"/Play"} className = "linkToPlay">
+                            <div>
+                                <div>
+                                    <img src={play} />
+                                </div>
+                                <div>
+                                    <p>Play</p> 
+                                </div>
+                            </div>
                         </Link>
                     </div>
-                    <div >
-                        <button>Mas informacionS</button>
+                    <div className='Info'>
+                        <button>
+                            <div>
+                                <div>
+                                    <img src={info} alt="" />
+                                </div>
+                                <div>
+                                    <p>Informacion</p>
+                                </div>
+                            </div>
+                        </button>
+                  
                     </div>
                 </div>
         </div>

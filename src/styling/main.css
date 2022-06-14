@@ -35,31 +35,73 @@
 .previewMenu .botones{
     display: flex;
     justify-content: space-between;
-    width: 35em;
+    width: 30em;
 }
-.previewMenu .botones button{
- padding: 0em 0em;
- width: 10em;
- border: none;
- font-size: 1em;
- height: 60px;
-}
-
 .previewMenu .botones .PlayBtn{
 display: flex;
-flex-direction: column;
-justify-content: center;
-font-size: 2em;
-
-}
-
-.previewMenu .botones .PlayBtn img{
-    width: 1em;
-    vertical-align: middle;
-    margin-right: 1em;
+justify-content: space-around; 
+width: 14em;
+background-color: lightgray;
+border-radius: 5px;
 }   
 
+.previewMenu .botones .PlayBtn .linkToPlay{
+    color: white;
+    text-decoration: none;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}   
+.previewMenu .botones .PlayBtn .linkToPlay div{
+   display: flex;
+}   
+.previewMenu .botones .PlayBtn .linkToPlay div div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+ }   
+ 
 
+.previewMenu .botones .PlayBtn img{
+    vertical-align: middle;
+    margin-right: 1em;
+    width: 2em;
+    height: 2em;
+}   
+.previewMenu .botones .Info{
+    background-color: rgba(255, 255, 255, 0.308);
+    width: 14em;
+    border-radius: 5px;
+
+} 
+.previewMenu .botones .Info button{
+    background-color: #ffffff00;
+    border: none;
+    height: 100%;
+
+ } 
+.previewMenu .botones .Info button div{
+    display: flex;
+    justify-content: center;
+    width: 14em;
+    font-size: 1.1em;
+
+
+ }   
+ .previewMenu .botones .Info button div div{
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ font-weight: bold;
+ color: white;
+ width: fit-content;
+ margin-left: 1em;
+    }  
+ .previewMenu .botones .Info button div img{
+ width: 2em;
+ height: 2em;
+ align-self: center;
+ }  
 
 /* carosel styling*/
 .carouselContainer{
