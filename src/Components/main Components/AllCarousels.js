@@ -94,13 +94,33 @@ function CarouselOriginalNet(){
         carosuel[0].scrollTo({ left: scroll, behavior: 'smooth' })
     }
     
+
+
+    function test(e){
+        if( e.target.localName === "img"){
+            console.log(e)
+        }
+        
+        let hideShowElem = e.currentTarget.childNodes[1]
+        PosicionX = e.currentTarget.getBoundingClientRect().x +150
+        PosicionY = e.currentTarget.getBoundingClientRect().y
+        hideShowElem.style.display ="flex"
+
+    }
+    function testoUT(e){
+       // let main = e.currentTarget.childNodes[0].children[1]
+       // main.style.display ="none"
+
+    }
+
 return (
+    <>
 <div className='carouselContainer Netflix'>
     <h3>Originales de Netflix</h3>
     <div  className='ScrollBtn Left'>
         <button onClick={scrollLeft}> <img src={left} alt="" /></button>
     </div>
-    <div className='carusel OriginalNetflix'>  
+    <div className='carusel OriginalNetflix'  onMouseOver={test} onMouseLeave={testoUT}>  
         {
             originalSeries.map((movie)=>{
             return <MovieCards 
@@ -112,57 +132,51 @@ return (
         <button onClick={scrollRight}> <img src={right} alt="" /></button>
     </div>
   </div>
+  <div className='HideMenu'>
+            {<HiddenMenu top = {PosicionX} bottom = {PosicionY} />}
+        </div>
+  </>
   )     
 
 }
 
 
-
-
+let PosicionX
+let PosicionY
 function MovieCards(props){
-    function test(e){
-        let main = e.currentTarget.childNodes[0]
-
-        let test = e.currentTarget.childNodes[1]
-       // setTimeout(() => {
-            test.style.display ="flex"
-            main.style.transform = "scale(1.1)"
-            test.style.transform = "scale(1.1)"
-
-       // }, 1000);
-    }
-    function testoUT(e){
-        let main = e.currentTarget.childNodes[0]
-
-        let test = e.currentTarget.childNodes[1]
-        test.style.display ="none"
-        main.style.transform = "scale(1)"
-
-    }
+ 
     return(
-        <div className='MovieCardCont'  onMouseOver={test} onMouseLeave={testoUT}>
+        <div className='MovieCardCont' >
             <div className='movieCardImgCont'>
                 <img src={props.img} alt="" />
             </div>
-                {/* <div className='HiddenMenu'>
-                    <div className='playAddColection'>
-                        <div>
-                            <button>Play</button>
-                        </div>
-                        <div>
-                            <button>Add Colection</button>
-                        </div>
-                        <div>
-                            <button>Like</button>
-                        </div>
-                    </div>
-                    <div className='SeeMore'>
-                        <div>
-                            <button>See More</button>
-                        </div>
-                    </div>
-    </div> */}
         </div>
+      
+    )
+}
+
+
+function HiddenMenu(props){
+    console.log(props)
+    return(
+        <div className='HiddenMenu' style={ {top: props.top}}>
+        <div className='playAddColection'>
+            <div>
+                <button>Play</button>
+            </div>
+            <div>
+                <button>Add Colection</button>
+            </div>
+            <div>
+                <button>Like</button>
+            </div>
+        </div>
+        <div className='SeeMore'>
+            <div>
+                <button>See More</button>
+            </div>
+        </div>
+</div>
     )
 }
 

@@ -104,20 +104,21 @@ border-radius: 5px;
  }  
 
 /* carosel styling*/
+
 .carouselContainer{
     position: relative;
     color: white;
-
 }
 
 .carusel{
     display: flex;
-    overflow-x: hidden;
     scrollbar-width: none; 
     -ms-overflow-style: none;  
+    overflow-x: scroll;
     transition: ease-in-out;
     padding: 1em 0em;
-    
+    transform: translateZ(0);
+    transform: translateY(0);
 }
 .carusel::-webkit-scrollbar { 
     width: 0;
@@ -139,7 +140,23 @@ border-radius: 5px;
 .movieCardImgCont{
     padding-right: 1em;
 }
+.movieCardImgCont:hover{
+    transform: scale(1.1);
 
+}
+
+.HiddenMenu{
+    display: flex;
+    position: absolute;
+    top: 763px;
+    left: 530px;
+    background-color: azure;
+    color: black;
+    z-index: 1;
+    width: 14em;
+    
+
+}
 
 .movieCardImgCont img{
     width: 14em;
@@ -151,6 +168,7 @@ border-radius: 5px;
 
 .categories .ScrollBtn{
 z-index: 3;
+
 }
 
 .categories .ScrollBtn:hover{
