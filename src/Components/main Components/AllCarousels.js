@@ -144,12 +144,12 @@ function CarouselOriginalNet(){
      
           
 
-        
-        for(let i = 0 ; i < movieCards.length; i++){
-            movieCards[i].style.transform ="scale(1)"
+            for(let i = 0 ; i < movieCards.length; i++){
+                movieCards[i].style.transform ="scale(1)"
+                
             
         }
-        console.log(e.target)
+      
     }
 
 
