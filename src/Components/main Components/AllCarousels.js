@@ -119,6 +119,8 @@ function CarouselOriginalNet(){
             }
             if(e.target.classList[0] === "HideMenu" ||  e.target.localName !== "img" ){
                 MovieCont.style.transform = "scale(1.1)" 
+                hiddenMenu[0].style.display = "flex"
+
               }
     
         
@@ -127,17 +129,27 @@ function CarouselOriginalNet(){
    }
 
     function testOut(e){
-        setHovered(false)
         let movieCards = document.getElementsByClassName("movieCardImgCont")
         const hiddenMenu = document.getElementsByClassName("HideMenu")
         const MovieCont = e.target.parentElement
-        if( e.target.localName !== "img"){
+        if(e.target.localName === "img" ){
             hiddenMenu[0].style.display = "none"
 
         }
+        if( e.target.classList[0] === "HideMenu"
+        ||e.target.classList[0] === "carusel" 
+        ||e.target.classList[0] === "" ){
+            hiddenMenu[0].style.display = "none"
+        }
+     
+          
+
+        
         for(let i = 0 ; i < movieCards.length; i++){
             movieCards[i].style.transform ="scale(1)"
+            
         }
+        console.log(e.target)
     }
 
 
