@@ -64,6 +64,7 @@ return (
 
 function CarouselOriginalNet(){
     const [originalSeries,setoriginalSeries] = useState([])
+    const [hovered,setHovered] = useState(false)
 
     useEffect(() => {
         originalSeriesapi().then((data)=>{setoriginalSeries(data.results) })
@@ -99,28 +100,34 @@ function CarouselOriginalNet(){
 
     let PosicionX
     let PosicionY
-
+    let MovieCont
+    let timer = 0
     function test(e){
         const hiddenMenu = document.getElementsByClassName("HideMenu")
-        if( e.target.localName === "img"){
-            const MovieCont = e.target.parentElement
-            hiddenMenu[0].style.display = "flex"
-            MovieCont.style.transform = "scale(1.1)" 
-            const element = e.target.parentElement
-            PosicionX = element.getBoundingClientRect().x+ 11
-            PosicionY = hiddenMenu[0].getBoundingClientRect().y
-            hiddenMenu[0].style.left = PosicionX.toString() +"px"
-            hiddenMenu[0].style.transform = "scale(1.1)"
-        }
+        setHovered(true)
+
+            if( e.target.localName === "img"){
+                MovieCont = e.target.parentElement
+                hiddenMenu[0].style.display = "flex"
+                MovieCont.style.transform = "scale(1.1)" 
+                const element = e.target.parentElement
+                PosicionX = element.getBoundingClientRect().x+ 11
+                PosicionY = hiddenMenu[0].getBoundingClientRect().y
+                hiddenMenu[0].style.left = PosicionX.toString() +"px"
+                hiddenMenu[0].style.transform = "scale(1.1)"
+             
+            }
+            if(e.target.classList[0] === "HideMenu" ||  e.target.localName !== "img" ){
+                MovieCont.style.transform = "scale(1.1)" 
+              }
+    
         
-        if(e.target.classList[0] === "HideMenu"){
-            console.log(e)    
-        }
-
-
-    }
+       
+       
+   }
 
     function testOut(e){
+        setHovered(false)
         let movieCards = document.getElementsByClassName("movieCardImgCont")
         const hiddenMenu = document.getElementsByClassName("HideMenu")
         const MovieCont = e.target.parentElement
@@ -131,7 +138,6 @@ function CarouselOriginalNet(){
         for(let i = 0 ; i < movieCards.length; i++){
             movieCards[i].style.transform ="scale(1)"
         }
-
     }
 
 
@@ -155,7 +161,7 @@ return (
         <button onClick={scrollRight}> <img src={right} alt="" /></button>
     </div>
   </div>
-  <div className='HideMenu' onMouseOver={test}>
+  <div className='HideMenu' onMouseOver={test} onMouseLeave={testOut}>
             {<HiddenMenu />}
         </div>
   </>
