@@ -15,11 +15,12 @@ import NavBar from "./Components/NavBar";
 import HomeScreen from "./pages/homeScreen";
 import Main from "./pages/main";
 import Register from "./pages/register";
+import Search from "./pages/search";
 import { YoutubeEmbed } from "./pages/Reproduce";
 import { store } from "./app/store";
 import { useSelector, useDispatch } from 'react-redux';
 function App() {
-  const [user,setUser] = useState()
+  const [user,setUser] = useState("some")
   const dispatch = useDispatch();
   const Store = useSelector((store)=>{return store})
   useEffect(() => {
@@ -35,17 +36,19 @@ function App() {
             }
   });
   },[Store]);
-
+console.log(user)
   return (
     <div className="App">
       <BrowserRouter > 
       <Routes>
-        <Route path='/'  element = {  user !== undefined? (
+        <Route path='/'  element = { 
+            user !== undefined? (
             <Navigate replace to="/main" />
             ) : (
               <HomeScreen/>
             )}/>
-        <Route path='/home' element = { user !== undefined? (
+        <Route path='/home' element = { 
+          user !== undefined? (
             <Navigate replace to="/main" />
           ) : (
             <HomeScreen />
@@ -62,7 +65,8 @@ function App() {
           ) : (
             <Main />
           )} />
-            <Route path='/register' element = { user !== undefined? (
+            <Route path='/register' element = {
+            user === undefined? (
             <Navigate replace to="/main" />
           ) : (
             <Register />
@@ -72,6 +76,12 @@ function App() {
             <Navigate replace to="/home" />
           ) : (
             <YoutubeEmbed />
+          )} />
+           <Route path='/search' element = {
+          user == undefined? (
+            <Navigate replace to="/home" />
+          ) : (
+            <Search />
           )} />
 </Routes>
     </BrowserRouter >

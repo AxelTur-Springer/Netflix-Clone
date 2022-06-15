@@ -1,5 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 import {signOut} from "firebase/auth"
 import { auth } from "../../firebase/firebaseconfig";
 import { useState,useEffect } from 'react';
@@ -11,6 +12,9 @@ import arrow from "../../assets/play.png"
 import "../../styling/navbarMain.css"
 
 const NavBarMain = () => {
+    const [search,setSearch] = useState()
+
+
     const dispatch = useDispatch()
     const logout = async()=>{
         await signOut(auth)
@@ -33,6 +37,9 @@ const NavBarMain = () => {
              
        
     }
+    function setting(){
+        setSearch(true)
+    }
     return (
         <div className='NavBarContainerMain'>
             <div className='imghomeseriesmoviescont'>
@@ -53,7 +60,9 @@ const NavBarMain = () => {
             </div>
             <div className='contSearchProfileLog'>
                 <div className='searchBar'>
-                    <input type="text" placeholder='titulo,series,peliculas'/>
+             {search === true ? <Navigate to ="/search"/> : null}
+                    <input  onClick={setting} 
+                    type="text" placeholder='titulo,series,peliculas'/>
                 </div>
                 <div className='profileDropDown' onMouseOver={displayMenu} >
                     <div className='Profile'>
