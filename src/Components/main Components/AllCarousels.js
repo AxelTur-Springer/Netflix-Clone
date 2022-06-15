@@ -3,6 +3,11 @@ import { useState,useEffect } from 'react';
 import { originalSeriesapi,popularApi ,allMovies} from '../../MovieApiData';
 import right from "../../assets/right.png"
 import left from "../../assets/left.png"
+import play from "../../assets/playHoverMovie.png"
+import like from "../../assets/like.png"
+import plus from "../../assets/plus.png"
+import arrowDown from "../../assets/down.png"
+
 
 /*   Api Call Popular carousel example */
 
@@ -18,21 +23,20 @@ function CarouselPopular(){
     let scroll = 0;
 
     function scrollLeft(e){
-        const carosuel = document.getElementsByClassName('carusel Popular')
-        let widthImg= carosuel[0].firstElementChild.getBoundingClientRect().width +15;
+        const carosuel = document.getElementsByClassName('carouselContainer Popular')
+        let widthImg= carosuel[0].getBoundingClientRect().width
         if(scroll === 0){
             scroll = 0 
         }else {
             scroll -= widthImg;
         }
         carosuel[0].scrollTo({ left: scroll, behavior: 'smooth' })
-      
     }
     
     function scrollRight(e){
-        const carosuel = document.getElementsByClassName('carusel Popular')
+        const carosuel = document.getElementsByClassName('carouselContainer Popular')
         let widthImg= carosuel[0].firstElementChild.getBoundingClientRect().width
-        if(scroll > scroll >  carosuel[0].scrollWidth - 1000 ){
+        if(scroll >  carosuel[0].scrollWidth - 1000 ){
             scroll = 0
         }else{
             scroll = scroll + widthImg ;
@@ -41,11 +45,13 @@ function CarouselPopular(){
     }
     
 return (
-<div className='carouselContainer Popular'>
-    <h3>Populares Ahora</h3>
-    <div  className='ScrollBtn Left'>
+    <div className='AllMightContainer'>
+ <div  className='ScrollBtn Left'>
         <button onClick={scrollLeft}><img src={left} alt="" /></button>
     </div>
+<div className='carouselContainer Popular'>
+    <h3>Populares Ahora</h3>
+   
     <div className='carusel Popular'>  
         {
             popular.map((movie)=>{
@@ -54,10 +60,13 @@ return (
             })
         }    
     </div>
-    <div className='ScrollBtn Right' >
+   
+  </div>
+  <div className='ScrollBtn Right' >
         <button onClick={scrollRight}> <img src={right} alt="" /></button>
     </div>
   </div>
+
   )     
 
 }
@@ -73,20 +82,19 @@ return (
     let scroll = 0;
 
     function scrollLeft(e){
-        const carosuel = document.getElementsByClassName('carusel OriginalNetflix')
-        let widthImg= carosuel[0].firstElementChild.getBoundingClientRect().width
+        const carosuel = document.getElementsByClassName('carouselContainer Netflix')
+        let widthImg= carosuel[0].getBoundingClientRect().width
         if(scroll === 0){
             scroll = 0 
         }else {
             scroll -= widthImg;
         }
         carosuel[0].scrollTo({ left: scroll, behavior: 'smooth' })
-      
+        console.log(carosuel)
     }
     
     function scrollRight(e){
-        const carosuel = document.getElementsByClassName('carusel OriginalNetflix')
-        console.log(carosuel)
+        const carosuel = document.getElementsByClassName('carouselContainer Netflix')
         let widthImg= carosuel[0].firstElementChild.getBoundingClientRect().width
         if(scroll >  carosuel[0].scrollWidth - 1000 ){
             scroll = 0
@@ -101,27 +109,30 @@ return (
     
 
 return (
-    <>
-<div className='carouselContainer Netflix'>
-    <h3>Originales de Netflix</h3>
-    <div  className='ScrollBtn Left'>
-        <button onClick={scrollLeft}> <img src={left} alt="" /></button>
-    </div>
-    <div className='carusel OriginalNetflix' >  
-        {
-            originalSeries.map((movie)=>{
-            return <MovieCards 
-            img={"https://image.tmdb.org/t/p/w500" + movie.backdrop_path}
-            />
-            })
-        }    
-    </div>
+    <div className='AllMightContainer'>
+          <div  className='ScrollBtn Left'>
+            <button onClick={scrollLeft}> <img src={left} alt="" /></button>
+        </div>
+        <div className='carouselContainer Netflix'>
+        <h3>Originales de Netflix</h3>
+    
+        <div className='carusel OriginalNetflix' >  
+      
+            {
+                originalSeries.map((movie)=>{
+                return <MovieCards 
+                img={"https://image.tmdb.org/t/p/w500" + movie.backdrop_path}
+                />
+                })
+            }    
+          
+        </div>
+    
+    </div>   
     <div className='ScrollBtn Right' >
-        <button onClick={scrollRight}> <img src={right} alt="" /></button>
-    </div>
+            <button onClick={scrollRight}> <img src={right} alt="" /></button>
+        </div> 
   </div>
- 
-  </>
   )     
 
 }
@@ -131,13 +142,20 @@ return (
 
 
 function MovieCards(props){
- 
+ function showMenu(e){
+    console.log()
+    e.currentTarget.childNodes[1].style.display ="flex"
+}
+function hideMenu(e){
+    console.log()
+    e.currentTarget.childNodes[1].style.display ="none"
+}
     return(
-        <div className='MovieCardCont' >
+        <div className='MovieCardCont'  onMouseEnter={showMenu} onMouseLeave={hideMenu}  >
             <div className='movieCardImgCont'>
                 <img src={props.img} alt="" />
             </div>
-            {<HiddenMenu />}
+                {<HiddenMenu />}
         </div>
       
     )
@@ -146,28 +164,39 @@ function MovieCards(props){
 
 
 function HiddenMenu(props){
-    function testoUT(e){
-        const hiddenMenu = document.getElementsByClassName("HideMenu")
-       
-            hiddenMenu[0].style.display = "none"
-          
-    
-    }    return(
+
+    return(
         <div className='HiddenMenu' >
             <div className='playAddColection'>
                 <div>
-                    <button>Play</button>
+                    <button>
+                        <div className='playImgCont'>
+                            <img src={play} alt="" />
+                        </div>
+                    </button>
                 </div>
                 <div>
-                    <button>Add Colection</button>
+                    <button>
+                        <div>
+                            <img src={like} alt="" />
+                        </div>
+                    </button>
                 </div>
                 <div>
-                    <button>Like</button>
+                    <button>
+                        <div>
+                            <img src={plus} alt="" />
+                        </div>
+                    </button>
                 </div>
             </div>
             <div className='SeeMore'>
                 <div>
-                    <button>See More</button>
+                    <button>
+                        <div>
+                            <img src={arrowDown} alt="" />
+                        </div>
+                    </button>
                 </div>
             </div>
 </div>

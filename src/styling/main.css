@@ -104,15 +104,21 @@ border-radius: 5px;
  }  
 
 /* carosel styling*/
-
+.AllMightContainer{
+    position: relative;
+}
 .carouselContainer{
+    position: relative;
     display: flex;
     justify-content: flex-start;
     flex-direction: column;
-   
+   padding: 0em 1em;
     position: relative;
     height: 15em;
-    border: solid red;
+    overflow-x: hidden;
+    scrollbar-width: none; 
+    -ms-overflow-style: none;  
+    transition: ease-in-out;
 }
 
 .carouselContainer h3{
@@ -121,13 +127,10 @@ border-radius: 5px;
 .carusel{
     display: flex;
     padding: 1em 0em;
-    overflow-x: scroll;
     height: 100%;
-    scrollbar-width: none; 
-    -ms-overflow-style: none;  
-    transition: ease-in-out;
+
 }
-.carusel::-webkit-scrollbar { 
+.caruselContainer::-webkit-scrollbar { 
     width: 0;
     height: 0;
 }
@@ -142,30 +145,68 @@ border-radius: 5px;
     justify-content: space-between;
 
 }
-.MovieCardCont:hover{
-    transform: scale(1.1);
-}
+    .MovieCardCont:hover{
+        animation: menuHover 1s  forwards;
+        
+    }
+    
+    @keyframes menuHover{
+        100%{
+            transform: scale(1.3);
+        }
+    }
+    .movieCardImgCont{
+        padding-right: 1em;
+    }   
+    .movieCardImgCont img{
+        width: 12em;
+        border-radius: 5px;
 
-.movieCardImgCont{
-    padding-right: 1em;
-}
+    }
+
 
 .HiddenMenu{
-    border: solid red;
     display: flex;
-}
-
-.movieCardImgCont img{
+    flex-direction: row;
     width: 12em;
-    border-radius: 5px;
-
+    height: 100%;
+    justify-content: space-between;
 }
+    .HiddenMenu .playAddColection{
+        display: flex;
+        justify-items: flex-start;
+        margin-left: -5px;
+    }
+        .HiddenMenu  button{
+        border: none;
+        background-color: transparent;
+        }
+        .HiddenMenu button div{
+            border: rgba(255, 255, 255, 0.527) solid 2px;
+            border-radius: 50%;
+            height: 2em;
+            width: 2em;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            
+            }
+            .HiddenMenu button div img{
+            width: 12px;
+            height: 12px;
+            margin: auto;
 
+                }
+            .HiddenMenu .playAddColection .playImgCont{
+                background-color: white;
+            }
+            .HiddenMenu .playAddColection .playImgCont img{
+                margin-left: 8.5px;
+            }
 
 
 .categories .ScrollBtn{
 z-index: 3;
-
 }
 
 .categories .ScrollBtn:hover{
@@ -174,15 +215,13 @@ z-index: 3;
     }
     .categories .ScrollBtn.Left{
         position: absolute;
-        bottom: 50px;
-        height: 73%;
+        top: 5em;
         display: flex;
         }
     .categories .ScrollBtn.Right{
         position: absolute;
-        bottom: 50px;
-        right: 5px;
-        height: 73%;
+        right: 0px;
+        top: 5em;
         display: flex;
         
     }
