@@ -25,7 +25,7 @@ function CarouselPopular(){
 
     function scrollLeft(e){
         const carosuel = document.getElementsByClassName('carouselContainer Popular')
-        let widthImg= carosuel[0].getBoundingClientRect().width
+        let widthImg= document.getElementsByClassName("MovieCardCont")[0].getBoundingClientRect().width
         if(scroll === 0){
             scroll = 0 
         }else {
@@ -36,7 +36,7 @@ function CarouselPopular(){
     
     function scrollRight(e){
         const carosuel = document.getElementsByClassName('carouselContainer Popular')
-        let widthImg= carosuel[0].firstElementChild.getBoundingClientRect().width
+        let widthImg= document.getElementsByClassName("MovieCardCont")[0].getBoundingClientRect().width
         if(scroll >  carosuel[0].scrollWidth - 1000 ){
             scroll = 0
         }else{
@@ -95,7 +95,7 @@ return (
 
     function scrollLeft(e){
         const carosuel = document.getElementsByClassName('carouselContainer Netflix')
-        let widthImg= carosuel[0].getBoundingClientRect().width
+        let widthImg= document.getElementsByClassName("MovieCardCont")[0].getBoundingClientRect().width
         if(scroll === 0){
             scroll = 0 
         }else {
@@ -107,7 +107,7 @@ return (
     
     function scrollRight(e){
         const carosuel = document.getElementsByClassName('carouselContainer Netflix')
-        let widthImg= carosuel[0].firstElementChild.getBoundingClientRect().width
+        let widthImg= document.getElementsByClassName("MovieCardCont")[0].getBoundingClientRect().width
         if(scroll >  carosuel[0].scrollWidth - 1000 ){
             scroll = 0
         }else{
