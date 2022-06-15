@@ -4,6 +4,7 @@ import { originalSeriesapi,popularApi ,allMovies} from '../../MovieApiData';
 import right from "../../assets/right.png"
 import left from "../../assets/left.png"
 
+/*   Api Call Popular carousel example */
 
 function CarouselPopular(){
     
@@ -61,8 +62,8 @@ return (
 
 }
 
-
-function CarouselOriginalNet(){
+/*   Api Call Netflix carousel example */
+ function CarouselOriginalNet(){
     const [originalSeries,setoriginalSeries] = useState([])
     const [hovered,setHovered] = useState(false)
 
@@ -98,60 +99,7 @@ function CarouselOriginalNet(){
     
 
 
-    let PosicionX
-    let PosicionY
-    let MovieCont
-    let timer = 0
-    function test(e){
-        const hiddenMenu = document.getElementsByClassName("HideMenu")
-        setHovered(true)
-
-            if( e.target.localName === "img"){
-                MovieCont = e.target.parentElement
-                hiddenMenu[0].style.display = "flex"
-                MovieCont.style.transform = "scale(1.1)" 
-                const element = e.target.parentElement
-                PosicionX = element.getBoundingClientRect().x+ 11
-                PosicionY = hiddenMenu[0].getBoundingClientRect().y
-                hiddenMenu[0].style.left = PosicionX.toString() +"px"
-                hiddenMenu[0].style.transform = "scale(1.1)"
-             
-            }
-            if(e.target.classList[0] === "HideMenu" ||  e.target.localName !== "img" ){
-                MovieCont.style.transform = "scale(1.1)" 
-                hiddenMenu[0].style.display = "flex"
-
-              }
     
-        
-       
-       
-   }
-
-    function testOut(e){
-        let movieCards = document.getElementsByClassName("movieCardImgCont")
-        const hiddenMenu = document.getElementsByClassName("HideMenu")
-        const MovieCont = e.target.parentElement
-        if(e.target.localName === "img" ){
-            hiddenMenu[0].style.display = "none"
-
-        }
-        if( e.target.classList[0] === "HideMenu"
-        ||e.target.classList[0] === "carusel" 
-        ||e.target.classList[0] === "" ){
-            hiddenMenu[0].style.display = "none"
-        }
-     
-          
-
-            for(let i = 0 ; i < movieCards.length; i++){
-                movieCards[i].style.transform ="scale(1)"
-                
-            
-        }
-      
-    }
-
 
 return (
     <>
@@ -160,7 +108,7 @@ return (
     <div  className='ScrollBtn Left'>
         <button onClick={scrollLeft}> <img src={left} alt="" /></button>
     </div>
-    <div className='carusel OriginalNetflix'  onMouseOver={test}  onMouseLeave={testOut} >  
+    <div className='carusel OriginalNetflix' >  
         {
             originalSeries.map((movie)=>{
             return <MovieCards 
@@ -173,13 +121,14 @@ return (
         <button onClick={scrollRight}> <img src={right} alt="" /></button>
     </div>
   </div>
-  <div className='HideMenu' onMouseOver={test} onMouseLeave={testOut}>
-            {<HiddenMenu />}
-        </div>
+ 
   </>
   )     
 
 }
+
+
+
 
 
 function MovieCards(props){
@@ -189,10 +138,12 @@ function MovieCards(props){
             <div className='movieCardImgCont'>
                 <img src={props.img} alt="" />
             </div>
+            {<HiddenMenu />}
         </div>
       
     )
 }
+
 
 
 function HiddenMenu(props){
@@ -203,10 +154,7 @@ function HiddenMenu(props){
           
     
     }    return(
-        <div className='HiddenMenu' style={ {top: props.top}} onMouseLeave={testoUT}>
-            <div className='InvisibleSet'>
-
-            </div>
+        <div className='HiddenMenu' >
             <div className='playAddColection'>
                 <div>
                     <button>Play</button>
@@ -227,12 +175,5 @@ function HiddenMenu(props){
     )
 }
 
-function MovieCardPrev(){
-    return(
-        <div>
-            helloooo
-        </div>
-    )
-}
 
 export {CarouselPopular ,CarouselOriginalNet};
