@@ -106,13 +106,14 @@ border-radius: 5px;
 /* carosel styling*/
 .AllMightContainer{
     position: relative;
+    padding: 0em 1em;
+
 }
 .carouselContainer{
     position: relative;
     display: flex;
     justify-content: flex-start;
     flex-direction: column;
-   padding: 0em 1em;
     position: relative;
     height: 15em;
     overflow-x: hidden;
@@ -166,7 +167,7 @@ border-radius: 5px;
 
 
 .HiddenMenu{
-    display: flex;
+    display: none;
     flex-direction: row;
     width: 12em;
     height: 100%;
