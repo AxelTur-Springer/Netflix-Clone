@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState,useEffect } from 'react';
 import { originalSeriesapi,popularApi ,allMovies ,genresList} from '../../MovieApiData';
+import {Link} from "react-router-dom"
 import right from "../../assets/right.png"
 import left from "../../assets/left.png"
 import play from "../../assets/playHoverMovie.png"
@@ -128,7 +129,7 @@ return (
         </div>
         <div className='carouselContainer Netflix'>
         <h3>Originales de Netflix</h3>
-    
+
         <div className='carusel OriginalNetflix' >  
       
             {
@@ -192,11 +193,13 @@ function HiddenMenu(props){
                     <div className='ContainerButtons'>
                         <div className='playAddColection'>
                             <div>
+                            <Link to ="/play" >
                                 <button>
                                     <div className='playImgCont'>
                                         <img src={play} alt="" />
                                     </div>
                                 </button>
+                            </Link>
                             </div>
                             <div>
                                 <button>
