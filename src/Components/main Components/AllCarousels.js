@@ -65,7 +65,6 @@ return (
 /*   Api Call Netflix carousel example */
  function CarouselOriginalNet(){
     const [originalSeries,setoriginalSeries] = useState([])
-    const [hovered,setHovered] = useState(false)
 
     useEffect(() => {
         originalSeriesapi().then((data)=>{setoriginalSeries(data.results) })
