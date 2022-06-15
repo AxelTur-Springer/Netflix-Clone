@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState,useEffect } from 'react';
-import { originalSeriesapi,popularApi ,allMovies} from '../../MovieApiData';
+import { originalSeriesapi,popularApi ,allMovies ,genresList} from '../../MovieApiData';
 import right from "../../assets/right.png"
 import left from "../../assets/left.png"
 import play from "../../assets/playHoverMovie.png"
@@ -14,12 +14,13 @@ import arrowDown from "../../assets/down.png"
 function CarouselPopular(){
     
     const [popular,setpopular] = useState([])
-
+    const [genres,setGeneres] = useState([])
 
     useEffect(() => {
+        genresList().then((data)=>{setGeneres(data) })
         popularApi().then((data)=>{setpopular(data.results) })
-    },[]);  
 
+    },[]);  
     let scroll = 0;
 
     function scrollLeft(e){
@@ -46,6 +47,7 @@ function CarouselPopular(){
     
 return (
     <div className='AllMightContainer'>
+    
  <div  className='ScrollBtn Left'>
         <button onClick={scrollLeft}><img src={left} alt="" /></button>
     </div>
@@ -55,9 +57,17 @@ return (
     <div className='carusel Popular'>  
         {
             popular.map((movie)=>{
+                let genera = genres.genres.filter((a)=>{
+                    if(movie.genre_ids.includes(a.id)){
+                        return a.name
+                    }
+                })
             return <MovieCards 
-            img={"https://image.tmdb.org/t/p/w500" + movie.backdrop_path} />
-            })
+            img={"https://image.tmdb.org/t/p/w500" + movie.backdrop_path} 
+            genero ={genera}
+            />
+            
+        })
         }    
     </div>
    
@@ -74,9 +84,11 @@ return (
 /*   Api Call Netflix carousel example */
  function CarouselOriginalNet(){
     const [originalSeries,setoriginalSeries] = useState([])
-
+    const [genres,setGeneres] = useState({genres:[]})
     useEffect(() => {
         originalSeriesapi().then((data)=>{setoriginalSeries(data.results) })
+        genresList().then((data)=>{setGeneres(data) })
+
     },[]);  
     
     let scroll = 0;
@@ -104,6 +116,7 @@ return (
         carosuel[0].scrollTo({ left: scroll, behavior: 'smooth' })
     }
     
+    console.log(genres)
 
 
     
@@ -120,8 +133,14 @@ return (
       
             {
                 originalSeries.map((movie)=>{
+                    let genera = genres.genres.filter((a)=>{
+                        if(movie.genre_ids.includes(a.id)){
+                            return a.name
+                        }
+                    })
                 return <MovieCards 
-                img={"https://image.tmdb.org/t/p/w500" + movie.backdrop_path}
+                img={"https://image.tmdb.org/t/p/w500" + movie.backdrop_path} 
+                genero ={ genera}
                 />
                 })
             }    
@@ -143,7 +162,6 @@ return (
 
 function MovieCards(props){
  function showMenu(e){
-    console.log()
     e.currentTarget.childNodes[1].style.display ="flex"
 }
 function hideMenu(e){
@@ -155,7 +173,7 @@ function hideMenu(e){
             <div className='movieCardImgCont'>
                 <img src={props.img} alt="" />
             </div>
-                {<HiddenMenu />}
+                {<HiddenMenu genero = {props.genero} />}
         </div>
       
     )
@@ -164,42 +182,55 @@ function hideMenu(e){
 
 
 function HiddenMenu(props){
-
+    let generoArray =[];
+    if(props.genero!== undefined){
+    generoArray = props.genero
+    } else{return}
+ 
     return(
         <div className='HiddenMenu' >
-            <div className='playAddColection'>
-                <div>
-                    <button>
-                        <div className='playImgCont'>
-                            <img src={play} alt="" />
+                    <div className='ContainerButtons'>
+                        <div className='playAddColection'>
+                            <div>
+                                <button>
+                                    <div className='playImgCont'>
+                                        <img src={play} alt="" />
+                                    </div>
+                                </button>
+                            </div>
+                            <div>
+                                <button>
+                                    <div>
+                                        <img src={like} alt="" />
+                                    </div>
+                                </button>
+                            </div>
+                            <div>
+                                <button>
+                                    <div>
+                                        <img src={plus} alt="" />
+                                    </div>
+                                </button>
+                            </div>
                         </div>
-                    </button>
+                        <div className='SeeMore'>
+                            <div>
+                                <button>
+                                    <div>
+                                        <img src={arrowDown} alt="" />
+                                    </div>
+                                </button>
+                            </div>
+                        </div>    
                 </div>
-                <div>
-                    <button>
-                        <div>
-                            <img src={like} alt="" />
-                        </div>
-                    </button>
-                </div>
-                <div>
-                    <button>
-                        <div>
-                            <img src={plus} alt="" />
-                        </div>
-                    </button>
-                </div>
+            <div className='InfoGeneres'>
+                {generoArray.map((a)=>{
+                    return  a.name + " "
+                })}
             </div>
-            <div className='SeeMore'>
-                <div>
-                    <button>
-                        <div>
-                            <img src={arrowDown} alt="" />
-                        </div>
-                    </button>
-                </div>
             </div>
-</div>
+           
+      
     )
 }
 

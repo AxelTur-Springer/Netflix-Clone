@@ -20,8 +20,18 @@ async function popularApi() {
       console.error(err);
     }
   }
+  async function genresList() {
+    try{
+      let response = await fetch(`https://api.themoviedb.org/3/genre/movie/list?api_key=${API_KEY}&language=en-US`)
+      let data = await response.json();
+      return  await data
+    }catch(err){
+      console.error(err);
+    }
+  }
+  
 
 
-export {popularApi,originalSeriesapi}
+export {popularApi,originalSeriesapi, genresList}
 
 
