@@ -39,8 +39,9 @@ const NavBarMain = (props) => {
              
        
     }
-    function setting(){
+    function setting(e){
         navigate("/search")
+        props.inputSearch(e)
     }
     return (
         <div className='NavBarContainerMain'>
@@ -62,8 +63,8 @@ const NavBarMain = (props) => {
             </div>
             <div className='contSearchProfileLog'>
                 <div className='searchBar'>
-                    <input  onClick={setting} 
-                    onChange = {props.inputSearch }
+                    <input
+                    onChange = {setting }
                     type="text" placeholder='titulo,series,peliculas'/>
                 </div>
                 <div className='profileDropDown' onMouseOver={displayMenu} >
