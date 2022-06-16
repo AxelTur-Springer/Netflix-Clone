@@ -1,5 +1,6 @@
 import React from 'react';
 import { useState,useEffect } from 'react';
+import { useNavigate } from "react-router-dom";
 import NavBarMain from '../Components/main Components/navbarMain'; 
 import { originalSeriesapi,popularApi ,allMovies ,genresList} from '../MovieApiData';
 import MovieCards from '../Components/MovieCard';
@@ -12,6 +13,9 @@ const Search = () => {
     const [search,setSearch] = useState([])
     const [genres,setGeneres] = useState({genres:[]})
     const [num,setNum] = useState(1)
+
+    const navigate = useNavigate()
+
 
     useEffect(() => {
         genresList().then((data)=>{setGeneres(data) })
@@ -29,6 +33,7 @@ const Search = () => {
     },[]);  
 
     function retrieveInputSearchValue(e){
+        console.log(e)
         let search = e.target.value.toLowerCase();
     let test = all.filter((a)=>{
         if(a.name !== undefined){
