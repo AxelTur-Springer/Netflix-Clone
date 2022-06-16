@@ -34,22 +34,28 @@ const Search = () => {
 
     return (
         <>
-      <NavBarMain inputSearch = {retrieveInputSearchValue} />
-            <div className='Search-menu'>
-                {
-                all.map((movie)=>{
-                    let genera = genres.genres.filter((a)=>{
-                        if(movie.genre_ids.includes(a.id)){
-                            return a.name
-                        }
-                    })
-                return <MovieCards 
-                img={"https://image.tmdb.org/t/p/w500" + movie.backdrop_path} 
-                genero ={ genera}
-                />
-                })
-            }    
-            </div>
+        <NavBarMain inputSearch = {retrieveInputSearchValue} />
+            <div className='Search-Menu-container'>
+                <div>
+                    <h2>Search Titles</h2>
+                </div>
+                <div className='Search-menu'>
+                    {
+                    all.map((movie)=>{
+                        let genera = genres.genres.filter((a)=>{
+                            if(movie.genre_ids.includes(a.id)){
+                                return a.name
+                            }
+                                })
+                        return <MovieCards 
+                        img={"https://image.tmdb.org/t/p/w500" + movie.backdrop_path} 
+                        genero ={ genera}
+                        />
+                        })
+                    }    
+                    </div>
+                </div>
+             
         </>
     );
 }
