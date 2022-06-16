@@ -36,7 +36,6 @@ function App() {
             }
   });
   },[Store]);
-console.log(user)
   return (
     <div className="App">
       <BrowserRouter > 
