@@ -44,20 +44,11 @@ const NavBarMain = (props) => {
     }
     function redirect(){
         navigate("/search")
-
     }
     function setting(e){
-
         props.inputSearch(e)
-
-       /* let value = e.target.value
-        if(value.length >= 2){
-        }
-        dispatch(valueChange(value))
-        e.target.value = Store.valueSearchReducer.value*/
+     
     }
-    console.log(Store)
-
     function showSearchBar(e){
         let searchanime = document.getElementsByClassName("inputCont")[0]
         searchanime.childNodes[0].style.animation ="searchBarAnimacionShow 1s forwards"

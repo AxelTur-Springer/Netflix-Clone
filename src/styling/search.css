@@ -11,9 +11,10 @@
 
 }
 .SearchInSearch .NavBarContainerMain .inputCont input{
-    animation: searchBarAnimacionShow 1s forwards;
+    width: 11em;
 }
 @keyframes searchBarAnimacionShow {
+    0%{ width: 1em;}
     100%{
         width: 11em;
         visibility: visible;
