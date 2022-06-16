@@ -10,15 +10,27 @@ const Search = () => {
     const [originalSeries,setoriginalSeries] = useState([])
     const [all,setAll] = useState([])
     const [genres,setGeneres] = useState({genres:[]})
-
+    const [num,setNum] = useState(1)
 
     useEffect(() => {
-        popularApi().then((data)=>{setpopular(data.results) })
-        originalSeriesapi().then((data)=>{setoriginalSeries(data.results) })
         genresList().then((data)=>{setGeneres(data) })
-        setAll(popular.concat(originalSeries))
+        async function bringAll(){
+            const Pop = await popularApi()
+            const resultPop = Pop.results
+            const originalNet = await originalSeriesapi()
+            const resultOriginal = originalNet.results
+
+            setAll(resultPop.concat(resultOriginal)) 
+        }
+    
+        bringAll()
+
     },[]);  
-    console.log(all)
+
+
+
+
+
     return (
         <>
       <NavBarMain />
