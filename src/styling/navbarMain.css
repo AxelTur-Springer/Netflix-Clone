@@ -101,6 +101,12 @@ margin-top: 4px;
          width: 0.5em;
         }
 
+
+
+
+.contSearchProfileLog{
+    border: solid red;
+}
 .NavBarContainerMain  .profileDropDown{
     position: relative;
     z-index: 1;
