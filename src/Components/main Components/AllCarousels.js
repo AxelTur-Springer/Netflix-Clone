@@ -61,6 +61,7 @@ return (
             return <MovieCards 
             img={"https://image.tmdb.org/t/p/w500" + movie.backdrop_path} 
             genero ={genera}
+            name ={movie.title=== undefined? movie.name: movie.title}
             />
             
         })
@@ -137,6 +138,7 @@ return (
                 return <MovieCards 
                 img={"https://image.tmdb.org/t/p/w500" + movie.backdrop_path} 
                 genero ={ genera}
+                name ={movie.title=== undefined? movie.name: movie.title}
                 />
                 })
             }    

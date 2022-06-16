@@ -144,6 +144,7 @@ border-radius: 5px;
 
 
 .MovieCardCont{
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -168,7 +169,15 @@ border-radius: 5px;
 
     }
 
-
+    .Main-menu .MovieCardCont .title{
+        position: absolute;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        height: 8em;
+        max-width: 13em;
+    }
 .HiddenMenu{
     display: none;
     flex-direction: column;
