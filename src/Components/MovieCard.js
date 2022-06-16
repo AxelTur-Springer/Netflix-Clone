@@ -13,13 +13,19 @@ export default function MovieCards(props){
        e.currentTarget.childNodes[1].style.display ="none"
    }
        return(
+        <>
            <div className='MovieCardCont'  onMouseEnter={showMenu} onMouseLeave={hideMenu}  >
+         
                <div className='movieCardImgCont'>
-                   <img src={props.img} alt="" />
+               <div className="title">
+                <p>{props.name}</p>
+            </div>
+                   <img src={props.img} alt=""  />
                </div>
                    {<HiddenMenu genero = {props.genero} />}
            </div>
-         
+      
+         </>
        )
    }
    

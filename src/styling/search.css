@@ -1,7 +1,7 @@
 .Search-Menu-container{
     padding: 6em 1em;
     background-color: rgb(65, 65, 65);
-
+    min-height: 100vh;
 }
 .Search-menu{
     display: grid;
@@ -14,9 +14,18 @@
     width: 16em;
 }
 .Search-menu .MovieCardCont {
+    position: relative;
     width: 16em;
     height: 13em;
     justify-content: center;
+}
+.Search-menu .MovieCardCont .title{
+    position: absolute;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 9em;
 }
 .Search-menu .MovieCardCont .HiddenMenu {
     width: 100%;

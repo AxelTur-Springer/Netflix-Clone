@@ -31,7 +31,6 @@ const Search = () => {
         bringAll()
 
     },[]);  
-
     function retrieveInputSearchValue(e){
         console.log(e)
         let search = e.target.value.toLowerCase();
@@ -66,6 +65,7 @@ const Search = () => {
                         return <MovieCards 
                         img={"https://image.tmdb.org/t/p/w500" + movie.backdrop_path} 
                         genero ={ genera}
+                        name ={movie.title=== undefined? movie.name: movie.title}
                         />
                         })
                     }    

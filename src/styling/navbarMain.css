@@ -8,6 +8,7 @@
     font-size: 0.8em;
     position: fixed;
     top: 0px;
+    z-index: 1;
     
 }
 .NavBarContainerMain .link{
