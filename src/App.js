@@ -65,7 +65,7 @@ function App() {
             <Main />
           )} />
             <Route path='/register' element = {
-            user === undefined? (
+            user !== undefined? (
             <Navigate replace to="/main" />
           ) : (
             <Register />
