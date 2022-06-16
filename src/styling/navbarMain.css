@@ -45,6 +45,9 @@ display: flex;
 flex-direction: column;
 justify-content: center;
 }
+.NavBarContainerMain .lupita img{
+width: 1.2em;
+    }
 
 .NavBarContainerMain .contSearchProfileLog .inputCont{
     display: flex;
@@ -57,16 +60,24 @@ border: none;
 outline: none;
 visibility: hidden;
 width: 1em;
-
 }
 
-@keyframes searchBarAnimacion {
+@keyframes searchBarAnimacionShow {
     100%{
-        width: 100%;
+        width: 11em;
         visibility: visible;
     }
 }
-    
+ 
+
+@keyframes searchBarAnimacionHide{
+    0%{
+        width: 11em;
+    }
+    100%{
+        width: 0em;
+    }
+}
 /* managing dropdown stuff*/
 .NavBarContainerMain .Profile {
     display: flex;

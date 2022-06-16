@@ -45,9 +45,16 @@ const NavBarMain = (props) => {
         props.inputSearch(e)
     }
 
-    function showSearchBar(e){
-        e.target.parentElement.parentElement.childNodes[1].children[0]
-        .style.animacion = "searchBarAnimacion 1s forwards"
+    function showSearchBar(){
+        let searchanime = document.getElementsByClassName("inputCont")[0]
+        searchanime.childNodes[0].style.animation ="searchBarAnimacionShow 1s forwards"
+    }
+    function hideSearchBar(){
+        let searchanime = document.getElementsByClassName("inputCont")[0]
+        searchanime.childNodes[0].style.animation ="searchBarAnimacionHide 1s forwards"
+
+
+
     }
     return (
         <div className='NavBarContainerMain'>
@@ -72,7 +79,7 @@ const NavBarMain = (props) => {
                     <div className='lupita'  onClick={showSearchBar}>
                         <img src={lupa} alt="" />
                     </div>
-                    <div className='inputCont'>
+                    <div className='inputCont' onMouseLeave={hideSearchBar}>
                         <input
                             onChange = {setting }
                             type="text" placeholder='titulo,series,peliculas'/>
