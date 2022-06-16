@@ -5,19 +5,21 @@ import {signOut} from "firebase/auth"
 import { auth } from "../../firebase/firebaseconfig";
 import { useState,useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { store } from "../../app/store";
 import {loginSuccess, logoutSuccess,UserLoginName} from "../../features/loginCheck/loginSlice"
 import netflixLogo from "../../assets/logoNetNav.png"
 import profileImg from "../../assets/iconProfile.png"
 import arrow from "../../assets/play.png"
 import lupa from "../../assets/search.png"
 import "../../styling/navbarMain.css"
+import {valueChange} from "../../features/valueSearch"
 
 
 const NavBarMain = (props) => {
     const [search,setSearch] = useState()
 
     const navigate = useNavigate()
-
+    const Store = useSelector((store)=>{return store})
     const dispatch = useDispatch()
     const logout = async()=>{
         await signOut(auth)
@@ -40,12 +42,23 @@ const NavBarMain = (props) => {
              
        
     }
-    function setting(e){
+    function redirect(){
         navigate("/search")
-        props.inputSearch(e)
-    }
 
-    function showSearchBar(){
+    }
+    function setting(e){
+
+        props.inputSearch(e)
+
+       /* let value = e.target.value
+        if(value.length >= 2){
+        }
+        dispatch(valueChange(value))
+        e.target.value = Store.valueSearchReducer.value*/
+    }
+    console.log(Store)
+
+    function showSearchBar(e){
         let searchanime = document.getElementsByClassName("inputCont")[0]
         searchanime.childNodes[0].style.animation ="searchBarAnimacionShow 1s forwards"
     }
@@ -76,10 +89,11 @@ const NavBarMain = (props) => {
             </div>
             <div className='contSearchProfileLog'>
                 <div className='searchBarCont'>
-                    <div className='lupita'  onClick={showSearchBar}>
+                    <div className='lupita'  onMouseOver={showSearchBar}>
                         <img src={lupa} alt="" />
                     </div>
-                    <div className='inputCont' onMouseLeave={hideSearchBar}>
+                    <div className='inputCont' onMouseLeave={hideSearchBar} 
+                    onClick={redirect}>
                         <input
                             onChange = {setting }
                             type="text" placeholder='titulo,series,peliculas'/>
