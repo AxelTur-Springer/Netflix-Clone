@@ -49,7 +49,9 @@ const Search = () => {
 
     return (
         <>
-        <NavBarMain inputSearch = {retrieveInputSearchValue} />
+        <div className='SearchInSearch'>
+            <NavBarMain inputSearch = {retrieveInputSearchValue} />
+        </div>
             <div className='Search-Menu-container'>
                 <div>
                     <h2>Search Titles</h2>
