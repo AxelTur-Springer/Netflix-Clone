@@ -9,6 +9,7 @@ const Search = () => {
     const [popular,setpopular] = useState([])
     const [originalSeries,setoriginalSeries] = useState([])
     const [all,setAll] = useState([])
+    const [search,setSearch] = useState([])
     const [genres,setGeneres] = useState({genres:[]})
     const [num,setNum] = useState(1)
 
@@ -20,6 +21,7 @@ const Search = () => {
             const originalNet = await originalSeriesapi()
             const resultOriginal = originalNet.results
             setAll(resultPop.concat(resultOriginal)) 
+            setSearch(resultPop.concat(resultOriginal))
         }
     
         bringAll()
@@ -27,9 +29,18 @@ const Search = () => {
     },[]);  
 
     function retrieveInputSearchValue(e){
-        console.log(e.target.value)
-    }
+        let search = e.target.value.toLowerCase();
+    let test = all.filter((a)=>{
+        if(a.name !== undefined){
+            return a.name.toLowerCase().includes(search)
+        } if(a.title !== undefined){
+            return a.title.toLowerCase().includes(search)
+        }
+       
+    })
+    setSearch(test)
 
+}
 
 
     return (
@@ -41,7 +52,7 @@ const Search = () => {
                 </div>
                 <div className='Search-menu'>
                     {
-                    all.map((movie)=>{
+                  search.map((movie)=>{
                         let genera = genres.genres.filter((a)=>{
                             if(movie.genre_ids.includes(a.id)){
                                 return a.name
@@ -55,7 +66,6 @@ const Search = () => {
                     }    
                     </div>
                 </div>
-             
         </>
     );
 }
