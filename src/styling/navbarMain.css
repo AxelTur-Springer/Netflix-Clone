@@ -46,7 +46,7 @@ flex-direction: column;
 justify-content: center;
 }
 .NavBarContainerMain .lupita img{
-width: 1.2em;
+    width: 1.5em;
     }
 
 .NavBarContainerMain .contSearchProfileLog .inputCont{
@@ -58,8 +58,10 @@ justify-content: center;
 background-color: transparent;
 border: none;
 outline: none;
-visibility: hidden;
-width: 1em;
+font-size: 1.2em;
+width: 0em;
+color: white;
+
 }
 
 @keyframes searchBarAnimacionShow {
@@ -85,7 +87,8 @@ width: 1em;
     margin-right: 2em;
     }
 .NavBarContainerMain .Profile img{
-width: 2.1em;
+width: 2.5em;
+margin-top: 4px;
 }
 .NavBarContainerMain .Profile .arrow{
     display: flex;
