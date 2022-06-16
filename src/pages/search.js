@@ -19,7 +19,6 @@ const Search = () => {
             const resultPop = Pop.results
             const originalNet = await originalSeriesapi()
             const resultOriginal = originalNet.results
-
             setAll(resultPop.concat(resultOriginal)) 
         }
     
@@ -27,13 +26,15 @@ const Search = () => {
 
     },[]);  
 
-
+    function retrieveInputSearchValue(e){
+        console.log(e.target.value)
+    }
 
 
 
     return (
         <>
-      <NavBarMain />
+      <NavBarMain inputSearch = {retrieveInputSearchValue} />
             <div className='Search-menu'>
                 {
                 all.map((movie)=>{

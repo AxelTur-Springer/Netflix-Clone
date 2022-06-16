@@ -11,9 +11,11 @@ import profileImg from "../../assets/iconProfile.png"
 import arrow from "../../assets/play.png"
 import "../../styling/navbarMain.css"
 
-const NavBarMain = () => {
+
+const NavBarMain = (props) => {
     const [search,setSearch] = useState()
 
+    const navigate = useNavigate()
 
     const dispatch = useDispatch()
     const logout = async()=>{
@@ -38,7 +40,7 @@ const NavBarMain = () => {
        
     }
     function setting(){
-        setSearch(true)
+        navigate("/search")
     }
     return (
         <div className='NavBarContainerMain'>
@@ -60,8 +62,8 @@ const NavBarMain = () => {
             </div>
             <div className='contSearchProfileLog'>
                 <div className='searchBar'>
-             {search === true ? <Navigate to ="/search"/> : null}
                     <input  onClick={setting} 
+                    onChange = {props.inputSearch }
                     type="text" placeholder='titulo,series,peliculas'/>
                 </div>
                 <div className='profileDropDown' onMouseOver={displayMenu} >
