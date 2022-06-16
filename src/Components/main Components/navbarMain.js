@@ -9,6 +9,7 @@ import {loginSuccess, logoutSuccess,UserLoginName} from "../../features/loginChe
 import netflixLogo from "../../assets/logoNetNav.png"
 import profileImg from "../../assets/iconProfile.png"
 import arrow from "../../assets/play.png"
+import lupa from "../../assets/search.png"
 import "../../styling/navbarMain.css"
 
 
@@ -43,6 +44,11 @@ const NavBarMain = (props) => {
         navigate("/search")
         props.inputSearch(e)
     }
+
+    function showSearchBar(e){
+        e.target.parentElement.parentElement.childNodes[1].children[0]
+        .style.animacion = "searchBarAnimacion 1s forwards"
+    }
     return (
         <div className='NavBarContainerMain'>
             <div className='imghomeseriesmoviescont'>
@@ -62,10 +68,15 @@ const NavBarMain = (props) => {
                     </div>
             </div>
             <div className='contSearchProfileLog'>
-                <div className='searchBar'>
-                    <input
-                    onChange = {setting }
-                    type="text" placeholder='titulo,series,peliculas'/>
+                <div className='searchBarCont'>
+                    <div className='lupita'  onClick={showSearchBar}>
+                        <img src={lupa} alt="" />
+                    </div>
+                    <div className='inputCont'>
+                        <input
+                            onChange = {setting }
+                            type="text" placeholder='titulo,series,peliculas'/>
+                    </div>
                 </div>
                 <div className='profileDropDown' onMouseOver={displayMenu} >
                     <div className='Profile'>

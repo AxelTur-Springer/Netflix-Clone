@@ -33,13 +33,40 @@ width: 7em;
     display: flex;
     margin-right: 1em;
 }
-.NavBarContainerMain .contSearchProfileLog .searchBar{
+
+.NavBarContainerMain .contSearchProfileLog  .searchBarCont{
+    display: flex;
+}
+.NavBarContainerMain .contSearchProfileLog  div{
+
+}
+.NavBarContainerMain .lupita{
 display: flex;
 flex-direction: column;
 justify-content: center;
-margin-right: 1em;
 }
 
+.NavBarContainerMain .contSearchProfileLog .inputCont{
+    display: flex;
+flex-direction: column;
+justify-content: center;
+}
+.NavBarContainerMain .contSearchProfileLog .inputCont input{
+background-color: transparent;
+border: none;
+outline: none;
+visibility: hidden;
+width: 1em;
+
+}
+
+@keyframes searchBarAnimacion {
+    100%{
+        width: 100%;
+        visibility: visible;
+    }
+}
+    
 /* managing dropdown stuff*/
 .NavBarContainerMain .Profile {
     display: flex;
