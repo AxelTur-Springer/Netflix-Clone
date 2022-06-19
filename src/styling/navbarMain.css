@@ -73,9 +73,7 @@ color: white;
  
 
 @keyframes searchBarAnimacionHide{
-    0%{
-        width: 11em;
-    }
+ 
     100%{
         width: 0em;
     }
@@ -105,7 +103,6 @@ margin-top: 4px;
 
 
 .contSearchProfileLog{
-    border: solid red;
 }
 .NavBarContainerMain  .profileDropDown{
     position: relative;

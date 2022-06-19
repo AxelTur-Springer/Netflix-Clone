@@ -50,12 +50,16 @@ const NavBarMain = (props) => {
      
     }
     function showSearchBar(e){
+        console.log(e)
         let searchanime = document.getElementsByClassName("inputCont")[0]
         searchanime.childNodes[0].style.animation ="searchBarAnimacionShow 1s forwards"
     }
-    function hideSearchBar(){
+    function hideSearchBar(e){
         let searchanime = document.getElementsByClassName("inputCont")[0]
-        searchanime.childNodes[0].style.animation ="searchBarAnimacionHide 1s forwards"
+
+            searchanime.childNodes[0].style.animation ="searchBarAnimacionHide 1s forwards"
+
+        
 
 
 
@@ -80,17 +84,17 @@ const NavBarMain = (props) => {
             </div>
             <div className='contSearchProfileLog'>
                 <div className='searchBarCont'>
-                    <div className='lupita'  onMouseOver={showSearchBar}>
+                    <div className='lupita'  onMouseOver={showSearchBar}  onMouseLeave={hideSearchBar} >
                         <img src={lupa} alt="" />
                     </div>
-                    <div className='inputCont' onMouseLeave={hideSearchBar} 
+                    <div className='inputCont' onMouseLeave={hideSearchBar} onMouseOver={showSearchBar}
                     onClick={redirect}>
                         <input
                             onChange = {setting }
                             type="text" placeholder='titulo,series,peliculas'/>
                     </div>
                 </div>
-                <div className='profileDropDown' onMouseOver={displayMenu} >
+                <div className='profileDropDown' onMouseOver={displayMenu}  >
                     <div className='Profile'>
                         <div>
                             <img src={profileImg} alt="" />
