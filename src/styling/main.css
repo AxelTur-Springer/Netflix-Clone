@@ -238,6 +238,9 @@ justify-content: space-between;
 
 .categories .ScrollBtn{
 z-index: 3;
+background-color: rgba(0, 0, 0, 0.212);
+height: 8em;
+border-radius: 5px;
 }
 
 .categories .ScrollBtn:hover{
@@ -246,13 +249,14 @@ z-index: 3;
     }
     .categories .ScrollBtn.Left{
         position: absolute;
-        top: 5em;
+        top: 3em;
+        left: 3px;
         display: flex;
         }
     .categories .ScrollBtn.Right{
         position: absolute;
         right: 10px;
-        top: 5em;
+        top: 3em;
         display: flex;
         
     }
