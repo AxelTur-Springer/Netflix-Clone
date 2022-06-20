@@ -51,29 +51,27 @@ justify-content: center;
 
 .NavBarContainerMain .contSearchProfileLog .inputCont{
     display: flex;
-flex-direction: column;
-justify-content: center;
 }
 .NavBarContainerMain .contSearchProfileLog .inputCont input{
 background-color: transparent;
 border: none;
 outline: none;
 font-size: 1.4em;
-width: 0em;
 color: white;
+width: 0em;
+animation: searchBarAnimacionHide 1s forwards;
 
 }
 
 @keyframes searchBarAnimacionShow {
     100%{
         width: 11em;
-        visibility: visible;
     }
 }
  
 
 @keyframes searchBarAnimacionHide{
- 
+
     100%{
         width: 0em;
     }

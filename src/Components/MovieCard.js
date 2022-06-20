@@ -15,12 +15,13 @@ export default function MovieCards(props){
        return(
         <>
            <div className='MovieCardCont'  onMouseEnter={showMenu} onMouseLeave={hideMenu}  >
-         
                <div className='movieCardImgCont'>
-               <div className="title">
-                <p>{props.name}</p>
-            </div>
-                   <img src={props.img} alt=""  />
+              
+                <div className = "backGround" style={ {backgroundImage: `url(${props.img})`}}>
+                <div className="title">
+                        <p>{props.name}</p>
+                </div>
+                </div>
                </div>
                    {<HiddenMenu genero = {props.genero} />}
            </div>

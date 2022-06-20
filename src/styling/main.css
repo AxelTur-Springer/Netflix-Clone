@@ -1,6 +1,6 @@
 /* main menu styling*/
 .Main-menu{
-    background-color: #272727;
+    background-color: #141414;
     margin-top: 3.01em;
     color: white;
     width: 100%;
@@ -10,19 +10,19 @@
 /* styling for bilboard intro*/
 .previewMenu{
     height: 85vh;
-    width: 98.9%;
+    width: 100%;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-left: 1em;
     font-weight: bold;
     border: none;
 }
 .previewMenu .Descripcion{
         width: 40em;
+        padding: 0em 1em;
 
 }
 .previewMenu .Descripcion h2{
@@ -36,6 +36,8 @@
     display: flex;
     justify-content: space-between;
     width: 30em;
+    padding: 0em 1em;
+
 }
 .previewMenu .botones .PlayBtn{
 display: flex;
@@ -144,12 +146,22 @@ border-radius: 5px;
 
 
 .MovieCardCont{
-    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    
 
 }
+.MovieCardCont .backGround{
+    width: 13em;
+    height: 8em;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 5px;
+
+
+}
+
     .MovieCardCont:hover{
         animation: menuHover 1s  forwards;
         
@@ -163,11 +175,7 @@ border-radius: 5px;
     .movieCardImgCont{
         padding-right: 1em;
     }   
-    .movieCardImgCont img{
-        width: 13em;
-        border-radius: 5px;
-
-    }
+  
 
     .Main-menu .MovieCardCont .title{
         position: absolute;

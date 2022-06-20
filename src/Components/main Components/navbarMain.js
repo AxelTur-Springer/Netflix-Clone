@@ -42,7 +42,7 @@ const NavBarMain = (props) => {
              
        
     }
-    function redirect(){
+    function redirect(e){
         navigate("/search")
     }
     function setting(e){
@@ -50,14 +50,12 @@ const NavBarMain = (props) => {
      
     }
     function showSearchBar(e){
-        console.log(e)
         let searchanime = document.getElementsByClassName("inputCont")[0]
-        searchanime.childNodes[0].style.animation ="searchBarAnimacionShow 1s forwards"
+        searchanime.childNodes[1].style.animation ="searchBarAnimacionShow 1s forwards"
     }
     function hideSearchBar(e){
         let searchanime = document.getElementsByClassName("inputCont")[0]
-
-            searchanime.childNodes[0].style.animation ="searchBarAnimacionHide 1s forwards"
+        searchanime.childNodes[1].style.animation ="searchBarAnimacionHide 0s forwards"
 
         
 
@@ -84,11 +82,13 @@ const NavBarMain = (props) => {
             </div>
             <div className='contSearchProfileLog'>
                 <div className='searchBarCont'>
-                    <div className='lupita'  onMouseOver={showSearchBar}  onMouseLeave={hideSearchBar} >
-                        <img src={lupa} alt="" />
-                    </div>
-                    <div className='inputCont' onMouseLeave={hideSearchBar} onMouseOver={showSearchBar}
+                    <div className='inputCont' 
+                    onMouseLeave={hideSearchBar} 
+                    onMouseOver={showSearchBar}
                     onClick={redirect}>
+                         <div className='lupita'    >
+                            <img src={lupa} alt="" />
+                        </div>
                         <input
                             onChange = {setting }
                             type="text" placeholder='titulo,series,peliculas'/>
