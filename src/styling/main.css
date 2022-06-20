@@ -5,7 +5,9 @@
     color: white;
     width: 100%;
 }
-
+.Main-menu h2{
+margin: 0px;
+}
 
 /* styling for bilboard intro*/
 .previewMenu{
@@ -154,7 +156,7 @@ border-radius: 5px;
 }
 .MovieCardCont .backGround{
     width: 13em;
-    height: 8em;
+    height: 9em;
     background-size: cover;
     background-repeat: no-repeat;
     border-radius: 5px;
@@ -169,7 +171,7 @@ border-radius: 5px;
     
     @keyframes menuHover{
         100%{
-            transform: scale(1.18);
+            transform: scale(1.16);
         }
     }
     .movieCardImgCont{
@@ -178,7 +180,6 @@ border-radius: 5px;
   
 
     .Main-menu .MovieCardCont .title{
-        position: absolute;
         color: white;
         display: flex;
         flex-direction: column;

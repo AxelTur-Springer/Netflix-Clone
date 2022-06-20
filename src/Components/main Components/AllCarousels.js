@@ -43,12 +43,12 @@ function CarouselPopular(){
     
 return (
     <div className='AllMightContainer'>
-    
+        <h2>Populares Ahora</h2>
+
  <div  className='ScrollBtn Left'>
         <button onClick={scrollLeft}><img src={left} alt="" /></button>
     </div>
 <div className='carouselContainer Popular'>
-    <h3>Populares Ahora</h3>
    
     <div className='carusel Popular'>  
         {
@@ -120,11 +120,12 @@ return (
 
 return (
     <div className='AllMightContainer'>
+                <h2>Originales de Netflix</h2>
+
           <div  className='ScrollBtn Left'>
             <button onClick={scrollLeft}> <img src={left} alt="" /></button>
         </div>
         <div className='carouselContainer Netflix'>
-        <h3>Originales de Netflix</h3>
 
         <div className='carusel OriginalNetflix' >  
       
