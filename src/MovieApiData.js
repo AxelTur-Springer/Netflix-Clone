@@ -20,6 +20,24 @@ async function popularApi() {
       console.error(err);
     }
   }
+  async function topRatedMovies() {
+    try{
+      let response = await fetch(`https://api.themoviedb.org/3/movie/top_rated?api_key=${API_KEY}&language=en-US&page=1`)
+      let data = await response.json();
+      return  await data
+    }catch(err){
+      console.error(err);
+    }
+  }
+  async function PopularSeries() {
+    try{
+      let response = await fetch(`  https://api.themoviedb.org/3/tv/popular?api_key=${API_KEY}&language=en-US&page=1`)
+      let data = await response.json();
+      return  await data
+    }catch(err){
+      console.error(err);
+    }
+  }
   async function genresList() {
     try{
       let response = await fetch(`https://api.themoviedb.org/3/genre/movie/list?api_key=${API_KEY}&language=en-US`)
@@ -31,7 +49,6 @@ async function popularApi() {
   }
   
 
-
-export {popularApi,originalSeriesapi, genresList}
+export {popularApi,originalSeriesapi,topRatedMovies, genresList,PopularSeries}
 
 

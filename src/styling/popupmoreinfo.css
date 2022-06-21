@@ -18,6 +18,7 @@ background-color: rgba(2, 2, 2, 0.493);
     height: 35em;
     margin: auto;
     border-radius: 10px;
+
 }
 .popUpMoreInfo .ImgBackground{
 display: flex;
@@ -29,6 +30,7 @@ background-size: cover;
 background-position: 0px -20px;
 background-repeat: no-repeat;
 position: relative;
+border-radius: 5px;
 }
 .popUpMoreInfo .ImgBackground .btnClose{
     position: absolute;

@@ -3,7 +3,7 @@ import { useState,useEffect } from 'react';
 import NavBarMain from '../Components/main Components/navbarMain'; 
 import "../styling/main.css"
 import { BilboardMain } from '../Components/main Components/BilboardIntro';
-import { CarouselPopular ,CarouselOriginalNet } from '../Components/main Components/AllCarousels';
+import { CarouselPopular ,CarouselOriginalNet,CarouselTopRatedMovies,CarouselPopularSeries } from '../Components/main Components/AllCarousels';
 const Main = () => {
    
     
@@ -16,6 +16,8 @@ const Main = () => {
                 <div className='categories'>
                            <CarouselOriginalNet />
                             <CarouselPopular />
+                            <CarouselTopRatedMovies/>
+                            <CarouselPopularSeries />
                 </div>
             </div>
         </>
