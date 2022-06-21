@@ -1,0 +1,86 @@
+.popUpContMoreInfo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    margin-left: auto;
+margin-right: auto;
+left: 0;
+right: 0;
+text-align: center;
+color: white;
+height: 100%;
+background-color: rgba(2, 2, 2, 0.493);
+}
+.popUpMoreInfo{
+    background-color: black;
+    width: 40em;
+    height: 35em;
+    margin: auto;
+    border-radius: 10px;
+}
+.popUpMoreInfo .ImgBackground{
+display: flex;
+flex-direction: column;
+justify-content: flex-end;
+width: 100%;
+height: 20em;
+background-size: cover;
+background-position: 0px -20px;
+background-repeat: no-repeat;
+position: relative;
+}
+.popUpMoreInfo .ImgBackground .btnClose{
+    position: absolute;
+    color: white;
+    top: 0px;    
+    right: 0px;
+}
+.popUpMoreInfo .ImgBackground{
+    text-align: left;
+}
+
+.ContainerButtons{
+    display: flex;
+    justify-content: space-between;
+    }
+        .popUpMoreInfo .playAddColection{
+            display: flex;
+            justify-content: flex-start;
+        }
+            .popUpMoreInfo  button{
+            border: none;
+            background-color: transparent;
+            }
+            .popUpMoreInfo button div{
+                border: rgba(255, 255, 255, 0.527) solid 2px;
+                border-radius: 50%;
+                height: 3.5em;
+                width: 3.5em;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                
+                }
+                .popUpMoreInfo button div img{
+                width: 18px;
+                height: 18px;
+                margin: auto;
+    
+                    }
+                .popUpMoreInfo .playAddColection .playImgCont{
+                    background-color: white;
+                }
+                .popUpMoreInfo .playAddColection .playImgCont img{
+                    margin-left: 15px;
+                }
+    
+        .popUpMoreInfo .InfoGeneres{
+            font-size: 0.6em;
+            padding-left: 0.5em;
+        }
+
+        .popUpMoreInfo .DescripcionAndSuch{
+            padding: 1em;
+            font-size: 1.2em;
+        }

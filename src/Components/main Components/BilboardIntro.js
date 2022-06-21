@@ -4,10 +4,11 @@ import {Link } from 'react-router-dom';
 import randomNetflixMovies from '../../randomMovieObj';
 import play from "../../assets/playIcon.png"
 import info from "../../assets/informacion.png"
-
+import PopUpInfo from '../PopUpMoreInfo';
 export const BilboardMain = () => {
 
     const [randomOriginalNet,setrandomOriginalNet] = useState([])
+    const [interval,setinterval] = useState(true)
 
     
     useEffect(() => {
@@ -17,7 +18,6 @@ export const BilboardMain = () => {
 
 
  
-
 function testing(){
     let arrayOfPreviewsCompo =[];
     let x = 0;
@@ -32,10 +32,11 @@ function testing(){
         )
     }
     setrandomOriginalNet(arrayOfPreviewsCompo[x])
-    setInterval(() => {
+setInterval(() => {
         x === 19 ? x = 0 : x+=1
         setrandomOriginalNet(arrayOfPreviewsCompo[x])
     }, 10000);
+
 }
 
     return (
@@ -43,16 +44,47 @@ function testing(){
                     {randomOriginalNet}          
                 </>
     );
+
+    
 }
 
 
 
 function PreviewMenu(props){
+    const [moreInfo,setMoreInfo] = useState(false)
+    const [stateProp,setstateProp] = useState()
+
+    useEffect(() => {
+   
+    },[]);
+
+
+    function DisplayMoreInfo(){
+        setMoreInfo(true)
+
+        setstateProp(
+            <PopUpInfo title = {props.title} 
+            descripcion = {props.descripcion}
+            img = {props.img}
+            showOrHide = {hideDisplayMoreInfo}
+            /> 
+        )
+
+    }
+    function hideDisplayMoreInfo(){
+        setMoreInfo(false)
+
+    }
 
     return(
-        <div className='previewMenu' style={ {backgroundImage: `url(${props.img})`}}>
+        <>
+                    {moreInfo ?stateProp : null}
+
+        <div className='previewMenu'
+         style={ {backgroundImage: `url(${props.img})`}}>
+          
             <div className='Descripcion'>
-                <h2>{props.title}</h2>
+                <h1>{props.title}</h1>
                 <p>{props.descripcion}</p>
             </div>
                 <div className='botones'>
@@ -75,7 +107,9 @@ function PreviewMenu(props){
                                     <img src={info} alt="" />
                                 </div>
                                 <div>
-                                    <p>Informacion</p>
+                                   <button onClick={DisplayMoreInfo}>
+                                        Informacion
+                                    </button> 
                                 </div>
                             </div>
                         </button>
@@ -83,6 +117,8 @@ function PreviewMenu(props){
                     </div>
                 </div>
         </div>
+        </>
+
     )
 }
 
