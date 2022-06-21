@@ -101,19 +101,12 @@ function PreviewMenu(props){
                         </Link>
                     </div>
                     <div className='Info'>
-                        <button>
-                            <div>
+                        <button onClick={DisplayMoreInfo}>
                                 <div>
                                     <img src={info} alt="" />
+                                    <p> Informacion</p>
                                 </div>
-                                <div>
-                                   <button onClick={DisplayMoreInfo}>
-                                        Informacion
-                                    </button> 
-                                </div>
-                            </div>
                         </button>
-                  
                     </div>
                 </div>
         </div>

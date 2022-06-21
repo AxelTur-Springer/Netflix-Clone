@@ -39,7 +39,6 @@ margin: 0px;
     justify-content: space-between;
     width: 30em;
     padding: 0em 1em;
-
 }
 .previewMenu .botones .PlayBtn{
 display: flex;
@@ -79,9 +78,11 @@ border-radius: 5px;
 
 } 
 .previewMenu .botones .Info button{
+    display: flex;
     background-color: #ffffff00;
     border: none;
     height: 100%;
+    color: white;
 
  } 
 .previewMenu .botones .Info button div{
@@ -89,18 +90,11 @@ border-radius: 5px;
     justify-content: center;
     width: 14em;
     font-size: 1.1em;
-
-
  }   
- .previewMenu .botones .Info button div div{
- display: flex;
- flex-direction: column;
- justify-content: center;
- font-weight: bold;
- color: white;
- width: fit-content;
- margin-left: 1em;
-    }  
+ .previewMenu .botones .Info button div p{
+margin-left: 1em;
+ }   
+
  .previewMenu .botones .Info button div img{
  width: 2em;
  height: 2em;
