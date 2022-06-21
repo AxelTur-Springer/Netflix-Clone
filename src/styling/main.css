@@ -119,7 +119,7 @@ border-radius: 5px;
     justify-content: flex-start;
     flex-direction: column;
     position: relative;
-    height: 15em;
+    height: 17em;
     overflow-x: hidden;
     overflow-y: hidden;
     scrollbar-width: none; 
@@ -155,8 +155,8 @@ border-radius: 5px;
 
 }
 .MovieCardCont .backGround{
-    width: 13em;
-    height: 9em;
+    width: 18em;
+    height: 11em;
     background-size: cover;
     background-repeat: no-repeat;
     border-radius: 5px;
@@ -171,7 +171,7 @@ border-radius: 5px;
     
     @keyframes menuHover{
         100%{
-            transform: scale(1.16);
+            transform: scale(1.14);
         }
     }
     .movieCardImgCont{
@@ -184,13 +184,15 @@ border-radius: 5px;
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
-        height: 8em;
+        height: 9em;
+        margin-left: 0.5em;
         max-width: 13em;
+        font-size: 1.2em;
     }
 .HiddenMenu{
     display: none;
     flex-direction: column;
-    width: 13em;
+    width: 18em;
     height: 100%;
     justify-content: space-around;
     background-color: rgb(77, 77, 77);
@@ -240,7 +242,7 @@ justify-content: space-between;
 .categories .ScrollBtn{
 z-index: 3;
 background-color: rgba(0, 0, 0, 0.212);
-height: 9em;
+height: 11em;
 border-radius: 5px;
 }
 
