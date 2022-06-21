@@ -5,7 +5,7 @@
     justify-content: space-between;
     color: white;
     padding: 0.5em 0em;
-    font-size: 0.8em;
+    font-size: 1em;
     position: fixed;
     top: 0px;
     z-index: 1;
@@ -44,6 +44,7 @@ width: 7em;
 display: flex;
 flex-direction: column;
 justify-content: center;
+margin-right: 0.5em;
 }
 .NavBarContainerMain .lupita img{
     width: 1.5em;
@@ -79,27 +80,26 @@ width: 0em;
     display: flex;
     flex-direction: row;
     margin-right: 2em;
+    width: 100%;
     }
 .NavBarContainerMain .Profile img{
+border-radius: 5px;
 width: 2.5em;
-margin-top: 4px;
 }
 .NavBarContainerMain .Profile .arrow{
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    transform: rotate(270deg);
+    width: 0.7em;
+    height: 0.7em;
+    margin-top: 1em;
     margin-left: 0.3em;
-    transform: rotate(90deg)
     }
     .NavBarContainerMain .Profile .arrow img{
-         width: 0.5em;
+         width: 0.7em;
+         height: 0.7em;
         }
 
 
-
-
-.contSearchProfileLog{
-}
 .NavBarContainerMain  .profileDropDown{
     position: relative;
     z-index: 1;
@@ -110,9 +110,53 @@ margin-top: 4px;
     flex-direction: column;
     justify-content: flex-end;
     position: absolute;
-    top: 3.4em;
+    top: 2.8em;
     right: 2em;
-    height: 20em;
-    width: 10em;
-    background-color: black;
+    height: fit-content;
+    width: 13em;
+    background-color: rgb(54, 54, 54);
+    border-radius: 5px;
 }
+.NavBarContainerMain .profileDropDown .DropDown .All{
+    font-size: 1em;
+    padding: 0em 1em;
+   }
+.NavBarContainerMain .profileDropDown .DropDown img{
+ width: 1.5em;
+}
+.NavBarContainerMain .profileDropDown .DropDown .once{
+    display: flex;
+}
+.NavBarContainerMain .profileDropDown .DropDown .once div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.NavBarContainerMain .profileDropDown .DropDown .once div p{
+    margin-left: 0.5em;
+}
+.NavBarContainerMain .profileDropDown .DropDown .Users{
+  padding-top: 1em;
+}
+.NavBarContainerMain .profileDropDown .DropDown .Users img{
+    width: 3em;
+    border-radius: 5px;
+}
+.NavBarContainerMain .profileDropDown .DropDown .AccountHelp{
+border-top:2px solid rgb(128, 128, 128);
+border-bottom: 2px solid rgb(128, 128, 128);
+
+padding: 0%;
+}
+.NavBarContainerMain .profileDropDown .DropDown .logOut{
+padding: 1em 0em;
+display: flex;
+justify-content: center;
+
+}
+.NavBarContainerMain .profileDropDown .DropDown .logOut button{
+    border: none;
+    background-color: transparent;
+    color: white;
+    font-size: 1em;
+    }

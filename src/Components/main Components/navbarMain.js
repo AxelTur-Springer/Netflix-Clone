@@ -11,6 +11,9 @@ import netflixLogo from "../../assets/logoNetNav.png"
 import profileImg from "../../assets/iconProfile.png"
 import arrow from "../../assets/play.png"
 import lupa from "../../assets/search.png"
+import helpIcon from "../../assets/informacion.png"
+import userIcon from "../../assets/user.png"
+import editIcon from "../../assets/edit.png"
 import "../../styling/navbarMain.css"
 import {valueChange} from "../../features/valueSearch"
 
@@ -104,7 +107,7 @@ const NavBarMain = (props) => {
                             type="text" placeholder='titulo,series,peliculas'/>
                     </div>
                 </div>
-                <div className='profileDropDown' onMouseOver={displayMenu}  >
+                <div className='profileDropDown' onMouseOver={displayMenu}  onMouseLeave={hideMenu} >
                     <div className='Profile'>
                         <div>
                             <img src={profileImg} alt="" />
@@ -113,8 +116,48 @@ const NavBarMain = (props) => {
                             <img src={arrow} alt="" />
                         </div>
                     </div>
-                    <div className='DropDown' onMouseLeave={hideMenu} >
-                        <button onClick={logout}>Log Out</button>
+                    <div className='DropDown' onMouseLeave={hideMenu} onMouseOver={displayMenu} >
+                        <div className='All'>
+                            <div className=' UsersContainer'>
+                                <div className='once Users'>
+                                    <div> 
+                                        <img src={profileImg} alt="" />
+                                    </div>
+                                    <div>
+                                        <p> Users Name</p>
+                                    </div>
+                                </div>
+                                <div className='once'>
+                                    <div>
+                                        <img src={editIcon} alt="" />
+                                    </div>
+                                    <div>
+                                        <p>Administer Users</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className='AccountHelp'>
+                                <div className='once'>
+                                    <div>
+                                        <img src={userIcon} alt="" />
+                                    </div>
+                                    <div>
+                                        <p>Account</p>
+                                    </div>
+                                </div>
+                                <div className='once'>
+                                    <div>
+                                        <img src={helpIcon} alt="" />
+                                    </div>
+                                    <div>
+                                        <p>Help Center</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className='logOut'>
+                                <button onClick={logout}>Log out of Netflix</button>
+                            </div>
+                    </div>
                     </div>
                 </div>
             </div>
