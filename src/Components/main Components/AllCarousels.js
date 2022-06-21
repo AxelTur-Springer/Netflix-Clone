@@ -10,7 +10,7 @@ import MovieCards from '../MovieCard';
 function CarouselPopular(){
     
     const [popular,setpopular] = useState([])
-    const [genres,setGeneres] = useState([])
+    const [genres,setGeneres] = useState({genres:[]})
 
     useEffect(() => {
         genresList().then((data)=>{setGeneres(data) })

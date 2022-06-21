@@ -16,11 +16,14 @@ import {valueChange} from "../../features/valueSearch"
 
 
 const NavBarMain = (props) => {
-    const [search,setSearch] = useState()
-
     const navigate = useNavigate()
     const Store = useSelector((store)=>{return store})
     const dispatch = useDispatch()
+    
+    useEffect(() => {
+
+    }, []);
+
     const logout = async()=>{
         await signOut(auth)
         dispatch(loginSuccess("false"))
@@ -50,13 +53,19 @@ const NavBarMain = (props) => {
      
     }
     function showSearchBar(e){
-        let searchanime = document.getElementsByClassName("inputCont")[0]
-        searchanime.childNodes[1].style.animation ="searchBarAnimacionShow 1s forwards"
+         let searchanime = document.getElementsByClassName("inputCont")[0]
+            if(searchanime.childNodes[1].style.animation === "0s ease 0s 1 normal forwards running searchBarAnimacionShow"){
+            }
+            else{
+                searchanime.childNodes[1].style.animation ="searchBarAnimacionShow 0s forwards"
+            }
+  
+        
     }
     function hideSearchBar(e){
         let searchanime = document.getElementsByClassName("inputCont")[0]
-        searchanime.childNodes[1].style.animation ="searchBarAnimacionHide 0s forwards"
 
+        searchanime.childNodes[1].style.animation ="searchBarAnimacionHide 1s forwards"
         
 
 
@@ -91,6 +100,7 @@ const NavBarMain = (props) => {
                         </div>
                         <input
                             onChange = {setting }
+                            autoFocus
                             type="text" placeholder='titulo,series,peliculas'/>
                     </div>
                 </div>

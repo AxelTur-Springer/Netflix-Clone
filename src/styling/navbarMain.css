@@ -59,8 +59,6 @@ outline: none;
 font-size: 1.4em;
 color: white;
 width: 0em;
-animation: searchBarAnimacionHide 1s forwards;
-
 }
 
 @keyframes searchBarAnimacionShow {
