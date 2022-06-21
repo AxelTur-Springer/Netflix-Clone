@@ -35,7 +35,7 @@ const Search = () => {
         }
     
         bringAll()
-
+        console.log(all)
     },[]);  
     function retrieveInputSearchValue(e){
         console.log(e)
