@@ -262,3 +262,53 @@ border-radius: 5px;
         background-color: transparent;
         color: white;
     }
+
+
+    @media only screen and (max-width: 768px) {
+  
+   
+        /* styling for bilboard intro*/
+    
+        .previewMenu .Descripcion{
+                width: 95%;
+                padding: 0px;
+        
+        }
+        .previewMenu .Descripcion h2{
+            font-size: 4em;
+        }
+        .previewMenu .Descripcion p{
+            width: 95%;
+        }
+        .previewMenu .botones{
+            display: flex;
+            width: 100%;
+            justify-content:space-around;
+            height: 3em;
+            padding: 0px;
+        }
+        .previewMenu .botones .PlayBtn{
+            width: 9em;
+        }   
+        
+        .previewMenu .botones .PlayBtn img{
+            width: 1em;
+            height: 1em;
+        }   
+        .previewMenu .botones .Info{
+            width: 9em;
+        } 
+    
+        .previewMenu .botones .Info button div{
+            width: 9em;
+         }   
+         .previewMenu .botones .Info button div p{
+        margin-left: 1em;
+         }   
+        
+         .previewMenu .botones .Info button div img{
+         width: 1em;
+         height: 1em;
+         }  
+    
+     }
