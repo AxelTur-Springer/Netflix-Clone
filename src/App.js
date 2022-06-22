@@ -16,6 +16,7 @@ import HomeScreen from "./pages/homeScreen";
 import Main from "./pages/main";
 import Register from "./pages/register";
 import Search from "./pages/search";
+import Series from "./pages/Series";
 import { YoutubeEmbed } from "./pages/Reproduce";
 import { store } from "./app/store";
 import { useSelector, useDispatch } from 'react-redux';
@@ -77,10 +78,16 @@ function App() {
             <YoutubeEmbed />
           )} />
            <Route path='/search' element = {
-          user == undefined? (
+          user === undefined? (
             <Navigate replace to="/home" />
           ) : (
             <Search />
+          )} />
+            <Route path='/Series' element = {
+          user === undefined? (
+            <Navigate replace to="/home" />
+          ) : (
+            <Series />
           )} />
 </Routes>
     </BrowserRouter >

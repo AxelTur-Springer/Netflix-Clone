@@ -1,0 +1,28 @@
+.SeriesAndFilter{
+    display: flex;
+    justify-content: space-between;
+}
+.SelectorGenero{
+    position: relative;
+}
+.LabelForFilter{
+    width: 8em;
+    text-align: center;
+    margin-top: 3em;
+    color: white;
+}
+.genreOptions{
+    position: absolute;
+    display: none;
+    width: 15em;
+    left: -11em;
+    top: 4.2em;
+    background-color: black;
+    padding: 1em;
+    border-radius: 5px;
+}
+.genreOptions button{
+border: none;
+background-color: transparent;
+color: white;
+}
