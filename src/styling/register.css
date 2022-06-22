@@ -43,3 +43,27 @@ padding: 1em 0em;
 margin: 1em auto;
 border-radius: 2px;
 }
+.WrongEmail{
+    color: #ffa00a;
+    font-weight: bold;
+    margin-top: 0px;
+}
+.WrongEmail p 
+ {
+    margin: 0px;
+}
+ .undefinedEmail{
+    display: none;
+}
+.WrongPassWord{
+    color: #ffa00a;
+    font-weight: bold;
+    margin-top: 0px;
+}
+.WrongPassWord p 
+ {
+    margin: 0px;
+}
+.undefinedPassWord{
+    display: none;
+}

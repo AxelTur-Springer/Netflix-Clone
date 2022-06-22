@@ -17,32 +17,54 @@ const HomeScreen = () => {
     const [registerEmail,setRegisterEmail]= useState("")
     const [isClient,setisClient]= useState()
     const [isRegistered,setisRegistered]= useState()
+    const [wrongDataEmail,setwrongDataEmail]= useState("undefinedEmail")
+    
 
 
 
     async function Register(){
-       let result = await fetchSignInMethodsForEmail(auth, registerEmail) 
-        if(result.length !== 0){
-            renderPopUp(true);
-            setTimeout(() => {
-                setisClient(true)
-            }, 5000);
-        }else{
-            renderPopUp(false)
-            setTimeout(() => {
-                setisClient(false)
-            }, 5000);
+        let input = document.getElementsByClassName("InputCont")[0]
+
+       try{
+            let result = await fetchSignInMethodsForEmail(auth, registerEmail) 
+        
+            if(result.length !== 0){
+                renderPopUp(true);
+                setwrongDataEmail('undefinedEmail')
+                input.style.borderBottom = "none"
+                setTimeout(() => {
+                    setisClient(true)
+                }, 5000);
+            }else{
+                renderPopUp(false)
+                setwrongDataEmail('undefinedEmail')
+                input.style.borderBottom = "none"
+                setTimeout(() => {
+                    setisClient(false)
+                }, 5000);
+            }
+        }catch(err){
+            setwrongDataEmail('WrongEmail')
+            input.style.borderBottom = "#ffa00a solid"
         }
+    
+     
     }
 
 function renderPopUp(account){
-    account ?setisRegistered(true):setisRegistered(false)
+    if(account){
+        setisRegistered(true)
+    }else if(account === false){
+        setisRegistered(false)
+    }
 
 }
 return (
         <div className='homeScreenContainer'>
-            {isRegistered ? <PopUp  exists ={isRegistered} /> : 
-            isRegistered === undefined? null :<PopUp exists ={isRegistered} /> }
+            {
+            isRegistered ? <PopUp  exists ={isRegistered} /> : 
+            isRegistered === undefined? null :<PopUp exists ={isRegistered} /> 
+            }
            
             {isClient ? (
             <Navigate replace to="/login" />
@@ -63,12 +85,16 @@ return (
                         </div>
                         <div className='EnterEmailInputBtn'>
                             <div className='InputCont'>
-                                <input type="text" placeholder='Email address' onChange={(event)=>{setRegisterEmail(event.target.value)}}/>
+                                <input type="email" placeholder="Enter Email" onChange={(event)=>{setRegisterEmail(event.target.value)}}/>
                             </div>
                             <div className='btnCont'>
                                 <button onClick={Register}>Get Started</button>
                             </div>
+                            <div className={wrongDataEmail}>
+                                <p>Please Enter Valid Email</p>
+                            </div>
                         </div>
+                        
                     </div>
             </div>
         </div>

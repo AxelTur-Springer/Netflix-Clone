@@ -29,7 +29,6 @@ function CarouselPopular(){
         }
         carosuel[0].scrollTo({ left: scroll, behavior: 'smooth' })
     }
-    
     function scrollRight(e){
         const carosuel = document.getElementsByClassName('carouselContainer Popular')
         let widthImg= document.getElementsByClassName("MovieCardCont")[0].getBoundingClientRect().width
@@ -62,12 +61,13 @@ return (
             img={"https://image.tmdb.org/t/p/w500" + movie.backdrop_path} 
             genero ={genera}
             name ={movie.title=== undefined? movie.name: movie.title}
+            key={movie.id}
+
             />
             
         })
         }    
     </div>
-   
   </div>
   <div className='ScrollBtn Right' >
         <button onClick={scrollRight}> <img src={right} alt="" /></button>
@@ -113,7 +113,6 @@ return (
         carosuel[0].scrollTo({ left: scroll, behavior: 'smooth' })
     }
     
-    console.log(genres)
 
 
     
@@ -140,6 +139,8 @@ return (
                 img={"https://image.tmdb.org/t/p/w500" + movie.backdrop_path} 
                 genero ={ genera}
                 name ={movie.title=== undefined? movie.name: movie.title}
+                key={movie.id}
+
                 />
                 })
             }    
@@ -190,7 +191,6 @@ function CarouselTopRatedMovies(){
         carosuel[0].scrollTo({ left: scroll, behavior: 'smooth' })
     }
     
-    console.log(genres)
 
 
     
@@ -217,6 +217,8 @@ return (
                 img={"https://image.tmdb.org/t/p/w500" + movie.backdrop_path} 
                 genero ={ genera}
                 name ={movie.title=== undefined? movie.name: movie.title}
+                key={movie.id}
+
                 />
                 })
             }    
@@ -265,7 +267,6 @@ function CarouselPopularSeries(){
         carosuel[0].scrollTo({ left: scroll, behavior: 'smooth' })
     }
     
-    console.log(genres)
 
 
     
@@ -292,6 +293,8 @@ return (
                 img={"https://image.tmdb.org/t/p/w500" + movie.backdrop_path} 
                 genero ={ genera}
                 name ={movie.title=== undefined? movie.name: movie.title}
+                key={movie.id}
+
                 />
                 })
             }    

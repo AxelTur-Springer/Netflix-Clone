@@ -22,7 +22,8 @@ const Register = () => {
     const store = useSelector((store)=>{return store});
     const stateOfLogIn = useSelector((store)=>{return store.LogedInReducer})
     const dispatch = useDispatch();
-    //console.log(store)
+    const [wrongDataEmail,setwrongDataEmail]= useState("undefinedEmail")
+    const [wrongPassWord,setwrongPassWord]= useState("undefinedPassWord")
 
 
 useEffect(() => {
@@ -36,15 +37,33 @@ useEffect(() => {
 
 }, [])
     async function RegisterNew(){
+        let input = document.getElementsByClassName("InputsCont")[0]
+        let passInput = document.getElementsByClassName("InputsCont")
+        [0].childNodes[2]
+
         try{
             const user = await createUserWithEmailAndPassword(
                 auth,
                 registerEmail,
                 registerPassword)
                 dispatch(loginSuccess("true"))
+                setwrongDataEmail("undefinedEmail")
+                setwrongPassWord("undefinedPassWord")
+                input.childNodes[0].style.borderBottom = "none"
+                passInput.style.borderBottom = "none"
+
             }
         catch(error){
-            console.log(error);
+            if( input.childNodes[0].value.includes("@") === false){
+                setwrongDataEmail('WrongEmail')
+                input.childNodes[0].style.borderBottom = "#ffa00a solid"
+            }
+            if(passInput.value.length < 6){
+                setwrongPassWord("WrongPassWord")
+                passInput.style.borderBottom = "#ffa00a solid"
+            
+            }
+   
         }
     }
     const login = async() =>{
@@ -73,9 +92,19 @@ useEffect(() => {
                 <div className='greetInputBtn'>
                     <h1>Register</h1>
                         <div className='InputsCont'>
-                            <input type="text" name="" id="" placeholder='email' onChange={(event)=>{setRegisterEmail(event.target.value)}}/>
-                            <input type="text" name="" id="" placeholder='password' onChange={(event)=>{setRegisterPassword(event.target.value)}}/>
-                            <input type="text" name="" id="" placeholder='Name'/>
+                            <input type="email" name="" id="" placeholder='email' onChange={(event)=>{setRegisterEmail(event.target.value)}}/>
+                            <div className={wrongDataEmail}>
+                                <p>Please Enter Valid Email</p>
+                            </div>
+                            <input
+                              type="password"
+                              placeholder='password' 
+                              onChange={(event)=>{setRegisterPassword(event.target.value)}}
+                              />
+                                 <div className={wrongPassWord}>
+                                <p>Please enter password longer than 6 caracter</p>
+                            </div>
+                            <input type="text" name="" placeholder='Name'/>
                         </div>
                         <div className='buttonCont'>
                             <button onClick={RegisterNew}>Register</button>

@@ -72,8 +72,8 @@ useEffect(() => {
                 <div className='greetInputBtn'>
                     <h1>Sign In</h1>
                         <div className='InputsCont'>
-                            <input type="text" name="" id="" placeholder='email' onChange={(event)=>{setloginEmail(event.target.value)}}/>
-                            <input type = "password" name="" id="" placeholder='password' onChange={(event)=>{setLoginPassword(event.target.value)}}/>
+                            <input type="text" name="" placeholder='email' onChange={(event)=>{setloginEmail(event.target.value)}}/>
+                            <input type = "password" name=""  placeholder='password' onChange={(event)=>{setLoginPassword(event.target.value)}}/>
                         </div>
                         <div className='buttonCont'>
                             <button onClick={login}>Sign In</button>

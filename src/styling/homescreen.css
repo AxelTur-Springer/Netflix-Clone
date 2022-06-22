@@ -7,8 +7,9 @@
     background-image: url(../assets/AR-en-20220606-popsignuptwoweeks-perspective_alpha_website_large.jpg);
     background-size: cover;
     background-repeat: no-repeat;
-    height: 100vh;
+    height: 100%;
     text-align: center;
+    
 }
 .greetingHomeScreen .GreetingPlusInput{
     display: flex;
@@ -25,7 +26,7 @@
 margin-top: -1em;
 }
 .greetingHomeScreen .GreetingPlusInput h1{
-    padding: 0em 2em;
+    padding: 0em 1em;
     font-size: 4rem;
 }
 .our-story-card-subtitle{
@@ -39,16 +40,17 @@ margin-top: -1em;
     justify-content: space-between;
     margin: 0px auto;
     width: 65%;
+    position: relative;
 }
 .homeScreenContainer .EnterEmailInputBtn .InputCont{
     width: 70%;
     
 }
 .homeScreenContainer .EnterEmailInputBtn .InputCont input{
-    width: 100%;
+    width: 100.5%;
     height: 4rem;
     border: none;
-    padding: 0% 1em;
+    padding: 0% 0em;
     outline: none;
     border-radius: 5px;
 
@@ -66,8 +68,21 @@ margin-top: -1em;
     border-radius:0px 5px 5px 0px;
     background-color: red;
 }
-
-
+.homeScreenContainer .WrongEmail{
+    display: block;
+    position: absolute;
+    top: 3.8em;
+    color: #ffa00a;
+    font-weight: bold;
+    margin-top: 0px;
+}
+.homeScreenContainer .greetingHomeScreen .GreetingPlusInput .WrongEmail p 
+ {
+    margin-top: 0px;
+}
+.homeScreenContainer .undefinedEmail{
+    display: none;
+}
 @media only screen and (max-width: 768px) {
  
      .greetingHomeScreen .GreetingPlusInput{
