@@ -102,6 +102,8 @@ console.log(filtered)
                             <button onClick={filterByGenre}> Crime</button>
                             <button onClick={filterByGenre}> Drama</button>
                             <button onClick={filterByGenre}> Mystery</button>
+                            <button onClick={filterByGenre}> Romance</button>
+
                         </div>
                     </div>
                 </div>

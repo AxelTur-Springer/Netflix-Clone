@@ -15,9 +15,9 @@
 }
 .genreOptions{
     position: absolute;
-    display: none;
+    display: block;
     width: 14em;
-    height: 5em;
+    height: 7em;
     left: -7.7em;
     top: 6.7em;
     background-color: rgb(0, 0, 0);
