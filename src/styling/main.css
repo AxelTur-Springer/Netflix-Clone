@@ -326,4 +326,26 @@ border-radius: 5px;
          height: 1em;
          }  
     
+
+
+         /*   asdfasdasdasd   */
+.AllMightContainer{
+    padding: 0em; 
+}
+.carusel{
+    display: flex;
+    padding: 1em 3em;
+    height: 100%;
+}
+
+
+.MovieCardCont .backGround{
+    width: 17em;
+}
+
+.HiddenMenu{
+    width: 17em;
+}
+
+
      }

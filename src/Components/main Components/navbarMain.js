@@ -79,7 +79,9 @@ const NavBarMain = (props) => {
             <div className='imghomeseriesmoviescont'>
                 <div className='ImgCont'>
                     <div>
-                        <img src={netflixLogo} alt="" />
+                        <Link to={"/main"}>
+                            <img src={netflixLogo} alt="" />
+                        </Link>
                     </div>
                 </div>
                 <div>
