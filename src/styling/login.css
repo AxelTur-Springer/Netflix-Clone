@@ -45,3 +45,6 @@ padding: 1em 0em;
 margin: 1em auto;
 border-radius: 2px;
 }
+.loginBodyContainer .LinkToRegis {
+    color: #e50914;
+}

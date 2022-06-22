@@ -82,7 +82,7 @@ function hideFilterMenu(){
     }
 console.log(filtered)
     return (
-        <>
+        <div className='seriesContainer'>
         <div className='SearchInSearch' >
             <NavBarMain inputSearch = {retrieveInputSearchValue} />
         </div>
@@ -124,7 +124,7 @@ console.log(filtered)
                     }    
                     </div>
                 </div>
-        </>
+        </div>
     );
 }
 

@@ -10,6 +10,7 @@ import {
 import { auth } from "../firebase/firebaseconfig";
 import { useState,useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
 import {loginSuccess, logoutSuccess,UserLoginName} from "../features/loginCheck/loginSlice"
 import "../styling/login.css"
 import NavBarSignInRegister from '../Components/navBarSignInRegister';
@@ -72,15 +73,18 @@ useEffect(() => {
                     <h1>Sign In</h1>
                         <div className='InputsCont'>
                             <input type="text" name="" id="" placeholder='email' onChange={(event)=>{setloginEmail(event.target.value)}}/>
-                            <input type="text" name="" id="" placeholder='password' onChange={(event)=>{setLoginPassword(event.target.value)}}/>
+                            <input type = "password" name="" id="" placeholder='password' onChange={(event)=>{setLoginPassword(event.target.value)}}/>
                         </div>
                         <div className='buttonCont'>
                             <button onClick={login}>Sign In</button>
                         </div>           
                     </div>
                 <div>
-                    <p>New to Netflix? Sign up now.
-This page is protected by Google reCAPTCHA to ensure you're not a bot. Learn more.</p>
+                    <p>
+                    New to Netflix? <Link className='LinkToRegis' to={"/register"}>Sign up now</Link> This 
+                    page is protected by Google reCAPTCHA to ensure you're not a bot. 
+                    Learn more.
+                    </p>
                 </div>
             </div>
         </div>  
