@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState,useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
-import NavBarMain from '../Components/main Components/navbarMain'; 
+import NavBarSearch from '../Components/navbarSearch';
 import {popularApi,originalSeriesapi,topRatedMovies, genresList,PopularSeries} from '../MovieApiData';
 import MovieCards from '../Components/MovieCard';
 import "../styling/search.css"
@@ -55,7 +55,7 @@ const Search = () => {
     return (
         <>
         <div className='SearchInSearch'>
-            <NavBarMain inputSearch = {retrieveInputSearchValue} />
+            <NavBarSearch inputSearch = {retrieveInputSearchValue} />
         </div>
             <div className='Search-Menu-container'>
                 <div>
