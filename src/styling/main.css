@@ -249,13 +249,13 @@ justify-content: space-between;
 
 .categories .ScrollBtn{
 z-index: 3;
-background-color: rgba(0, 0, 0, 0.212);
+background-color: rgba(0, 0, 0, 0.438);
 height: 11em;
 border-radius: 5px;
 }
 
 .categories .ScrollBtn:hover{
-    background-color: rgba(0, 0, 0, 0.384);
+    background-color: rgba(0, 0, 0, 0.678);
     transform: scale(1.1);
     }
     .categories .ScrollBtn.Left{
@@ -266,7 +266,7 @@ border-radius: 5px;
         }
     .categories .ScrollBtn.Right{
         position: absolute;
-        right: 10px;
+        right: 3px;
         top: 3em;
         display: flex;
         
@@ -334,7 +334,7 @@ border-radius: 5px;
 }
 .carusel{
     display: flex;
-    padding: 1em 3em;
+    padding: 1em 3.3em;
     height: 100%;
 }
 
