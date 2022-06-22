@@ -2,10 +2,10 @@ import React from 'react';
 import { useState,useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
 import NavBarMain from '../Components/main Components/navbarMain'; 
-import {originalSeriesapi, genresList,PopularSeries} from '../MovieApiData';
+import {popularApi,topRatedMovies, genresList} from '../MovieApiData';
 import MovieCards from '../Components/MovieCard';
 import "../styling/seriesAndMovie.css"
-const Series = () => {
+const Movies = () => {
        
     const [popular,setpopular] = useState([])
     const [originalSeries,setoriginalSeries] = useState([])
@@ -23,11 +23,11 @@ const Series = () => {
         genresList().then((data)=>{setGeneres(data) })
         async function bringAll(){
        
-        const originalNet = await originalSeriesapi()
-            const resultOriginal = originalNet.results
+        const popular = await popularApi()
+            const resultOriginal = popular.results
        
-        const popTv = await PopularSeries()
-            const resultpopTv = popTv.results
+        const topMovies = await topRatedMovies()
+            const resultpopTv = topMovies.results
             
             setAll(resultpopTv.concat(resultOriginal))
             setSearch(resultpopTv.concat(resultOriginal))
@@ -89,7 +89,7 @@ console.log(filtered)
             <div className='Search-Menu-container'>
                 <div className='SeriesAndFilter'   >
                     <div>
-                        <h2>Series</h2>
+                        <h2>Movies</h2>
                     </div>
                     <div className='SelectorGenero' onMouseLeave={hideFilterMenu} >
                         <div className='LabelForFilter'  onMouseOver={showFilterMenu}>
@@ -129,4 +129,4 @@ console.log(filtered)
 
 
 
-export default Series;
+export default Movies;

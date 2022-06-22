@@ -89,7 +89,7 @@ const NavBarMain = (props) => {
                         <Link to={"/series"} className = "link"> Series </Link >
                     </div>
                     <div>
-                        <Link to={"/peliculas"} className = "link"> Peliculas </Link >
+                        <Link to={"/Movies"} className = "link"> Peliculas </Link >
                     </div>
             </div>
             <div className='contSearchProfileLog'>
