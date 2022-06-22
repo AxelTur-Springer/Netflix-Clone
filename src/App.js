@@ -22,7 +22,7 @@ import { YoutubeEmbed } from "./pages/Reproduce";
 import { store } from "./app/store";
 import { useSelector, useDispatch } from 'react-redux';
 function App() {
-  const [user,setUser] = useState("some")
+  const [user,setUser] = useState(undefined)
   const dispatch = useDispatch();
   const Store = useSelector((store)=>{return store})
   useEffect(() => {

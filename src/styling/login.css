@@ -16,6 +16,7 @@
     padding: 1em 3.2em;
     width: 15em;
     height: 26em;
+    margin-top: 14em;
 }
 .loginBodyContainer .contLogin .InputsCont{
     display: flex;
