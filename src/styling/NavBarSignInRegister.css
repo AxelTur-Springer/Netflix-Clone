@@ -3,8 +3,16 @@
     justify-content: space-between;
     padding: 1em 4em;
     position: absolute;
-    margin-bottom: 4em;
 }
 .NavBarSignInRegisterContainer .ImgCont img{
 width: 12em;
 }
+
+
+@media only screen and (max-width: 768px) {
+    .NavBarSignInRegisterContainer{
+        padding: 0em;
+   
+    }
+
+ }
