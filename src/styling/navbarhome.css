@@ -25,3 +25,11 @@ width: 12em;
     color: white;
     text-decoration: none;
 }
+@media only screen and (max-width: 600px) {
+ 
+    .NavBarHomeContainer{
+        display: flex;
+        justify-content: space-between;
+        padding: 1em 0.5em;
+    }
+}
