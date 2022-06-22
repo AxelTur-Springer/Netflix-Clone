@@ -178,27 +178,19 @@ justify-content: center;
     
     @media only screen and (max-width: 768px) {
         .NavBarContainerMain{
-            background-color: black;
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            color: white;
             padding: 0.5em 0em;
-            font-size: 1em;
-            position: fixed;
-            top: 0px;
-            z-index: 5;
-            
+       
         }
  
         .NavBarContainerMain .ImgCont {
             display: flex;
             flex-direction: column;
             justify-content: center;
-            margin-left: 1em;    
+            margin-left: 0.2em;    
+            height: 100%;
         }
         .NavBarContainerMain .ImgCont img{
-            width: 5em;
+            width: 7em;
         }
         .NavBarContainerMain .imghomeseriesmoviescont{
             display: flex;
@@ -213,40 +205,27 @@ justify-content: center;
             display: flex;
             margin-right: 0em;
         }
-        
+        .NavBarContainerMain .contSearchProfileLog .inputCont input{
+         
+            font-size: 0.9em;
+         
+            }
      
-     
-        .NavBarContainerMain .lupita{
-    
+    .NavBarContainerMain .lupita{
         margin-right: 0em;
         }
- 
     
-        
         @keyframes searchBarAnimacionShow {
             100%{
-                width: 7em;
+                width: 10em;
             }
         }
-         
-        
-        @keyframes searchBarAnimacionHide{
-        
-            100%{
-                width: 0em;
-            }
-        }
+
         /* managing dropdown stuff*/
         .NavBarContainerMain .Profile {
-         
             margin-right: 1em;
-         
-
             }
 
-        
-        
-      
         .NavBarContainerMain .profileDropDown .DropDown{
             top: 2.8em;
             right: 0.3em;

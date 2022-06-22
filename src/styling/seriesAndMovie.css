@@ -15,7 +15,7 @@
 }
 .genreOptions{
     position: absolute;
-    display: block;
+    display: none;
     width: 14em;
     height: 7em;
     left: -7.7em;

@@ -34,12 +34,15 @@
 
 
 }
-
+.Search-menu .MovieCardCont .movieCardImgCont{
+    width: 18em;
+    margin: 0px;
+}
 .Search-menu .MovieCardCont .movieCardImgCont img{
-    width: 16em;
+    width: 18em;
 }
 .Search-menu .MovieCardCont {
-    width: 16em;
+    width: 18em;
     height: 16em;
     justify-content: center;
 }
@@ -64,15 +67,35 @@
 
 @media only screen and (max-width: 768px) {
     .SearchInSearch .NavBarContainerMain .inputCont input{
-        width: 7em;
+        width: 10em;
     }
  
     @keyframes searchBarAnimacionShow {
         0%{ width: 1em;}
         100%{
-            width: 7em;
+            width: 10em;
             visibility: visible;
         }
+    }
+
+    .Search-Menu-container{
+        padding: 6em 1em;
+        background-color: #141414;
+        min-height: 100vh;
+    }
+    .Search-Menu-container h2{
+        color: white;
+        font-size: 2.5em;
+    }
+    .Search-menu{
+        display: grid;
+        grid-gap: 0em 0em;
+        grid-template-columns: repeat(auto-fill, minmax(18em, 1fr));
+    
+    }
+    .Search-menu .MovieCardCont{
+            margin: auto;
+        
     }
 
 }

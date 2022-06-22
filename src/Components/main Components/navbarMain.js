@@ -86,7 +86,6 @@ const NavBarMain = (props) => {
                     <div className='HomeSeriesMoviesCont'>
                         <div>
                             <Link to={"/main"} className = "link"> Home </Link >
-
                         </div>
                       
                         <div>
