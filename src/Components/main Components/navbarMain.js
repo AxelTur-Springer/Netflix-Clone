@@ -110,8 +110,8 @@ const NavBarMain = (props) => {
                             <img src={lupa} alt="" />
                         </div>
                         <input
+
                             onChange = {setting }
-                            autoFocus
                             type="text" placeholder='titulo,series,peliculas'/>
                     </div>
                 </div>
