@@ -82,15 +82,22 @@ const NavBarMain = (props) => {
                         <img src={netflixLogo} alt="" />
                     </div>
                 </div>
-                    <div>
-                        <Link to={"/main"} className = "link"> Home </Link >
-                    </div>
-                    <div>
-                        <Link to={"/series"} className = "link"> Series </Link >
-                    </div>
-                    <div>
-                        <Link to={"/Movies"} className = "link"> Peliculas </Link >
-                    </div>
+                <div>
+                    <div className='HomeSeriesMoviesCont'>
+                        <div>
+                            <Link to={"/main"} className = "link"> Home </Link >
+
+                        </div>
+                      
+                        <div>
+                            <Link to={"/series"} className = "link"> Series </Link >
+                        </div>
+                        <div>
+                            <Link to={"/Movies"} className = "link"> Peliculas </Link >
+                        </div>
+                </div>
+                </div>
+                   
             </div>
             <div className='contSearchProfileLog'>
                 <div className='searchBarCont'>

@@ -4,7 +4,7 @@
     display: flex;
     justify-content: space-between;
     color: white;
-    padding: 0.7em 0em;
+    padding: 0.7em 1em;
     font-size: 1em;
     position: fixed;
     top: 0px;
@@ -20,14 +20,8 @@ width: 7em;
 }
 .NavBarContainerMain .imghomeseriesmoviescont{
     display: flex;
-    flex-direction: row;
 }
-.NavBarContainerMain .imghomeseriesmoviescont div{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin-left: 1em;
-}
+
 /* managing search bar and profile info*/
 .NavBarContainerMain .contSearchProfileLog{
     display: flex;
@@ -37,9 +31,7 @@ width: 7em;
 .NavBarContainerMain .contSearchProfileLog  .searchBarCont{
     display: flex;
 }
-.NavBarContainerMain .contSearchProfileLog  div{
 
-}
 .NavBarContainerMain .lupita{
 display: flex;
 flex-direction: column;
@@ -162,9 +154,103 @@ justify-content: center;
     }
 
 
+
+.NavBarContainerMain  .HomeSeriesMoviesCont{
+        display: flex;
+        flex-direction: row;
+}
+.NavBarContainerMain  .HomeSeriesMoviesCont div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 2.8em;
+    margin-right: 2em;
+    margin-left: 1em;
+}
+
+
+
+
+
+
+
+
+    
     @media only screen and (max-width: 768px) {
         .NavBarContainerMain{
+            background-color: black;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            color: white;
+            padding: 0.5em 0em;
+            font-size: 1em;
+            position: fixed;
+            top: 0px;
+            z-index: 5;
             
         }
+ 
+        .NavBarContainerMain .ImgCont {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin-left: 1em;    
+        }
+        .NavBarContainerMain .ImgCont img{
+            width: 5em;
+        }
+        .NavBarContainerMain .imghomeseriesmoviescont{
+            display: flex;
+            flex-direction: row;
+        }
+        .NavBarContainerMain  .HomeSeriesMoviesCont div{
+            display: none;
+        
+        }
+        /* managing search bar and profile info*/
+        .NavBarContainerMain .contSearchProfileLog{
+            display: flex;
+            margin-right: 0em;
+        }
+        
+     
+     
+        .NavBarContainerMain .lupita{
     
+        margin-right: 0em;
+        }
+ 
+    
+        
+        @keyframes searchBarAnimacionShow {
+            100%{
+                width: 7em;
+            }
+        }
+         
+        
+        @keyframes searchBarAnimacionHide{
+        
+            100%{
+                width: 0em;
+            }
+        }
+        /* managing dropdown stuff*/
+        .NavBarContainerMain .Profile {
+         
+            margin-right: 1em;
+         
+
+            }
+
+        
+        
+      
+        .NavBarContainerMain .profileDropDown .DropDown{
+            top: 2.8em;
+            right: 0.3em;
+      
+        }
+       
      }

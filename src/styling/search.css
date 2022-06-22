@@ -60,3 +60,19 @@
     color: white;
     font-size: 1.2em;
 }
+
+
+@media only screen and (max-width: 768px) {
+    .SearchInSearch .NavBarContainerMain .inputCont input{
+        width: 7em;
+    }
+ 
+    @keyframes searchBarAnimacionShow {
+        0%{ width: 1em;}
+        100%{
+            width: 7em;
+            visibility: visible;
+        }
+    }
+
+}
