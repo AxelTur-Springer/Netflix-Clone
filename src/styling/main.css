@@ -347,5 +347,8 @@ border-radius: 5px;
     width: 17em;
 }
 
-
+.categories .ScrollBtn:hover{
+    background-color: rgba(0, 0, 0, 0.678);
+    transform: scale(1);
+    }
      }
