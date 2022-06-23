@@ -2,6 +2,8 @@ import React from 'react';
 import "../styling/footer.css"
 
 const Footer = () => {
+    var innerScreenHeight = window.innerHeight;
+    document.querySelector(".ContactContainer").style.top = innerScreenHeight + "px";
     return (
         <div className='ContactContainer'>
             <div>
