@@ -61,19 +61,32 @@ const NavBarMain = (props) => {
             }
             else{
                 searchanime.childNodes[1].style.animation ="searchBarAnimacionShow 0s forwards"
-            }
-  
-        
+            }  
     }
     function hideSearchBar(e){
         let searchanime = document.getElementsByClassName("inputCont")[0]
-
         searchanime.childNodes[1].style.animation ="searchBarAnimacionHide 1s forwards"
-        
-
-
-
     }
+    function ShowExploreMenu(e){
+        const arrow = document.getElementsByClassName("ArrowForExplorar")
+        let dropDownExplore = document.getElementsByClassName("DropDown")[0]
+        if( dropDownExplore.style.display === "flex"){
+            arrow[0].style.animation = "rotateArrowUp 1s forwards "            
+            dropDownExplore.style.animation= "dropDownExplorehide 0.5s forwards"
+            setTimeout(() => {
+                dropDownExplore.style.display ="none"
+            }, 500);
+
+        }else{
+            dropDownExplore.style.animation= "dropDownExploreShow 0.5s forwards"
+            dropDownExplore.style.display= "flex"
+            arrow[0].style.animation = "rotateArrowDown 1s forwards "
+
+        }
+        
+ 
+       
+   }
     return (
         <div className='NavBarContainerMain'>
             <div className='imghomeseriesmoviescont'>
@@ -96,7 +109,29 @@ const NavBarMain = (props) => {
                         <div>
                             <Link to={"/Movies"} className = "link"> Peliculas </Link >
                         </div>
-                </div>
+                    </div>
+                    <div className='HomeSeriesMoviesMobileCont'>
+                        <div className='IconStatic' onClick={ShowExploreMenu}>
+                            <div>
+                                <p>Explorar</p>
+                            </div>
+                            <div className='ArrowForExplorar'>
+                                <img src={arrow} alt="" />
+                            </div>
+                        </div>
+                        <div className='DropDown'>
+                            <div>
+                                <Link to={"/main"} className = "link"> Home </Link >
+                            </div>
+                        
+                            <div>
+                                <Link to={"/series"} className = "link"> Series </Link >
+                            </div>
+                            <div>
+                                <Link to={"/Movies"} className = "link"> Peliculas </Link >
+                            </div>
+                        </div>
+                    </div>
                 </div>
                    
             </div>

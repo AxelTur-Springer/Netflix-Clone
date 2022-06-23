@@ -52,6 +52,7 @@ const Search = () => {
 }
 
 
+
     return (
         <>
         <div className='SearchInSearch'>

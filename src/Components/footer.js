@@ -10,7 +10,7 @@ const Footer = () => {
                     Netflix clone created with:
                     React, React Router v6, redux to manage 
                     user login status, firebase for managing user
-                    login and user register.
+                    login and user register and using the TMDB api.
                 </p>
             </div>
             <div className="ContainerIcon">
