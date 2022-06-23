@@ -21,7 +21,7 @@ margin: 0px;
     justify-content: center;
     font-weight: bold;
     border: none;
-    animation: movingBackground 10s infinite ease-in
+    animation: movingBackground 10s infinite forwards ease-in
    
 
 }
@@ -31,11 +31,7 @@ margin: 0px;
         background-position: 100% 50%;
     }
 }
-@keyframes transicionchange{
-    100%{
-        background-image: none;
-    }
-}
+
 .previewMenu .Descripcion{
         width: 40em;
         padding: 0em 1em;
