@@ -9,7 +9,8 @@
     background-repeat: no-repeat;
     height: 100%;
     text-align: center;
-    min-height: 100vh;
+    min-height: 50em;
+    border: solid red;
 
 }
 .greetingHomeScreen .GreetingPlusInput{

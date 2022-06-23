@@ -5,6 +5,7 @@
     height: 100vh;
     background-color: black;
     color: white;
+    min-height: 45em;
 }
 .loginBodyContainer .contLogin {
     display: flex;
