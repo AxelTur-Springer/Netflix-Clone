@@ -152,7 +152,10 @@ justify-content: center;
     color: white;
     font-size: 1em;
     }
-
+    .NavBarContainerMain .profileDropDown .DropDown .logOut button:hover{
+      text-decoration: underline;
+        }
+    
 
 
 .NavBarContainerMain  .HomeSeriesMoviesCont{
@@ -166,6 +169,10 @@ justify-content: center;
     height: 2.8em;
     margin-right: 1.5em;
     margin-left: 1em;
+}
+.NavBarContainerMain  .HomeSeriesMoviesCont div:hover{
+
+    text-decoration: underline;
 }
 
 .HomeSeriesMoviesMobileCont{
@@ -282,6 +289,7 @@ justify-content: center;
             background-color: rgb(0, 0, 0);
             text-align: center;
             height: 0em;
+            border-top: white solid thin;
            
         }
         @keyframes dropDownExploreShow {
