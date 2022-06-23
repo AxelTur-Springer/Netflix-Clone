@@ -39,6 +39,7 @@ function App() {
             }
   });
   },[Store]);
+  
   return (
     <div className="App">
       <BrowserRouter > 
@@ -99,7 +100,10 @@ function App() {
           )} />
 </Routes>
     </BrowserRouter >
+    <div className="Footer">
     <Footer/>
+
+    </div>
     </div>
   );
 }

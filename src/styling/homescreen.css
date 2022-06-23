@@ -1,7 +1,7 @@
 .homeScreenContainer{
    display: flex;
    flex-direction: column;
-   position: relative;
+   min-height: 100vh;
 }
 .greetingHomeScreen{
     background-image: url(../assets/AR-en-20220606-popsignuptwoweeks-perspective_alpha_website_large.jpg);
@@ -9,7 +9,8 @@
     background-repeat: no-repeat;
     height: 100%;
     text-align: center;
-    
+    min-height: 100vh;
+
 }
 .greetingHomeScreen .GreetingPlusInput{
     display: flex;
