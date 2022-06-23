@@ -18,7 +18,7 @@ const Footer = () => {
                     <p>Take a look at my socials :) </p>
                     <ul class="social">
                         <li>
-                            <a href="https://github.com/AxelTur-Springer/ReactRouterShopOdin"><i className="fa fa-github" aria-hidden="true"></i></a>
+                            <a href="https://github.com/AxelTur-Springer"><i className="fa fa-github" aria-hidden="true"></i></a>
                         </li>
                         <li>
                             <a href="https://www.instagram.com/axel.turspringer/"> <i className="fa fa-instagram" aria-hidden="true"></i></a>
