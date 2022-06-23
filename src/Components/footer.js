@@ -16,7 +16,7 @@ const Footer = () => {
             <div className="ContainerIcon">
                 <div id="social-test">
                     <p>Take a look at my socials :) </p>
-                    <ul class="social">
+                    <ul className="social">
                         <li>
                             <a href="https://github.com/AxelTur-Springer"><i className="fa fa-github" aria-hidden="true"></i></a>
                         </li>

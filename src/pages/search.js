@@ -52,7 +52,6 @@ const Search = () => {
 }
 
 
-
     return (
         <>
         <div className='SearchInSearch'>
@@ -64,6 +63,7 @@ const Search = () => {
                 </div>
                 <div className='Search-menu'>
                     {
+                      
                   search.map((movie)=>{
                         let genera = genres.genres.filter((a)=>{
                             if(movie.genre_ids.includes(a.id)){
@@ -73,8 +73,7 @@ const Search = () => {
                         return <MovieCards 
                         img={"https://image.tmdb.org/t/p/w500" + movie.backdrop_path} 
                         genero ={ genera}
-                        name ={movie.title=== undefined? movie.name: movie.title}
-                        />
+                        name ={movie.title=== undefined? movie.name: movie.title}                        />
                         })
                     }    
                     </div>

@@ -37,18 +37,14 @@ const NavBarMain = (props) => {
         const arrow = document.getElementsByClassName("arrow")
         arrow[0].style.transform = "rotate(90deg)"
         menu[0].style.display= "flex"
-        if(e._reactName === "onClick"){
-            menu[0].style.display = "none"
-            arrow[0].style.transform = "rotate(270deg)"
-
-        }
+     
         
     }
     function hideMenu(e){
                 const menu = document.getElementsByClassName("DropDown")
                 const arrow = document.getElementsByClassName("arrow")
                 arrow[0].style.transform = "rotate(270deg)"
-             
+
                 menu[0].style.display= "none"
 
              
@@ -155,7 +151,7 @@ const NavBarMain = (props) => {
                             type="text" placeholder='titulo,series,peliculas'/>
                     </div>
                 </div>
-                <div className='profileDropDown' onClick={displayMenu} onMouseOver={displayMenu}  onMouseLeave={hideMenu} >
+                <div className='profileDropDown'  onMouseOver={displayMenu}  onMouseLeave={hideMenu} >
                     <div className='Profile'>
                         <div>
                             <img src={profileImg} alt="" />
