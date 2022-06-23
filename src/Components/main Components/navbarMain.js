@@ -69,7 +69,7 @@ const NavBarMain = (props) => {
     }
     function ShowExploreMenu(e){
         const arrow = document.getElementsByClassName("ArrowForExplorar")
-        let dropDownExplore = document.getElementsByClassName("DropDown")[0]
+        let dropDownExplore = document.getElementsByClassName("DropDownExplore")[0]
         if( dropDownExplore.style.display === "flex"){
             arrow[0].style.animation = "rotateArrowUp 1s forwards "            
             dropDownExplore.style.animation= "dropDownExplorehide 0.5s forwards"
@@ -119,7 +119,7 @@ const NavBarMain = (props) => {
                                 <img src={arrow} alt="" />
                             </div>
                         </div>
-                        <div className='DropDown'>
+                        <div className='DropDownExplore'>
                             <div>
                                 <Link to={"/main"} className = "link"> Home </Link >
                             </div>

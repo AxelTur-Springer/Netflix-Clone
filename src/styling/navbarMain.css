@@ -269,7 +269,7 @@ justify-content: center;
         .HomeSeriesMoviesMobileCont .IconStatic p{
          margin: 0%;
         }
-        .HomeSeriesMoviesMobileCont .DropDown{
+        .HomeSeriesMoviesMobileCont .DropDownExplore{
             display: none;
             flex-direction: column;
             justify-content: center;
@@ -300,7 +300,7 @@ justify-content: center;
 
           }
         }
-        .HomeSeriesMoviesMobileCont .DropDown div{
+        .HomeSeriesMoviesMobileCont .DropDownExplore div{
                 margin: 1em 0em;
 
         }
