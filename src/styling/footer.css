@@ -19,7 +19,7 @@
     }
     .ContactContainer .me{
         padding: 1em;
-        border-bottom: solid red;
+        border-bottom: solid rgba(255, 0, 0, 0.378);
       }
     
       #social-test {
