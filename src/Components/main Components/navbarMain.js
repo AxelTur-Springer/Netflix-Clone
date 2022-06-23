@@ -145,7 +145,6 @@ const NavBarMain = (props) => {
                             <img src={lupa} alt="" />
                         </div>
                         <input
-
                             onChange = {setting }
                             type="text" placeholder='titulo,series,peliculas'/>
                     </div>
