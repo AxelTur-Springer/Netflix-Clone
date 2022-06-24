@@ -78,6 +78,7 @@ useEffect(() => {
             }
             if(errorMessage=== "Firebase: Access to this account has been temporarily disabled due to many failed login attempts. You can immediately restore it by resetting your password or you can try again later. (auth/too-many-requests)."){
                 passwordCont.style.display ="flex"
+                WrongEmail.style.display = "none"
                 setwrongPassOrToMuchTrys("To many tries, please wait 10 minutes or reset password")
 
             }
