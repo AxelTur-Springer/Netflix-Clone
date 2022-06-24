@@ -13,15 +13,37 @@ height: 100%;
 background-color: rgba(0, 0, 0, 0.493);
 }
 .PopUpChangePassContainer .contPopUp{
-    background-color: black;
+    background-color: rgb(77, 77, 77);
     width: 20em;
     height: 20em;
     margin: auto;
     border-radius: 10px;
+
 }
 .PopUpChangePassContainer .ForgotPassContainer{
     display: none;
 }
 .popUpCont h1{
     color: #e50914;
+}
+.PopUpChangePassContainer .ConfirmacionEmailSent{
+    display: none;
+}
+.PopUpChangePassContainer .InputsCont input{
+border: none;
+outline: none;
+padding: 1em;
+}
+.PopUpChangePassContainer .buttonCont {
+margin-top: 1em;
+    }
+.PopUpChangePassContainer .buttonCont button{
+    border: none;
+    padding: 1em;
+    background-color: #e50914;
+    color: white;
+    }
+.PopUpChangePassContainer .CloseBtnCont {
+display: flex;
+justify-content: flex-end;
 }

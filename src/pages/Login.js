@@ -23,6 +23,8 @@ const Login = () => {
     const [user,setUser] = useState({})
     const [resetPass,setResetPass] = useState(false)
     const [wrongPassOrToMuchTrys,setwrongPassOrToMuchTrys] = useState()
+    const [mailNotFound,setmailNotFound] = useState()
+
     const store = useSelector((store)=>{return store});
     const stateOfLogIn = useSelector((store)=>{return store.LogedInReducer})
     const dispatch = useDispatch();
@@ -53,18 +55,23 @@ useEffect(() => {
         }
     }
     const login = async() =>{
+        let passwordCont = document.getElementsByClassName("ForgotPassContainer")[0]
+        let WrongEmail = document.getElementsByClassName("WrongEmailLogin")[0]
         try{
             const user = await signInWithEmailAndPassword(
                 auth,
                 loginEmail,
                 loginPassword)
+                passwordCont.style.display ="none"
+                WrongEmail.style.display ="none"
+
                 
         }
         catch(error){
-            let passwordCont = document.getElementsByClassName("ForgotPassContainer")[0]
+        
             const errorCode = error.code;
-            console.log(passwordCont)
             const errorMessage = error.message;
+            console.log(errorMessage)
             if(errorMessage ==="Firebase: Error (auth/wrong-password)."){
                 passwordCont.style.display ="flex"
                 setwrongPassOrToMuchTrys("Wrong Password")
@@ -74,6 +81,19 @@ useEffect(() => {
                 setwrongPassOrToMuchTrys("To many tries, please wait 10 minutes or reset password")
 
             }
+            if(errorMessage==="Firebase: Error (auth/internal-error)."){
+                WrongEmail.style.display = "flex"
+            }
+            if(errorMessage==="Firebase: Error (auth/user-not-found)."){
+                setmailNotFound("User not found, please register")
+                WrongEmail.style.display ="flex"
+
+            }
+            if(errorMessage==="Firebase: Error (auth/invalid-email)."){
+                setmailNotFound("Please enter valid Email")
+                WrongEmail.style.display ="flex"
+            }
+            
         }
     }
     function onClickReset(){
@@ -81,10 +101,7 @@ useEffect(() => {
         passwordCont.style.display ="none"
         setResetPass(true) 
     }
-   /* sendPasswordResetEmail(auth, "axel.turspringer@gmail.com")
-      .then(() => {
 
-      })*/
     return (
         <>
         {resetPass ? <PopUpChangePass hidePop ={()=>{setResetPass(false)}}/> : null}
@@ -94,7 +111,12 @@ useEffect(() => {
                 <div className='greetInputBtn'>
                     <h1>Sign In</h1>
                         <div className='InputsCont'>
-                            <input type="text" name="" placeholder='email' onChange={(event)=>{setloginEmail(event.target.value)}}/>
+                            <input type="email" name="" placeholder='email' onChange={(event)=>{setloginEmail(event.target.value)}}/>
+                            <div className='WrongEmailLogin'>
+                                <p>
+                                    {mailNotFound}
+                                </p>
+                            </div>
                             <input type = "password" name=""  placeholder='password' onChange={(event)=>{setLoginPassword(event.target.value)}}/>
                             <div className='ForgotPassContainer'>
                                 <p>
