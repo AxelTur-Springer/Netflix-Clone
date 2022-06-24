@@ -14,13 +14,15 @@ import { Link } from 'react-router-dom';
 import {loginSuccess, logoutSuccess,UserLoginName} from "../features/loginCheck/loginSlice"
 import "../styling/login.css"
 import NavBarSignInRegister from '../Components/navBarSignInRegister';
-
+import PopUpChangePass from './popUpchangePass';
 const Login = () => {
     const [registerEmail,setRegisterEmail]= useState("")
     const [registerPassword,setRegisterPassword]= useState("")
     const [loginEmail,setloginEmail]= useState("")
     const [loginPassword,setLoginPassword]= useState("")
     const [user,setUser] = useState({})
+    const [resetPass,setResetPass] = useState(false)
+    const [wrongPassOrToMuchTrys,setwrongPassOrToMuchTrys] = useState()
     const store = useSelector((store)=>{return store});
     const stateOfLogIn = useSelector((store)=>{return store.LogedInReducer})
     const dispatch = useDispatch();
@@ -59,13 +61,33 @@ useEffect(() => {
                 
         }
         catch(error){
-            console.log(error);
-            alert(error)
+            let passwordCont = document.getElementsByClassName("ForgotPassContainer")[0]
+            const errorCode = error.code;
+            console.log(passwordCont)
+            const errorMessage = error.message;
+            if(errorMessage ==="Firebase: Error (auth/wrong-password)."){
+                passwordCont.style.display ="flex"
+                setwrongPassOrToMuchTrys("Wrong Password")
+            }
+            if(errorMessage=== "Firebase: Access to this account has been temporarily disabled due to many failed login attempts. You can immediately restore it by resetting your password or you can try again later. (auth/too-many-requests)."){
+                passwordCont.style.display ="flex"
+                setwrongPassOrToMuchTrys("To many tries, please wait 10 minutes or reset password")
+
+            }
         }
     }
+    function onClickReset(){
+        let passwordCont = document.getElementsByClassName("ForgotPassContainer")[0]
+        passwordCont.style.display ="none"
+        setResetPass(true) 
+    }
+   /* sendPasswordResetEmail(auth, "axel.turspringer@gmail.com")
+      .then(() => {
 
+      })*/
     return (
         <>
+        {resetPass ? <PopUpChangePass hidePop ={()=>{setResetPass(false)}}/> : null}
         <NavBarSignInRegister />
         <div className='loginBodyContainer'> 
             <div className='contLogin'>
@@ -74,6 +96,11 @@ useEffect(() => {
                         <div className='InputsCont'>
                             <input type="text" name="" placeholder='email' onChange={(event)=>{setloginEmail(event.target.value)}}/>
                             <input type = "password" name=""  placeholder='password' onChange={(event)=>{setLoginPassword(event.target.value)}}/>
+                            <div className='ForgotPassContainer'>
+                                <p>
+                                    {wrongPassOrToMuchTrys}<button onClick={onClickReset}>Reset</button>
+                                </p>
+                            </div>
                         </div>
                         <div className='buttonCont'>
                             <button onClick={login}>Sign In</button>

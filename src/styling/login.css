@@ -49,3 +49,16 @@ border-radius: 2px;
 .loginBodyContainer .LinkToRegis {
     color: #e50914;
 }
+.loginBodyContainer .ForgotPassContainer{
+    display: none;
+    font-size: 0.8em;
+    text-align: center;
+}
+.loginBodyContainer .ForgotPassContainer button{
+border: none;
+background-color: transparent;
+color: white;
+text-decoration: underline;
+font-size: 1em;
+
+}
