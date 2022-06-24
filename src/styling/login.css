@@ -73,3 +73,12 @@ font-size: 1em;
     font-size: 0.8em;
 
 }
+.loginBodyContainer .footerLogin button{
+    border: none;
+background-color: transparent;
+color: white;
+text-decoration: underline;
+color: #e50914;
+
+font-size: 1em;
+}

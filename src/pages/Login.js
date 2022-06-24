@@ -133,11 +133,11 @@ useEffect(() => {
                             <button onClick={login}>Sign In</button>
                         </div>           
                     </div>
-                <div>
+                <div className='footerLogin'>
                     <p>
                     New to Netflix? <Link className='LinkToRegis' to={"/register"}>Sign up now</Link> This 
                     page is protected by Google reCAPTCHA to ensure you're not a bot. 
-                    Learn more.
+                    Forgot Password ? <button onClick={onClickReset}>Reset</button>.
                     </p>
                 </div>
             </div>
