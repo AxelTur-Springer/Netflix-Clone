@@ -68,12 +68,15 @@ useEffect(() => {
                 
         }
         catch(error){
-        
+            WrongEmail.style.display = "none"
+            passwordCont.style.display ="none"
+
             const errorCode = error.code;
             const errorMessage = error.message;
             console.log(errorMessage)
             if(errorMessage ==="Firebase: Error (auth/wrong-password)."){
                 passwordCont.style.display ="flex"
+                WrongEmail.style.display = "none"
                 setwrongPassOrToMuchTrys("Wrong Password")
             }
             if(errorMessage=== "Firebase: Access to this account has been temporarily disabled due to many failed login attempts. You can immediately restore it by resetting your password or you can try again later. (auth/too-many-requests)."){
@@ -84,6 +87,7 @@ useEffect(() => {
             }
             if(errorMessage==="Firebase: Error (auth/internal-error)."){
                 WrongEmail.style.display = "flex"
+                setmailNotFound("Enter Password")
             }
             if(errorMessage==="Firebase: Error (auth/user-not-found)."){
                 setmailNotFound("User not found, please register")
