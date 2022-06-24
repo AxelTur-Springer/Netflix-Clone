@@ -1,46 +1,50 @@
-# Getting Started with Create React App and Redux
+<br/>
+<p align="center">
+    <a href="https://netflix-clone-chi-taupe.vercel.app/home" target="_blank">
+        <img width="50%" src="https://1000marcas.net/wp-content/uploads/2020/01/Logo-Netflix.png" alt="Sulu logo">
+    </a>
+</p>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
+<br/>
+<p align="center">
 
-## Available Scripts
+</p>
+<br/>
 
-In the project directory, you can run:
+Buenas! Esta vez decidi crear un clon de Netflix, utilice :
+<ul>
+  <li> React</li>
+  <li> React Router v6</li>
+  <li> Redux Tool Kit</li>
+  <li> Firebase</li>
+</ul>
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🚀&nbsp; Detalles y Funciones
+ En este caso utilice redux para manejar el state del Login del usuario en conjunto a Router, Si se detecta que el usuario no esta logeado automaticamente te redirige al Home page, caso contrario te redirige al Main page, el login utilice firebase para determinar si el usuario ya se logeo, el logeo se mantiene aunque cierres el navegador y lo vuelvas a abrir, cuenta con la funciones de:
+<ul>
+  <li> Login</li>
+  <li> Log Out</li>
+  <li> Registrarse</li>
+  <li> Reset Contraseña con envio de Email</li>
+   <li> Barra de Busqueda</li>
+  <li> Filtro por genero en Series y Peliculas</li>
+</ul>
+En caso de no desear crear usuario puede ingresar con: 
+<ul>
+  <li> User: axel@gmail.com</li>
+  <li> Pass:123456 </li>
+</ul>
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 🤝&nbsp; Encontro un Bug, falta una funcion?
 
-### `npm run build`
+Si encuentra algun problema o que falta algo lo puede agregar en [Netflix Clone](https://github.com/AxelTur-Springer/Netflix-Clone/issues) repositorio.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## ✅&nbsp; Instalar localmente
+ Para instalar localmente, clonar proyecto e correr en npm con npm start :)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
