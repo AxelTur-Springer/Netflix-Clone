@@ -20,13 +20,7 @@ const PopUpChangePass = (props) => {
    
 
 
-useEffect(() => {
-   
 
-}, [])
-    async function Register(){
-    
-    }
 function SendEmail(){
     let ConfirmSent = document.getElementsByClassName("ConfirmacionEmailSent")[0]
 sendPasswordResetEmail(auth, Email)
