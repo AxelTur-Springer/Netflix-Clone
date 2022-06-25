@@ -1,9 +1,7 @@
 import { initializeApp } from "firebase/app";
 import {getAuth} from "firebase/auth"
-const API_KEY =
-setTimeout(() => {
-    process.env.REACT_APP_API_KEYS.split(",")[1]
-}, 1000);
+const API_KEY = process.env.REACT_APP_API_KEYS.split(",")[1]
+
 
 const firebaseConfig = {
     apiKey: API_KEY,
