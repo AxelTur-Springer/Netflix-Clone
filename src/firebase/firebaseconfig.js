@@ -1,6 +1,6 @@
 import { initializeApp } from "firebase/app";
 import {getAuth} from "firebase/auth"
-const API_KEY = "AIzaSyB4FPYPyP4e_efbRJntLxWcKf4KFPQ-1rc"
+const API_KEY = REACT_APP_API_KEY_FIREBASE
 
 
 const firebaseConfig = {
