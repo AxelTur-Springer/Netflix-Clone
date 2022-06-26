@@ -39,7 +39,7 @@ function App() {
             }
   });
   },[Store]);
-  
+  console.log("Thank you very much for visiting my proyect :)")
   return (
     <div className="App">
       <BrowserRouter > 
