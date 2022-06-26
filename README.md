@@ -42,8 +42,6 @@ En caso de no desear crear usuario puede ingresar con:
 
 Si encuentra algun problema o que falta algo lo puede agregar en [Netflix Clone](https://github.com/AxelTur-Springer/Netflix-Clone/issues) repositorio.
 
-## ✅&nbsp; Instalar localmente
- Para instalar localmente, clonar proyecto e correr en npm con npm start :)
 
 
 
