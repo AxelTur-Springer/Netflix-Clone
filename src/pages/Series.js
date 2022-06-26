@@ -80,7 +80,6 @@ function hideFilterMenu(){
     let menu = document.getElementsByClassName("genreOptions")
     menu[0].style.display = "none"
     }
-console.log(filtered)
     return (
         <div className='seriesContainer'>
         <div className='SearchInSearch' >
