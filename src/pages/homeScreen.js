@@ -64,7 +64,6 @@ function renderPopUp(account){
 
 
 
-console.log(process.env)
 
 return (
         <div className='homeScreenContainer'>
