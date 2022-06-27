@@ -1,5 +1,4 @@
 import React from 'react';
-import { useState,useEffect } from 'react';
 import NavBarMain from '../Components/main Components/navbarMain'; 
 import "../styling/main.css"
 import { BilboardMain } from '../Components/main Components/BilboardIntro';

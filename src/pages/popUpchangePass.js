@@ -1,18 +1,8 @@
 import React from 'react';
-import {
-    createUserWithEmailAndPassword , 
-    onAuthStateChanged, 
-    signOut,
-    signInWithEmailAndPassword,
-    fetchSignInMethodsForEmail,
-    sendPasswordResetEmail } from "firebase/auth"
-
+import {sendPasswordResetEmail } from "firebase/auth"
 import { auth } from "../firebase/firebaseconfig";
 import { useState,useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { Link } from 'react-router-dom';
 import "../styling/popupChangePass.css"
-import NavBarSignInRegister from '../Components/navBarSignInRegister';
 import close from "../assets/close.png"
 
 const PopUpChangePass = (props) => {

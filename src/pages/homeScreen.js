@@ -3,14 +3,8 @@ import { useState,useEffect } from 'react';
 import "../styling/homescreen.css"
 import NavBarHome from '../Components/NavBarHome';
 import PopUp from '../Components/PopUp';
-import { BrowserRouter, Route, Routes,Link,Navigate } from 'react-router-dom';
-import {
-    createUserWithEmailAndPassword , 
-    onAuthStateChanged, 
-    signOut,
-    signInWithEmailAndPassword,
-    fetchSignInMethodsForEmail
-} from "firebase/auth"
+import {Navigate } from 'react-router-dom';
+import {fetchSignInMethodsForEmail} from "firebase/auth"
 import { auth } from "../firebase/firebaseconfig";
 const HomeScreen = () => {
 

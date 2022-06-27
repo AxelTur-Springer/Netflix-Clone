@@ -1,21 +1,16 @@
 import React from 'react';
 import { useState,useEffect } from 'react';
-import { useNavigate } from "react-router-dom";
 import NavBarSearch from '../Components/navbarSearch';
 import {popularApi,originalSeriesapi,topRatedMovies, genresList,PopularSeries} from '../heplers/MovieApiData';
 import MovieCards from '../Components/MovieCard';
 import "../styling/search.css"
 const Search = () => {
        
-    const [popular,setpopular] = useState([])
-    const [originalSeries,setoriginalSeries] = useState([])
-    const [topMovies,setTopMovies] = useState([])
-    const [tvSeries,setTvSeries] = useState([])
+
     const [all,setAll] = useState([])
     const [search,setSearch] = useState([])
     const [genres,setGeneres] = useState({genres:[]})
 
-    const navigate = useNavigate()
 
 
     useEffect(() => {

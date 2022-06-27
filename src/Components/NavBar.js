@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import {signOut} from "firebase/auth"
 import { auth } from "../firebase/firebaseconfig";
-import { useState,useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import {loginSuccess, logoutSuccess,UserLoginName} from "../features/loginCheck/loginSlice"
 import "../styling/navbar.css"

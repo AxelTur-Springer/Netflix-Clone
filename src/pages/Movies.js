@@ -7,10 +7,7 @@ import MovieCards from '../Components/MovieCard';
 import "../styling/seriesAndMovie.css"
 const Movies = () => {
        
-    const [popular,setpopular] = useState([])
-    const [originalSeries,setoriginalSeries] = useState([])
-    const [topMovies,setTopMovies] = useState([])
-    const [tvSeries,setTvSeries] = useState([])
+
     const [all,setAll] = useState([])
     const [search,setSearch] = useState([])
     const [filtered,setFiltered] = useState([])

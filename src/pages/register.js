@@ -3,8 +3,8 @@ import {
     createUserWithEmailAndPassword , 
     onAuthStateChanged, 
     signOut,
-    signInWithEmailAndPassword,
-    fetchSignInMethodsForEmail} from "firebase/auth"
+    signInWithEmailAndPassword
+    } from "firebase/auth"
 
 import { auth } from "../firebase/firebaseconfig";
 import { useState,useEffect } from 'react';
