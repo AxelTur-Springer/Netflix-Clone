@@ -2,7 +2,7 @@ import React from 'react';
 import { useState,useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
 import NavBarSearch from '../Components/navbarSearch';
-import {popularApi,originalSeriesapi,topRatedMovies, genresList,PopularSeries} from '../MovieApiData';
+import {popularApi,originalSeriesapi,topRatedMovies, genresList,PopularSeries} from '../heplers/MovieApiData';
 import MovieCards from '../Components/MovieCard';
 import "../styling/search.css"
 const Search = () => {

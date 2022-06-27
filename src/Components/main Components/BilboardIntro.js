@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState,useEffect } from 'react';
 import {Link } from 'react-router-dom';
-import randomNetflixMovies from '../../randomMovieObj';
+import randomNetflixMovies from '../../heplers/randomMovieObj';
 import play from "../../assets/playIcon.png"
 import info from "../../assets/informacion.png"
 import PopUpInfo from '../PopUpMoreInfo';

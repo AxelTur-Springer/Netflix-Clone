@@ -2,7 +2,7 @@ import React from 'react';
 import { useState,useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
 import NavBarMain from '../Components/main Components/navbarMain'; 
-import {originalSeriesapi, genresList,PopularSeries} from '../MovieApiData';
+import {originalSeriesapi, genresList,PopularSeries} from '../heplers/MovieApiData';
 import MovieCards from '../Components/MovieCard';
 import "../styling/seriesAndMovie.css"
 const Series = () => {

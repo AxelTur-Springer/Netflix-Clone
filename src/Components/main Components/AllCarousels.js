@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState,useEffect } from 'react';
-import { originalSeriesapi,popularApi ,allMovies,topRatedMovies ,genresList,PopularSeries} from '../../MovieApiData';
+import { originalSeriesapi,popularApi ,allMovies,topRatedMovies ,genresList,PopularSeries} from '../../heplers/MovieApiData';
 import right from "../../assets/right.png"
 import left from "../../assets/left.png"
 import MovieCards from '../MovieCard';
