@@ -13,6 +13,7 @@ const HomeScreen = () => {
     const [isRegistered,setisRegistered]= useState()
     const [wrongDataEmail,setwrongDataEmail]= useState("undefinedEmail")
     
+  
 
 
 

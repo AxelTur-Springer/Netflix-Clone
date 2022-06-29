@@ -16,7 +16,7 @@ import userIcon from "../../assets/user.png"
 import editIcon from "../../assets/edit.png"
 import "../../styling/navbarMain.css"
 import {valueChange} from "../../features/valueSearch"
-
+import RetrieveUserName from '../../heplers/bringUserName';
 
 const NavBarMain = (props) => {
     const navigate = useNavigate()
@@ -85,9 +85,8 @@ const NavBarMain = (props) => {
             arrow[0].style.animation = "rotateArrowDown 1s forwards "
 
         }
-        
  
-       
+
    }
     return (
         <div className='NavBarContainerMain'>
@@ -168,7 +167,7 @@ const NavBarMain = (props) => {
                                         <img src={profileImg} alt="" />
                                     </div>
                                     <div>
-                                        <p> Users Name</p>
+                                        <RetrieveUserName/>
                                     </div>
                                 </div>
                                 <div className='once'>

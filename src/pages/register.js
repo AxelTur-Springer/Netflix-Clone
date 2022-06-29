@@ -3,7 +3,8 @@ import {
     createUserWithEmailAndPassword , 
     onAuthStateChanged, 
     signOut,
-    signInWithEmailAndPassword
+    signInWithEmailAndPassword,
+    fetchSignInMethodsForEmail
     } from "firebase/auth"
 
 import { auth } from "../firebase/firebaseconfig";
@@ -12,13 +13,15 @@ import { useSelector, useDispatch } from 'react-redux';
 import {loginSuccess, logoutSuccess,UserLoginName} from "../features/loginCheck/loginSlice"
 import "../styling/register.css"
 import NavBarSignInRegister from '../Components/navBarSignInRegister';
-
+import { getDatabase, ref, onValue,set} from "firebase/database";
+import checkValidacions from '../heplers/EmailValidUserValid';
 const Register = () => {
     const [registerEmail,setRegisterEmail]= useState("")
     const [registerPassword,setRegisterPassword]= useState("")
     const [loginEmail,setloginEmail]= useState("")
     const [loginPassword,setLoginPassword]= useState("")
     const [user,setUser] = useState({})
+    const [name,setName] = useState("")
     const store = useSelector((store)=>{return store});
     const stateOfLogIn = useSelector((store)=>{return store.LogedInReducer})
     const dispatch = useDispatch();
@@ -36,35 +39,46 @@ useEffect(() => {
     });
 
 }, [])
+
+function writeUserData(userId, name, email) {
+    const db = getDatabase();
+    set(ref(db, 'users/' + userId), {
+      userId: userId.toString(),
+      username: name.toString(),
+      email: email.toString()
+    });
+  }
+
+const db = getDatabase();
+   
+         
     async function RegisterNew(){
         let input = document.getElementsByClassName("InputsCont")[0]
         let passInput = document.getElementsByClassName("InputsCont")
         [0].childNodes[2]
-
-        try{
-            const user = await createUserWithEmailAndPassword(
-                auth,
-                registerEmail,
-                registerPassword)
-                dispatch(loginSuccess("true"))
-                setwrongDataEmail("undefinedEmail")
-                setwrongPassWord("undefinedPassWord")
-                input.childNodes[0].style.borderBottom = "none"
-                passInput.style.borderBottom = "none"
-
-            }
-        catch(error){
-            if( input.childNodes[0].value.includes("@") === false){
-                setwrongDataEmail('WrongEmail')
-                input.childNodes[0].style.borderBottom = "#ffa00a solid"
-            }
-            if(passInput.value.length < 6){
-                setwrongPassWord("WrongPassWord")
-                passInput.style.borderBottom = "#ffa00a solid"
-            
-            }
-   
-        }
+        checkValidacions(registerEmail).then((result)=>{
+            if(result){
+                try{ 
+                    createUserWithEmailAndPassword(
+                        auth,registerEmail,registerPassword
+                        )
+                    dispatch(loginSuccess("true"))
+                    //styling
+                    setwrongDataEmail("undefinedEmail")
+                    setwrongPassWord("undefinedPassWord")
+                    input.childNodes[0].style.borderBottom = "none"
+                    passInput.style.borderBottom = "none"
+                    //setting usersName
+                    writeUserData(auth._currentUser.uid,name,registerEmail)
+                }catch(error){
+                    console.log(error)
+                }
+        }else{
+            setwrongDataEmail('WrongEmail')
+            input.childNodes[0].style.borderBottom = "#ffa00a solid"        }
+    })
+      
+        
     }
     const login = async() =>{
         try{
@@ -75,7 +89,6 @@ useEffect(() => {
                 
         }
         catch(error){
-            console.log(error);
         }
     }
     const logout = async()=>{
@@ -104,8 +117,10 @@ useEffect(() => {
                                  <div className={wrongPassWord}>
                                 <p>Please enter password longer than 6 caracter</p>
                             </div>
-                            <input type="text" name="" placeholder='Name'/>
-                        </div>
+                            <input type="text" name="" placeholder='Name'
+                              onChange={(event)=>{setName(event.target.value)}}
+                              />
+                              </div>
                         <div className='buttonCont'>
                             <button onClick={RegisterNew}>Register</button>
                         </div>           
