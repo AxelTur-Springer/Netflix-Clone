@@ -48,9 +48,12 @@ function writeUserData(userId, name, email) {
       email: email.toString()
     });
   }
-
-const db = getDatabase();
-   
+   async function CreateUser(){
+   let user = await createUserWithEmailAndPassword(
+        auth,registerEmail,registerPassword
+        )
+        writeUserData(auth._currentUser.uid,name,registerEmail)
+   }
          
     async function RegisterNew(){
         let input = document.getElementsByClassName("InputsCont")[0]
@@ -59,9 +62,7 @@ const db = getDatabase();
         checkValidacions(registerEmail).then((result)=>{
             if(result){
                 try{ 
-                    createUserWithEmailAndPassword(
-                        auth,registerEmail,registerPassword
-                        )
+                    CreateUser()
                     dispatch(loginSuccess("true"))
                     //styling
                     setwrongDataEmail("undefinedEmail")
@@ -69,9 +70,7 @@ const db = getDatabase();
                     input.childNodes[0].style.borderBottom = "none"
                     passInput.style.borderBottom = "none"
                     //setting usersName
-                    writeUserData(auth._currentUser.uid,name,registerEmail)
                 }catch(error){
-                    console.log(error)
                 }
         }else{
             setwrongDataEmail('WrongEmail')
